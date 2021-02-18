@@ -1,0 +1,16 @@
+.container {
+  $surroundingMargin: 3rem;
+  margin: $surroundingMargin auto;
+  width: calc(100vw - 2*#{$surroundingMargin});
+  background-color: $color-white;
+  box-shadow: $box-shadow-light;
+  
+  display: flex;
+  height: calc(100vh - 2*#{$surroundingMargin});
+  min-height: 20rem;
+
+  @include respond(medium) {
+    margin: 0;
+    width: 100%;
+  }
+} 

@@ -1,0 +1,32 @@
+.logo {
+  text-align: center;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1rem 2rem;
+    color: $color-grey-light-1;
+  }
+ 
+  &:hover > &__name {
+    color: $color-primary-dark;
+    font-weight: 400;
+  }
+
+  &__job {
+    color: $color-grey-dark-3;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: $color-white;
+    margin-top: 3rem;
+  }
+}   

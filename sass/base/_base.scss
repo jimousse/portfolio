@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  // this defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  //larger queries before, so the smaller ones apply
+
+  @include respond(large) { // width < 1200 ?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%;
+  }
+}
+
+body {
+  $first-color-height: 15rem;
+  background-image: linear-gradient(
+    180deg,
+    $color-primary-dark 0%,
+    $color-primary-dark $first-color-height,
+    $color-grey-light-2 $first-color-height
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#root {
+  overflow: hidden;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

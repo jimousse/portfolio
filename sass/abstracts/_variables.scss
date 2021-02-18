@@ -1,0 +1,28 @@
+// COLORS
+$color-primary: #0081A7;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 10%);
+$color-primary-darker: darken($color-primary, 20%);
+
+$color-secondary: #F07167;
+$color-secondary-light: lighten($color-secondary, 20%);
+$color-secondary-dark: darken($color-secondary, 10%);
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #E5E6E4;
+$color-grey-light-2: #CFD2CD;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+// box shadow
+$box-shadow-light: 0 2rem 4rem rgba($color-black, .2);
