@@ -5,6 +5,12 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin focusRing() {
+  outline: none;
+  box-shadow: inset 0px 0px 0px 2px $color-primary,
+              inset 0px 0px 0px 4px $color-primary-light;
+}
+
 /*
   MEDIA QUERY MANAGER
 */

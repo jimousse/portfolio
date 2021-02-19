@@ -1,11 +1,7 @@
 .sidebar {
   background-color: $color-secondary;
-  flex: 0 0 18%;
+  flex: 0 0 23rem;
 
   display: flex;
   flex-direction: column;
-
-  @include respond(medium) {
-    display: none;
-  }
 }  

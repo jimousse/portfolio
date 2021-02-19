@@ -21,7 +21,6 @@
     background-color: transparent;
     position: relative;
     z-index: 10;
-    border-bottom: 3px solid transparent;
     font-size: 1.7rem;
     cursor: pointer;
 
@@ -42,9 +41,10 @@
 
     &:focus {
       outline: none;
+      @include focusRing;
+
       &:before {
-        transform: scaleY(1);
-        width: 100%;
+        @include focusRing;
       }
     }
 
@@ -53,7 +53,8 @@
       width: 100%;
     }
 
-    &:active:before {
+    &:active:before,
+    &.active {
       background-color: $color-primary-darker;
     }
 

@@ -1,19 +1,12 @@
 import React from 'react';
 import SideNavList from './SideNavList';
-import Name from './Name';
+import Logo from './Logo';
 
-const tabList = [
-  { name: 'About', tab: 'one' },
-  { name: 'Projects', tab: 'two' },
-  { name: 'Resume', tab: 'three' },
-  { name: 'Contact', tab: 'four' }
-];
-
-export default function NavSideBar() {
+export default function NavSideBar(props) {
   return (
     <nav className="sidebar">
-      <Name />
-      <SideNavList items={tabList} />
+      <Logo />
+      <SideNavList {...props} />
     </nav>
   );
 }

@@ -22,7 +22,10 @@
 
   // BACKGROUND
   &__background {
-    background-color: $color-secondary;
+    background-image: radial-gradient(
+      $color-secondary, 
+      darken($color-secondary-dark, 20%)
+    );
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
@@ -32,7 +35,7 @@
     right: 6rem;
     z-index: 1000;
 
-    transition: all .8s;
+    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
   
@@ -42,10 +45,7 @@
 
   // ICON
   &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include absoluteCentering;
 
     &,
     &:before,
@@ -98,22 +98,25 @@
   &__nav {
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: -1500;
+    left: -200rem;
+    z-index: 1500;
     height: 100vh;
     width: 100%;
     opacity: 0;
-    transition: all .2s .2s;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     & > * {
-      @include absoluteCentering;
-      width: 20rem;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25rem;
     }
   }
 
   &__checkbox:checked ~ &__nav {
     opacity: 1;
-    z-index: 1500;
+    left: 0;
   }
 
 }

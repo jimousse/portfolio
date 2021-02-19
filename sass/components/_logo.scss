@@ -6,7 +6,7 @@
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     color: $color-grey-light-1;
   }
  
@@ -15,8 +15,12 @@
     font-weight: 400;
   }
 
+  &:focus {
+    @include focusRing;
+  }
+
   &__job {
-    color: $color-grey-dark-3;
+    color: $color-primary-darker;
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: .2rem;
