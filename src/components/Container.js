@@ -15,7 +15,7 @@ export default function Container() {
       <Content>
         {TABS.map(tab => tab.name === activeTab ? <tab.comp /> : null)}
       </Content>
-      <FloatingNav activeTab={activeTab} items={TABS} onChangeTabs={setActiveTab} />
+      {/* <FloatingNav activeTab={activeTab} items={TABS} onChangeTabs={setActiveTab} /> */}
     </div>
   );
 }

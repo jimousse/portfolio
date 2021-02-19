@@ -1,0 +1,85 @@
+.about {
+  &__figure {
+    width: 20rem;
+    height: 20rem;
+    clip-path: circle(50% at 50% 50%);
+    // shape-outside: circle(50% at 50% 50%);
+    position: relative;
+    overflow: hidden;
+    padding: 3px;
+    float: left;
+    margin-right: 2rem;
+  }
+
+  &__picture {
+    height: 100%;
+    transform: scale(1.1);
+    transition: all .2s;
+    border-radius: 50%;
+  }
+
+  &__caption {
+    font-size: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: all .5s;
+  }
+
+  &__figure:hover &__picture {
+    transform: scale(1.2);
+    filter: blur(3px) brightness(80%);
+  }
+
+  &__figure:hover &__caption {
+    transform: translate(-50%, -50%);
+  }
+
+  &__description {
+    font-size: 1.7rem;
+  }
+
+  &__job-link {
+    
+    @keyframes arrowmoving {
+      0%   { transform: translate(0, 0); }
+      50% { transform: translate(2px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    &:visited,
+    &:link {
+      text-decoration: none;
+      color: $color-secondary;
+    }
+
+    &:hover {
+      color: $color-secondary-dark;
+      border-bottom: 1px solid $color-secondary-dark;
+    }
+
+    &:focus {
+      outline: none;
+      color: $color-secondary-dark;
+      border-bottom: 1px solid $color-secondary-dark;
+    }
+  }
+
+  &__job-link-arrow {
+    display: inline-block;
+    transition: all .2s;
+  }
+  
+  &__job-link:hover &__job-link-arrow {
+    transform: translate(2px, -2px);
+  }
+  
+  &__job-link:focus &__job-link-arrow {
+    animation: arrowmoving 1s infinite;
+    color: $color-secondary-dark;
+  }
+
+
+
+}

@@ -7,6 +7,7 @@ $color-primary-darker: darken($color-primary, 20%);
 $color-secondary: #00afb9;
 $color-secondary-light: lighten($color-secondary, 20%);
 $color-secondary-dark: darken($color-secondary, 10%);
+$color-secondary-darker: darken($color-secondary, 20%);
 
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
@@ -16,7 +17,8 @@ $color-grey-light-2: #CFD2CD;
 
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
+$color-grey-dark-3: #666;
+$color-grey-dark-4: #333;
 
 $color-white: #fff;
 $color-black: #000;
