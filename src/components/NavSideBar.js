@@ -1,11 +1,11 @@
 import React from 'react';
 import SideNavList from './SideNavList';
-import Logo from './Logo';
+import Name from './Name';
 
 export default function NavSideBar(props) {
   return (
     <nav className="sidebar">
-      <Logo />
+      <Name />
       <SideNavList {...props} />
     </nav>
   );

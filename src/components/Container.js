@@ -5,7 +5,7 @@ import Content from './Content';
 
 import { TABS } from '../data/tabs';
 
-const DEFAULT_ACTIVE_TAB = TABS[0].name;
+const DEFAULT_ACTIVE_TAB = TABS[2].name;
 
 export default function Container() {
   const [ activeTab, setActiveTab ] = useState(DEFAULT_ACTIVE_TAB);

@@ -17,11 +17,19 @@ $color-grey-light-2: #CFD2CD;
 
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
-$color-grey-dark-3: #666;
-$color-grey-dark-4: #333;
+$color-grey-dark-3: #6d6d6d;
+$color-grey-dark-4: #555454;
+$color-grey-dark-5: #3f3f3f;
 
 $color-white: #fff;
 $color-black: #000;
+
+// DUTCH COLORS
+$color-dutch-blue: #21468B;
+$color-dutch-white: #fff;
+$color-dutch-red: #AE1C28;
+$color-dutch-orange: #FF4F00;
+$color-dutch-orange-dark: darken(#FF4F00, 5%);
 
 // FONT
 $default-font-size: 1.6rem;

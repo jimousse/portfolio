@@ -1,0 +1,28 @@
+.resume-section {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-primary;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-column-gap: 3.5rem;
+
+    &:before,
+    &:after {
+      content: '';
+      display: inline-block;
+      height: 1px;
+      background-color: $color-primary;
+    }
+  }
+} 

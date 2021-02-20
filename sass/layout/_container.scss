@@ -7,7 +7,7 @@
   
   display: flex;
   height: calc(100vh - 2*#{$surroundingMargin});
-  min-height: 20rem;
+  min-height: 60rem;
 
   @include respond(medium) {
     margin: 0;

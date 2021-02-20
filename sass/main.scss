@@ -9,11 +9,14 @@
 
 @import "components/side-nav";
 @import "components/floating-nav";
-@import "components/logo";
+@import "components/name";
 @import "components/legal";
 @import "components/about";
 @import "components/link";
-
+@import "components/location";
+@import "components/resume/resume-section";
+@import "components/resume/education-entry";
+@import "components/resume/experience-entry";
 
 @import "layout/container"; 
 @import "layout/sidebar"; 
