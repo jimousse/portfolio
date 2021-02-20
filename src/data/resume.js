@@ -1,5 +1,3 @@
-import serviceNowLogo from '../../img/servicenow_logo.png';
-
 export const educationEntries = [
   {
     date: '2013 - 2017',
@@ -32,7 +30,6 @@ export const experienceEntries = [
     description: 'Working on the Now Design System at ServiceNow. Building Data Visualisations with D3.',
     location: 'Amsterdam, Netherlands',
     duration: '1 yr 8 mos',
-    logo: serviceNowLogo,
     isCurrent: true
   },
   {
@@ -41,7 +38,6 @@ export const experienceEntries = [
     title: 'Software Engineer',
     description: 'Performance Analytics and Reporting',
     location: 'Amsterdam, Netherlands',
-    logo: serviceNowLogo,
     duration: '11 mos'
   },
   {
@@ -50,7 +46,6 @@ export const experienceEntries = [
     title: 'Junior Software Engineer',
     description: 'Performance Analytics and Reporting',
     location: 'Amsterdam, Netherlands',
-    logo: serviceNowLogo,
     duration: '1 yr 5 mos'
   },
   {
