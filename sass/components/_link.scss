@@ -1,0 +1,38 @@
+.link {
+  margin: 0 2px;
+
+  &:visited,
+  &:link {
+    text-decoration: none;
+    color: $color-primary;
+  }
+
+  &:hover {
+    color: $color-primary-dark;
+    border-bottom: 1px solid $color-primary-dark;
+  }
+
+  &:focus {
+    outline: none;
+    color: $color-primary-dark;
+    border-bottom: 1px solid $color-primary-dark;
+  }
+
+  &__arrow {
+    display: inline-block;
+    transition: all .2s;
+    margin: 0 3px;
+  }
+
+  &:hover &__arrow,
+  &:focus &__arrow {
+    animation: arrowMoving .8s infinite;
+    color: $color-primary-dark;
+  }
+}
+
+@keyframes arrowMoving {
+  0%   { transform: translate(0, 0); }
+  50% { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
+}
