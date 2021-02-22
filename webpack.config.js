@@ -20,22 +20,17 @@ module.exports = [
         {
           test: /\.(sass|css|scss)$/i,
           use: [
-            {
-              loader: 'style-loader'
-            },
-            {
-              loader: 'css-loader'
-            },
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
             { loader: 'sass-loader' }
           ]
         },
         {
-          test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader'
-            }
-          ]
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          loader: "url-loader",
+          options: {
+            limit: 8192
+          }
         }
       ]
     },

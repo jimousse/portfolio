@@ -28,8 +28,8 @@ $color-black: #000;
 $color-dutch-blue: #21468B;
 $color-dutch-white: #fff;
 $color-dutch-red: #AE1C28;
-$color-dutch-orange: #FF4F00;
-$color-dutch-orange-dark: darken(#FF4F00, 5%);
+$color-dutch-orange: #eb7640;
+$color-dutch-orange-dark: darken($color-dutch-orange, 5%);
 
 // FONT
 $default-font-size: 1.6rem;

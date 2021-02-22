@@ -29,30 +29,37 @@ export const experienceEntries = [
     title: 'Senior Software Engineer',
     description: 'Working on the Now Design System at ServiceNow. Building Data Visualisations with D3.',
     location: 'Amsterdam, Netherlands',
-    duration: '1 yr 8 mos',
+    duration: '3 yr 11 mos',
+    responsibilities: [
+      'Stuff',
+      'More stuff',
+      'More stuff'
+    ],
+    tools: [ 'JavaScript', 'D3', 'Sass', 'Web Components' ],
     isCurrent: true
   },
   {
-    date: '2018 – 2019',
-    companyName: 'ServiceNow',
+    date: '2017 – 2019',
     title: 'Software Engineer',
     description: 'Performance Analytics and Reporting',
-    location: 'Amsterdam, Netherlands',
-    duration: '11 mos'
-  },
-  {
-    date: '2017 – 2018',
-    companyName: 'ServiceNow',
-    title: 'Junior Software Engineer',
-    description: 'Performance Analytics and Reporting',
-    location: 'Amsterdam, Netherlands',
-    duration: '1 yr 5 mos'
+    tools: [ 'JavaScript', 'React', 'Redux', 'Webpack', 'Java', 'Highcharts', 'Enzyme', 'Jest' ],
+    responsibilities: [
+      'Stuff',
+      'More stuff',
+      'More stuff'
+    ]
   },
   {
     date: '2016',
     companyName: 'Amadeus',
     title: 'Software Engineer Intern',
     description: 'Mobile Development Internship in the R&D Payment Department.',
+    responsibilities: [
+      'Stuff',
+      'More stuff',
+      'More stuff'
+    ],
+    tools: [ 'JavaScript', 'Ionic', 'PhoneGap', 'Angular', 'Android', 'Java' ],
     location: 'Madrid, Spain',
     duration: '6 mos'
   },
@@ -62,6 +69,12 @@ export const experienceEntries = [
     title: 'Software Engineer Intern',
     description: 'Worked in the QA team on IBM Decision Optimization on Cloud (DOcloud)',
     location: 'Nice, France',
+    tools: [ 'Python', 'Java',  'Docker' ],
+    responsibilities: [
+      'Stuff',
+      'More stuff',
+      'More stuff'
+    ],
     duration: '6 mos'
   }
 ];

@@ -1,19 +1,50 @@
 import React from 'react';
 
+const BLOCK_NAME = 'experience-entry';
+const TOOL_LIST_HEADER = 'Tools:';
+const RESP_LIST_HEADER = 'My responsibilities included:';
 export default function ExperienceEntry(props) {
-  const { date, location, description, title, companyName, duration, isCurrent, logo } = props;
-  const BLOCK_NAME = 'experience-entry';
+  const { 
+    date, 
+    location, 
+    description, 
+    title, 
+    companyName, 
+    duration, 
+    isCurrent, 
+    tools,
+    responsibilities
+  } = props;
   return (
     <div className={BLOCK_NAME}>
       <div className={`${BLOCK_NAME}__date  ${isCurrent ? 'current' : null}`}>{date}</div>
       <div className={`${BLOCK_NAME}__title ${isCurrent ? 'current' : null}`}>{title}</div>
-      <div className={`${BLOCK_NAME}__company-name`}>
+      <div className={`${BLOCK_NAME}__company-name  ${isCurrent ? 'current' : null}`}>
         {companyName}
       </div>
-      {/* <img className={`${BLOCK_NAME}__company-logo`} src={logo} /> */}
-      <div className={`${BLOCK_NAME}__company-location ${isCurrent ? 'current' : null}`}>{location}</div>
+      <div className={`${BLOCK_NAME}__company-location`}>{location}</div>
       <div className={`${BLOCK_NAME}__duration`}>{duration}</div>
-      <p className={`${BLOCK_NAME}__description`}>{description}</p>
+      <div className={`${BLOCK_NAME}__description`}>
+        <p>{description}</p>
+        {responsibilities &&
+        <p className="responsibilities">
+          {RESP_LIST_HEADER}
+        <ul className="responsibilities__list">
+          {responsibilities.map(resp => {
+            return <li className="responsibilities__item"><span>{resp}</span></li>;
+          })}
+        </ul>
+        </p>}
+        {tools &&
+        <p className="tools">
+          {TOOL_LIST_HEADER}
+          <ul className="tools__list">
+            {tools.map(tool => {
+              return <li className="tools__item"><span>{tool}</span></li>;
+            })}
+          </ul>
+        </p>}
+      </div>
     </div>
   );
 }
