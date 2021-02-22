@@ -1,0 +1,111 @@
+.skills {
+  padding: 2rem;
+  width: 75%;
+  margin: 0 auto;
+
+  &__list {
+    @include list-icon-def;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-column-gap: .5rem;
+    grid-row-gap: 1rem;
+  }
+
+  &__item {
+    @include list-icon-item;
+    grid-template-columns: min-content max-content;
+
+    &:before {
+      height: 3rem;
+      width: 3rem;
+      mask-image: url(/img/wrench.svg); 
+      -webkit-mask-image: url(/img/wrench.svg);
+    }
+
+    & > span {
+      margin-top: .2rem; // aligning stuff is hard :(
+    }
+
+    // PIE ICON
+    &.datavis {
+      &:before {
+        mask-image: url(/img/pie-chart.svg); 
+        -webkit-mask-image: url(/img/pie-chart.svg); 
+      }
+    }
+
+    // EARTH ICON
+    &.international {
+      &:before {
+        mask-image: url(/img/earth.svg); 
+        -webkit-mask-image: url(/img/earth.svg); 
+      }
+    }
+
+    // REACT ICON
+    &.react {
+      &:before {
+        mask-image: url(/img/react.svg); 
+        -webkit-mask-image: url(/img/react.svg); 
+      }
+    }
+
+    // CSS ICON
+    &.css {
+      &:before {
+        mask-image: url(/img/csswizardry.svg); 
+        -webkit-mask-image: url(/img/csswizardry.svg); 
+      }
+    }
+
+    // JS ICON
+    &.js {
+      &:before {
+        mask-image: url(/img/javascript.svg); 
+        -webkit-mask-image: url(/img/javascript.svg); 
+      }
+    }
+
+    // EMBED ICON
+    &.embed {
+      &:before {
+        height: 2rem;
+        mask-image: url(/img/embed2.svg); 
+        -webkit-mask-image: url(/img/embed2.svg); 
+        margin-top: .3rem;
+      }
+    }
+
+    // NODE ICON
+    &.node {
+      &:before {
+        mask-image: url(/img/node-dot-js.svg); 
+        -webkit-mask-image: url(/img/node-dot-js.svg); 
+      }
+    }
+
+    // DATABASE ICON
+    &.database {
+      &:before {
+        mask-image: url(/img/database.svg); 
+        -webkit-mask-image: url(/img/database.svg); 
+      }
+    }
+
+    // SASS ICON
+    &.sass {
+      &:before {
+        mask-image: url(/img/sass.svg); 
+        -webkit-mask-image: url(/img/sass.svg); 
+      }
+    }
+
+    // TEAM ICON
+    &.team {
+      &:before {
+        mask-image: url(/img/users.svg); 
+        -webkit-mask-image: url(/img/users.svg); 
+      }
+    }
+
+  }
+}

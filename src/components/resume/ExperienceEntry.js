@@ -13,7 +13,8 @@ export default function ExperienceEntry(props) {
     duration, 
     isCurrent, 
     tools,
-    responsibilities
+    responsibilities,
+    responsibilitiesHeader
   } = props;
   return (
     <div className={BLOCK_NAME}>
@@ -28,7 +29,7 @@ export default function ExperienceEntry(props) {
         <p>{description}</p>
         {responsibilities &&
         <p className="responsibilities">
-          {RESP_LIST_HEADER}
+          {responsibilitiesHeader || RESP_LIST_HEADER}
         <ul className="responsibilities__list">
           {responsibilities.map(resp => {
             return <li className="responsibilities__item"><span>{resp}</span></li>;

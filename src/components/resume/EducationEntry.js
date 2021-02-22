@@ -1,8 +1,8 @@
 import React from 'react';
+const BLOCK_NAME = 'education-entry';
 
 export default function EducationEntry(props) {
   const { date, location, description, diploma, schoolName } = props;
-  const BLOCK_NAME = 'education-entry';
   return (
     <div className={BLOCK_NAME}>
       <div className={`${BLOCK_NAME}__date`}>{date}</div>
