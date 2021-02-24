@@ -1,6 +1,6 @@
 @mixin grid-definition {
   display: grid;
-  grid-template-columns: 15rem 1fr 20rem;
+  grid-template-columns: 15rem 1fr 21rem;
   grid-template-rows: repeat(2, auto) 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: .5rem;
@@ -8,7 +8,7 @@
   align-items: center;
 
   @include respond(largest) {
-    grid-template-columns: 20rem repeat(2, 1fr);
+    grid-template-columns: 21rem repeat(2, 1fr);
     grid-column-gap: 0rem;
   }
 

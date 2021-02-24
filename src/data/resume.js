@@ -18,7 +18,7 @@ export const educationEntries = [
   {
     date: '2010 - 2013',
     schoolName: 'Lycée Fénelon',
-    diploma: 'Classe Préparatoire aux Grandes Ecoles, MPSI, MP*, Mathematics',
+    diploma: 'Classe Préparatoire aux Grandes Ecoles, MPSI, MP*',
     description: 'Highly selective training for national competitive entrance exams to leading French “Grandes Écoles”. Intense training in mathematics and physics.',
     location: 'Paris, France',
     country: 'FR'
