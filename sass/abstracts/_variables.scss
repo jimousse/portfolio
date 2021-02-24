@@ -31,8 +31,27 @@ $color-dutch-red: #AE1C28;
 $color-dutch-orange: #eb7640;
 $color-dutch-orange-dark: darken($color-dutch-orange, 5%);
 
+// FRENCH COLORS
+$color-french-blue: #0055A4;
+$color-french-white: #fff;
+$color-french-red:#EF4135;
+
+// SPANISH COLORS
+$color-spanish-red: #AA151B;
+$color-spanish-yellow: #F1BF00;
+
+// SWEDISH COLORS
+$color-swedish-yellow: #ffce00;
+$color-swedish-blue: #00559b;
+
+// BRANDS
+$color-twitter: #1da1f2;
+$color-linkedin: #0a66c2;
+$color-github: #000;
+
 // FONT
 $default-font-size: 1.6rem;
 
 // box shadow
 $box-shadow-light: 0 2rem 4rem rgba($color-black, .2);
+$box-shadow-dark: 0 1rem 4rem rgba($color-black, .4);

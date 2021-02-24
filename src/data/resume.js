@@ -4,21 +4,24 @@ export const educationEntries = [
     schoolName: 'Telecom ParisTech',
     diploma: 'Master of Science in Engineering',
     description: 'Among the highest ranked French Grandes Ecoles, Telecom ParisTech is considered as the leading one in Computer Sience and Information Technology in France. Majored in Web Engineering and Data Science.',
-    location: 'Paris, France'
+    location: 'Paris, France',
+    country: 'FR'
   },
   {
     date: '2016 - 2017',
     schoolName: 'KTH Royal Institute of Technology',
     diploma: 'Erasmus Exchange',
     description: 'Main courses: artifial intelligence, machine learning, data mining, computer encryption.',
-    location: 'Stockholm, Sweden'
+    location: 'Stockholm, Sweden',
+    country: 'SW'
   },
   {
     date: '2010 - 2013',
     schoolName: 'Lycée Fénelon',
     diploma: 'Classe Préparatoire aux Grandes Ecoles, MPSI, MP*, Mathematics',
     description: 'Highly selective training for national competitive entrance exams to leading French “Grandes Écoles”. Intense training in mathematics and physics.',
-    location: 'Paris, France'
+    location: 'Paris, France',
+    country: 'FR'
   }
 ];
 
@@ -29,6 +32,7 @@ export const experienceEntries = [
     title: 'Senior Software Engineer',
     description: 'Working on the Now Design System at ServiceNow. Building Data Visualisations with D3.',
     location: 'Amsterdam, Netherlands',
+    country: 'NL',
     duration: '3 yr 11 mos',
     responsibilitiesHeader: 'My responsibilities include:',
     responsibilities: [
@@ -65,6 +69,7 @@ export const experienceEntries = [
     ],
     tools: [ 'JavaScript', 'Ionic', 'PhoneGap', 'Angular', 'Android', 'Java' ],
     location: 'Madrid, Spain',
+    country: 'ES',
     duration: '6 mos'
   },
   {
@@ -81,6 +86,7 @@ export const experienceEntries = [
       'Used Docker to execute unsafe Python code in a cloud architecture',
       'Implemented a cloud component in Java, responsible of solving Python models, in a test driven development approach'
     ],
+    country: 'FR',
     duration: '6 mos'
   }
 ];

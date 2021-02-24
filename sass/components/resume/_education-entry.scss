@@ -20,25 +20,54 @@
     "description description";
   }
 
+  @include respond(small) {
+    grid-template-areas: 
+    "name"
+    "date"
+    "diploma"
+    "location"
+    "description";
+  }
+
   &__date {
     grid-area: date;
     @include main-style;
+    
+    @include respond(small) {
+      justify-self: center;
+    }
   }
 
   &__name {
     grid-area: name;
     @include main-style;
+
+    
+    @include respond(small) {
+      justify-self: center;
+      font-size: 2.1rem; // to fit long names
+    }
   }
 
   &__location {
     grid-area: location;
     @include info-style;
     justify-self: end;
+
+    
+    @include respond(small) {
+      justify-self: center;
+    }
   }
 
   &__diploma {
     grid-area: diploma;
     @include main-sub-style;
+
+    
+    @include respond(small) {
+      justify-self: center;
+    }
   }
 
   &__description {

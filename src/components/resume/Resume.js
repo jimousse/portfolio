@@ -14,15 +14,15 @@ export default function Resume() {
             
       <div className="resume-section">
         <div className="resume-section__title">Experience</div>
-        {experienceEntries.map(item => {
-          return <ExperienceEntry {...item} />;
+        {experienceEntries.map((item, i) => {
+          return <ExperienceEntry key={i} {...item} />;
         })}
       </div>
 
       <div className="resume-section">
         <div className="resume-section__title">Education </div>
-        {educationEntries.map(item => {
-          return <EducationEntry {...item} />;
+        {educationEntries.map((item, i) => {
+          return <EducationEntry key={i} {...item} />;
         })}
       </div>
     </div>

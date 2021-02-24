@@ -1,0 +1,59 @@
+.contact {
+  font-size: 2rem;
+  margin: 5rem;
+
+  @include respond(medium) {
+    @include absoluteCentering;
+    top: 33%;
+    margin: 0;
+  }
+
+  @include respond(small) {
+    top: 40%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 6rem;
+    }
+
+
+    &::before {
+      content: "";
+      display: inline-block;
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      height: 5rem;
+      width: 5rem;
+      background-color: green;
+      margin-right: 2rem;
+    }
+
+    &--twitter:before {
+      background-color: $color-twitter;
+      mask-image: url(/img/twitter.svg); 
+      -webkit-mask-image: url(/img/twitter.svg);
+    }
+
+    &--linkedin:before {
+      background-color: $color-linkedin;
+      mask-image: url(/img/linkedin.svg); 
+      -webkit-mask-image: url(/img/linkedin.svg);
+    }
+
+    &--github:before {
+      background-color: $color-github;
+      mask-image: url(/img/github.svg); 
+      -webkit-mask-image: url(/img/github.svg);
+    }
+
+    &--mail:before {
+      background-color: $color-primary;
+      mask-image: url(/img/mail.svg); 
+      -webkit-mask-image: url(/img/mail.svg);
+    }
+  }
+}

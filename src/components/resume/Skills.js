@@ -6,8 +6,12 @@ export default function Skills(props) {
   return (
     <div  className={BLOCK_NAME}>
       <ul className={`${BLOCK_NAME}__list`}>
-        {items.map(item => {
-          return <li className={`${BLOCK_NAME}__item ${item.class}`}><span>{item.label}</span></li>;
+        {items.map((item, i) => {
+          return (
+            <li key={i} className={`${BLOCK_NAME}__item ${item.class}`}>
+              <span>{item.label}</span>
+            </li>
+          );
         })}
       </ul>
     </div>

@@ -5,34 +5,81 @@
   color: inherit;
   font-weight: 700;
   $flag-opacity: .8;
-  transition: all .3s;
+  transition: all .2s;
 
+  &:hover {
+    color: $color-grey-dark-3;
+  }
 
   &:before {
     content: '';
     display: inline-block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-      to bottom,
-      rgba($color-dutch-blue, $flag-opacity) 33%,
-      rgba($color-dutch-white, $flag-opacity) 33% 66%,
-      rgba($color-dutch-red, $flag-opacity) 66% 100%
-    );
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     filter: blur(2px) brightness(110%);
     opacity: 0;
-    transition: all .3s;
+    transition: all .2s;
   }
 
   &:hover {
-    color: $color-dutch-orange;
     font-weight: 700;
     text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;
+    &:before { opacity: 1; } 
+  }
 
-    &:before { opacity: 1;}
+  // DUTCH FLAG
+  &.NL {
+    &:before {
+      background-image: linear-gradient(
+        to bottom,
+        rgba($color-dutch-blue, $flag-opacity) 33%,
+        rgba($color-dutch-white, $flag-opacity) 33% 66%,
+        rgba($color-dutch-red, $flag-opacity) 66% 100%
+      );
+    }
+
+    &:hover {
+      color: $color-dutch-orange;
+    }
+  }
+
+  // FRENCH FLAG
+  &.FR:before {
+    background-image: linear-gradient(
+      to right,
+      rgba($color-french-blue, $flag-opacity) 33%,
+      rgba($color-french-white, $flag-opacity) 33% 66%,
+      rgba($color-french-red, $flag-opacity) 66% 100%
+    );
+  }
+
+  // SPANISH FLAG
+  &.ES:before {
+    background-image: linear-gradient(
+      to bottom,
+      rgba($color-spanish-red, $flag-opacity) 25%,
+      rgba($color-spanish-yellow, $flag-opacity) 25% 75%,
+      rgba($color-spanish-red, $flag-opacity) 75%,
+    );
+  }
+
+  // SWEDISH FLAG 
+  &.SW:before {
+    background-image: linear-gradient(
+    to right,
+    transparent 25%,
+    $color-swedish-yellow 25% 35%,
+    transparent 35%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba($color-swedish-blue, $flag-opacity) 35%,
+      rgba($color-swedish-yellow, $flag-opacity) 35% 65%,
+      rgba($color-swedish-blue, $flag-opacity) 65%,
+    );
   }
 }

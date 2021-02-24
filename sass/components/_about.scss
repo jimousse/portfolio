@@ -1,13 +1,30 @@
 .about {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(small) {
+    margin-top: 5rem;
+  }
+
+
   &__figure {
-    width: 20rem;
-    height: 20rem;
+    width: 30rem;
+    height: 30rem;
     clip-path: circle(50% at 50% 50%);
     position: relative;
     overflow: hidden;
     padding: 3px;
-    float: left;
-    margin-right: 2rem;
+    margin-bottom: 5rem;
+    flex: 0 0 auto;
+
+    @include respond(small) {
+      width: 20rem;
+      height: 20rem;
+    }
   }
 
   &__picture {
@@ -22,7 +39,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 200%);
     transition: all .5s;
   }
 
@@ -37,5 +54,14 @@
 
   &__description {
     font-size: 1.7rem;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 50rem;
+    
+    @include respond(small) {
+      min-width: 0;
+    }
   }
 }

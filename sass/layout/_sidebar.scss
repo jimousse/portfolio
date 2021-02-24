@@ -2,6 +2,11 @@
   background-color: $color-secondary;
   flex: 0 0 23rem;
 
+  
+  @include respond(medium) {
+    display: none;
+  }
+
   display: flex;
   flex-direction: column;
 
