@@ -5,6 +5,21 @@
     ". diploma ."
     ". description .";
 
+  @include respond(largest) {
+    grid-template-areas: 
+    "date name location"
+    ". diploma diploma"
+    ". description description";
+  }
+
+  @include respond(large) {
+    grid-template-areas: 
+    "name name"
+    "date location"
+    "diploma diploma"
+    "description description";
+  }
+
   &__date {
     grid-area: date;
     @include main-style;

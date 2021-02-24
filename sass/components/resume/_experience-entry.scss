@@ -3,7 +3,22 @@
   grid-template-areas: 
     "company-name title company-location"
     "duration date ."
-    "none description .";
+    ". description .";
+
+  @include respond(largest) {
+    grid-template-areas: 
+    "company-name title title"
+    "duration date company-location"
+    ". description description";
+  }
+
+  @include respond(large) {
+    grid-template-areas: 
+    "company-name company-name"
+    "title duration"
+    "date company-location"
+    "description description";
+  }
 
   &__date {
     grid-area: date;
@@ -18,6 +33,10 @@
   &__company-name {
     grid-area: company-name;
     @include main-style;
+
+    @include respond(large) {
+      text-align: center;
+    }
   }
 
   &__company-location {
@@ -30,6 +49,10 @@
     grid-area: duration;
     @include info-style;
     justify-self: start;
+    
+    @include respond(large) {
+      justify-self: end;
+    }
   }
 
   &__description {

@@ -3,6 +3,10 @@
   width: 75%;
   margin: 0 auto;
 
+  @include respond(large) {
+    padding: 1rem;
+  }
+
   &__list {
     @include list-icon-def;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

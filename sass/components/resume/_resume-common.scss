@@ -1,10 +1,20 @@
 @mixin grid-definition {
   display: grid;
   grid-template-columns: 15rem 1fr 20rem;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: .5rem;
   padding: 1rem 0;
+  align-items: center;
+
+  @include respond(largest) {
+    grid-template-columns: 20rem repeat(2, 1fr);
+    grid-column-gap: 0rem;
+  }
+
+  @include respond(large) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @mixin info-style {
