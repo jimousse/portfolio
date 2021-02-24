@@ -8,7 +8,7 @@ module.exports = [
     devtool: 'inline-source-map',
     output: {
       filename: 'main.js',
-      path: path.resolve(__dirname, './dist')
+      path: path.resolve(__dirname, './docs')
     },
     module: {
       rules: [
@@ -43,7 +43,7 @@ module.exports = [
     },
     plugins: [ new webpack.HotModuleReplacementPlugin() ],
     devServer: {
-      contentBase: path.resolve(__dirname, './dist'),
+      contentBase: path.resolve(__dirname, './docs'),
       hot: true
     }
   }
