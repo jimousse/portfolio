@@ -43,6 +43,9 @@
     transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
+  &__checkbox:checked + &__button {
+    background-color: $color-primary;
+  }
   
   &__checkbox:checked ~ &__background {
     transform: scale(120);

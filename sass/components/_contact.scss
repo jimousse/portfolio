@@ -8,7 +8,7 @@
     margin: 0;
   }
 
-  @include respond(small) {
+  @include respond(medium) {
     top: 40%;
   }
 

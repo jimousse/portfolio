@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
 
-  @include respond(small) {
+  @include respond(medium) {
     margin-top: 5rem;
   }
 
@@ -21,9 +21,9 @@
     margin-bottom: 5rem;
     flex: 0 0 auto;
 
-    @include respond(small) {
-      width: 20rem;
-      height: 20rem;
+    @include respond(medium) {
+      width: 25rem;
+      height: 25rem;
     }
   }
 
@@ -35,7 +35,7 @@
   }
 
   &__caption {
-    font-size: 5rem;
+    font-size: 10rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,7 +60,7 @@
     flex: 1;
     min-width: 50rem;
     
-    @include respond(small) {
+    @include respond(medium) {
       min-width: 0;
     }
   }

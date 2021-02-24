@@ -20,7 +20,7 @@
     "description description";
   }
 
-  @include respond(small) {
+  @include respond(medium) {
     grid-template-areas: 
     "name"
     "date"
@@ -33,7 +33,7 @@
     grid-area: date;
     @include main-style;
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
@@ -43,7 +43,7 @@
     @include main-style;
 
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
       font-size: 2.1rem; // to fit long names
     }
@@ -55,7 +55,7 @@
     justify-self: end;
 
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
@@ -65,7 +65,7 @@
     @include main-sub-style;
 
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }

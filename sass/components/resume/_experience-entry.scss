@@ -21,7 +21,7 @@
   }
 
   
-  @include respond(small) {
+  @include respond(medium) {
     grid-template-areas: 
     "title"
     "company-name"
@@ -35,7 +35,7 @@
     grid-area: date;
     @include main-sub-style;
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
@@ -44,7 +44,7 @@
     grid-area: title;
     @include main-style;
 
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
@@ -63,7 +63,7 @@
     @include info-style;
     justify-self: end;
 
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
@@ -77,7 +77,7 @@
       justify-self: end;
     }
     
-    @include respond(small) {
+    @include respond(medium) {
       justify-self: center;
     }
   }
