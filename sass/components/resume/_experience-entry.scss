@@ -1,30 +1,30 @@
 .experience-entry {
   @include grid-definition;
-  grid-template-areas: 
+  grid-template-areas:
     "company-name title company-location"
     "duration date ."
     ". description .";
 
   @include respond(largest) {
-    grid-template-areas: 
+    grid-template-areas:
     "company-name title title"
     "duration date company-location"
     ". description description";
   }
 
   @include respond(large) {
-    grid-template-areas: 
+    grid-template-areas:
     "company-name company-name"
     "title duration"
     "date company-location"
     "description description";
   }
 
-  
+
   @include respond(medium) {
-    grid-template-areas: 
-    "title"
+    grid-template-areas:
     "company-name"
+    "title"
     "date"
     "duration"
     "company-location"
@@ -34,7 +34,7 @@
   &__date {
     grid-area: date;
     @include main-sub-style;
-    
+
     @include respond(medium) {
       justify-self: center;
     }
@@ -72,11 +72,11 @@
     grid-area: duration;
     @include info-style;
     justify-self: start;
-    
+
     @include respond(large) {
       justify-self: end;
     }
-    
+
     @include respond(medium) {
       justify-self: center;
     }
@@ -95,12 +95,12 @@
     @include list-icon-def;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
-    
+
   &__item {
     @include list-icon-item;
     &:before {
       mask-image: url(/img/wrench.svg);
-      -webkit-mask-image: url(/img/wrench.svg); 
+      -webkit-mask-image: url(/img/wrench.svg);
       margin-top: .7rem;
     }
   }
@@ -118,7 +118,7 @@
     @include list-icon-item;
     &:before {
       mask-image: url(/img/laptop.svg);
-      -webkit-mask-image: url(/img/laptop.svg); 
+      -webkit-mask-image: url(/img/laptop.svg);
       margin-top: .65rem;
     }
   }
