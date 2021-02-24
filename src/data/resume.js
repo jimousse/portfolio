@@ -33,7 +33,7 @@ export const experienceEntries = [
     description: 'Working on the Now Design System at ServiceNow. Building Data Visualisations with D3.',
     location: 'Amsterdam, Netherlands',
     country: 'NL',
-    duration: '3 yr 11 mos',
+    startTimestamp: 1491026400000,
     responsibilitiesHeader: 'My responsibilities include:',
     responsibilities: [
       'Developing a JavaScript charting library for the Now Platform, using D3',
