@@ -83,7 +83,7 @@
 /******/ 						installedModules[request].parents.push(moduleId);
 /******/ 					}
 /******/ 				} else {
-/******/ 					hotCurrentParents = [moduleId];
+/******/ 					hotCurrentParents = [ moduleId ];
 /******/ 					hotCurrentChildModule = request;
 /******/ 				}
 /******/ 				if (me.children.indexOf(request) === -1) {
@@ -372,12 +372,12 @@
 /******/ 		var moduleId;
 /******/
 /******/ 		function getAffectedStuff(updateModuleId) {
-/******/ 			var outdatedModules = [updateModuleId];
+/******/ 			var outdatedModules = [ updateModuleId ];
 /******/ 			var outdatedDependencies = {};
 /******/
 /******/ 			var queue = outdatedModules.map(function(id) {
 /******/ 				return {
-/******/ 					chain: [id],
+/******/ 					chain: [ id ],
 /******/ 					id: id
 /******/ 				};
 /******/ 			});
@@ -412,7 +412,7 @@
 /******/ 					if (parent.hot._declinedDependencies[moduleId]) {
 /******/ 						return {
 /******/ 							type: "declined",
-/******/ 							chain: chain.concat([parentId]),
+/******/ 							chain: chain.concat([ parentId ]),
 /******/ 							moduleId: moduleId,
 /******/ 							parentId: parentId
 /******/ 						};
@@ -421,13 +421,13 @@
 /******/ 					if (parent.hot._acceptedDependencies[moduleId]) {
 /******/ 						if (!outdatedDependencies[parentId])
 /******/ 							outdatedDependencies[parentId] = [];
-/******/ 						addAllToSet(outdatedDependencies[parentId], [moduleId]);
+/******/ 						addAllToSet(outdatedDependencies[parentId], [ moduleId ]);
 /******/ 						continue;
 /******/ 					}
 /******/ 					delete outdatedDependencies[parentId];
 /******/ 					outdatedModules.push(parentId);
 /******/ 					queue.push({
-/******/ 						chain: chain.concat([parentId]),
+/******/ 						chain: chain.concat([ parentId ]),
 /******/ 						id: parentId
 /******/ 					});
 /******/ 				}
@@ -544,7 +544,7 @@
 /******/ 					}
 /******/ 				}
 /******/ 				if (doDispose) {
-/******/ 					addAllToSet(outdatedModules, [result.moduleId]);
+/******/ 					addAllToSet(outdatedModules, [ result.moduleId ]);
 /******/ 					appliedUpdate[moduleId] = warnUnexpectedRequire;
 /******/ 				}
 /******/ 			}
@@ -1037,7 +1037,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMzIgMzIiPg0KICA8cGF0aCBmaWxsPSIjYzY5IiBzdHlsZT0iZmlsbDogdmFyKC0tY29sb3IxLCAjYzY5KSIgZD0iTTE2IDBjOC44MzYgMCAxNiA3LjE2NCAxNiAxNnMtNy4xNjQgMTYtMTYgMTYtMTYtNy4xNjQtMTYtMTYgNy4xNjQtMTYgMTYtMTZ6TTEyLjgyIDIxLjMzMWMwLjIzMyAwLjg2IDAuMjA4IDEuNjY0LTAuMDMyIDIuMzg5bC0wLjA4NyAwLjI0Yy0wLjAzMiAwLjA4MS0wLjA2OSAwLjE2LTAuMTA0IDAuMjM1LTAuMTg3IDAuMzg3LTAuNDM1IDAuNzQ3LTAuNzQgMS4wODAtMC45MzEgMS4wMTItMi4yMjkgMS4zOTYtMi43ODcgMS4wNzMtMC42LTAuMzQ5LTAuMzAxLTEuNzggMC43NzktMi45MiAxLjE2MS0xLjIyNCAyLjgyNy0yLjAxMiAyLjgyNy0yLjAxMnYtMC4wMDR6TTI2LjAzNSA2Ljg0OWMtMC43MjMtMi44NDQtNS40MzYtMy43NzktOS44OTYtMi4xOTMtMi42NTIgMC45NDMtNS41MjUgMi40MjQtNy41OTEgNC4zNTYtMi40NTcgMi4yOTUtMi44NDggNC4yOTUtMi42ODcgNS4xMzEgMC41NjkgMi45NDggNC42MDkgNC44NzYgNi4yNzEgNi4zMDd2MC4wMDhjLTAuNDg5IDAuMjQtNC4wNzUgMi4wMzktNC45MTUgMy45LTAuOSAxLjk2IDAuMTQgMy4zNjEgMC44MiAzLjU0IDIuMSAwLjU4MSA0LjI2LTAuNDggNS40Mi0yLjE5OSAxLjEyLTEuNjgxIDEuMDIxLTMuODQxIDAuNTM5LTQuOTAxIDAuNjYxLTAuMTggMS40NC0wLjI2IDIuNDQtMC4xMzkgMi44MDEgMC4zMiAzLjM2MSAyLjA4MCAzLjI0IDIuOC0wLjEyIDAuNzE5LTAuNjk3IDEuMTM5LTAuODk5IDEuMjU5LTAuMiAwLjEyMS0wLjI2IDAuMTYtMC4yNDEgMC4yNDEgMC4wMjAgMC4xMiAwLjEyMSAwLjEyIDAuMjggMC4xIDAuMjItMC4wNDAgMS40NjEtMC42IDEuNTIxLTEuOTYxIDAuMDYwLTEuNzItMS41ODEtMy42MzktNC41LTMuNi0xLjIgMC4wMjEtMS45NjEgMC4xMjEtMi41IDAuMzQxLTAuMDQwLTAuMDYwLTAuMDgxLTAuMS0wLjE0LTAuMTQtMS44LTEuOTQtNS4xNC0zLjMtNS01Ljg4IDAuMDQwLTAuOTQgMC4zOC0zLjQxOSA2LjQtNi40MTkgNC45NC0yLjQ2MSA4Ljg4MS0xLjc4IDkuNTYxLTAuMjggMC45NzcgMi4xMzktMi4xMDEgNi4xMi03LjI0MSA2LjY5OS0xLjk2IDAuMjItMi45OC0wLjUzOS0zLjI0MS0wLjgyLTAuMjc5LTAuMy0wLjMxOS0wLjMyLTAuNDE5LTAuMjU5LTAuMTYgMC4wODAtMC4wNjAgMC4zNCAwIDAuNSAwLjE2IDAuNCAwLjc4IDEuMSAxLjg2MSAxLjQ2IDAuOTM5IDAuMyAzLjI0IDAuNDc5IDYtMC42IDMuMDk5LTEuMTk5IDUuNTE5LTQuNTQgNC44MTktNy4zNHoiPjwvcGF0aD4NCjwvc3ZnPg==");
+/* harmony default export */ __webpack_exports__["default"] = ("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxwYXRoIGZpbGw9IiNjNjkiIHN0eWxlPSJmaWxsOiB2YXIoLS1jb2xvcjEsICNjNjkpIiBkPSJNMTYgMGM4LjgzNiAwIDE2IDcuMTY0IDE2IDE2cy03LjE2NCAxNi0xNiAxNi0xNi03LjE2NC0xNi0xNiA3LjE2NC0xNiAxNi0xNnpNMTIuODIgMjEuMzMxYzAuMjMzIDAuODYgMC4yMDggMS42NjQtMC4wMzIgMi4zODlsLTAuMDg3IDAuMjRjLTAuMDMyIDAuMDgxLTAuMDY5IDAuMTYtMC4xMDQgMC4yMzUtMC4xODcgMC4zODctMC40MzUgMC43NDctMC43NCAxLjA4MC0wLjkzMSAxLjAxMi0yLjIyOSAxLjM5Ni0yLjc4NyAxLjA3My0wLjYtMC4zNDktMC4zMDEtMS43OCAwLjc3OS0yLjkyIDEuMTYxLTEuMjI0IDIuODI3LTIuMDEyIDIuODI3LTIuMDEydi0wLjAwNHpNMjYuMDM1IDYuODQ5Yy0wLjcyMy0yLjg0NC01LjQzNi0zLjc3OS05Ljg5Ni0yLjE5My0yLjY1MiAwLjk0My01LjUyNSAyLjQyNC03LjU5MSA0LjM1Ni0yLjQ1NyAyLjI5NS0yLjg0OCA0LjI5NS0yLjY4NyA1LjEzMSAwLjU2OSAyLjk0OCA0LjYwOSA0Ljg3NiA2LjI3MSA2LjMwN3YwLjAwOGMtMC40ODkgMC4yNC00LjA3NSAyLjAzOS00LjkxNSAzLjktMC45IDEuOTYgMC4xNCAzLjM2MSAwLjgyIDMuNTQgMi4xIDAuNTgxIDQuMjYtMC40OCA1LjQyLTIuMTk5IDEuMTItMS42ODEgMS4wMjEtMy44NDEgMC41MzktNC45MDEgMC42NjEtMC4xOCAxLjQ0LTAuMjYgMi40NC0wLjEzOSAyLjgwMSAwLjMyIDMuMzYxIDIuMDgwIDMuMjQgMi44LTAuMTIgMC43MTktMC42OTcgMS4xMzktMC44OTkgMS4yNTktMC4yIDAuMTIxLTAuMjYgMC4xNi0wLjI0MSAwLjI0MSAwLjAyMCAwLjEyIDAuMTIxIDAuMTIgMC4yOCAwLjEgMC4yMi0wLjA0MCAxLjQ2MS0wLjYgMS41MjEtMS45NjEgMC4wNjAtMS43Mi0xLjU4MS0zLjYzOS00LjUtMy42LTEuMiAwLjAyMS0xLjk2MSAwLjEyMS0yLjUgMC4zNDEtMC4wNDAtMC4wNjAtMC4wODEtMC4xLTAuMTQtMC4xNC0xLjgtMS45NC01LjE0LTMuMy01LTUuODggMC4wNDAtMC45NCAwLjM4LTMuNDE5IDYuNC02LjQxOSA0Ljk0LTIuNDYxIDguODgxLTEuNzggOS41NjEtMC4yOCAwLjk3NyAyLjEzOS0yLjEwMSA2LjEyLTcuMjQxIDYuNjk5LTEuOTYgMC4yMi0yLjk4LTAuNTM5LTMuMjQxLTAuODItMC4yNzktMC4zLTAuMzE5LTAuMzItMC40MTktMC4yNTktMC4xNiAwLjA4MC0wLjA2MCAwLjM0IDAgMC41IDAuMTYgMC40IDAuNzggMS4xIDEuODYxIDEuNDYgMC45MzkgMC4zIDMuMjQgMC40NzkgNi0wLjYgMy4wOTktMS4xOTkgNS41MTktNC41NCA0LjgxOS03LjM0eiI+PC9wYXRoPgo8L3N2Zz4=");
 
 /***/ }),
 
@@ -1149,7 +1149,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_13___ = _node_modules_css_loader_dist_runtime_
 var ___CSS_LOADER_URL_REPLACEMENT_14___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_img_sass_svg__WEBPACK_IMPORTED_MODULE_17__["default"]);
 var ___CSS_LOADER_URL_REPLACEMENT_15___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_img_users_svg__WEBPACK_IMPORTED_MODULE_18__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "/*\n  MEDIA QUERY MANAGER\n*/\n*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit;\n}\n\nhtml {\n  height: 100%;\n  font-size: 62.5%;\n}\n@media only screen and (max-width: 62.5rem) {\n  html {\n    font-size: 56.25%;\n  }\n}\n\nbody {\n  background-image: linear-gradient(180deg, #005a74 0%, #005a74 15rem, #CFD2CD 15rem);\n  background-size: cover;\n  background-repeat: no-repeat;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n  padding: 3rem;\n}\n@media only screen and (max-width: 75rem) {\n  #root {\n    padding: 0;\n  }\n}\n\n::selection {\n  background-color: #0081A7;\n  color: #fff;\n}\n\nbody {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 1.6rem;\n  line-height: 1.7;\n  color: #777;\n}\n\n.heading-1 {\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: 300;\n  font-size: 2.5rem;\n}\n\n.heading-2 {\n  font-size: 2rem;\n  color: #6d6d6d;\n}\n\n.side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n}\n.side-nav__item {\n  position: relative;\n}\n.side-nav__item:not(:last-child) {\n  margin-bottom: 1rem;\n}\n.side-nav__button {\n  width: 100%;\n  border: none;\n  text-transform: uppercase;\n  display: block;\n  padding: 1.5rem 2rem;\n  color: #E5E6E4;\n  background-color: transparent;\n  position: relative;\n  z-index: 10;\n  font-size: 1.7rem;\n  cursor: pointer;\n}\n.side-nav__button:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 2px;\n  background-color: #005a74;\n  transform: scaleY(0);\n  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;\n}\n.side-nav__button:focus {\n  outline: none;\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:focus:before {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:hover:before {\n  transform: scaleY(1);\n  width: 100%;\n}\n.side-nav__button:active:before, .side-nav__button.active {\n  background-color: #003241;\n}\n\n.float-nav {\n  position: relative;\n  display: none;\n}\n.float-nav__checkbox {\n  display: none;\n}\n@media only screen and (max-width: 50rem) {\n  .float-nav {\n    display: block;\n  }\n}\n.float-nav__button {\n  background-color: #00afb9;\n  height: 7rem;\n  width: 7rem;\n  border-radius: 50%;\n  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);\n  z-index: 2000;\n  cursor: pointer;\n  position: fixed;\n  top: 3rem;\n  right: 3rem;\n}\n.float-nav__background {\n  background-image: radial-gradient(#00afb9, #001e20);\n  height: 3rem;\n  width: 3rem;\n  border-radius: 50%;\n  position: fixed;\n  top: 5rem;\n  right: 5rem;\n  z-index: 1000;\n  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);\n}\n.float-nav__checkbox:checked + .float-nav__button {\n  background-color: #0081A7;\n}\n.float-nav__checkbox:checked ~ .float-nav__background {\n  transform: scale(120);\n}\n.float-nav__icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.float-nav__icon, .float-nav__icon:before, .float-nav__icon:after {\n  width: 3rem;\n  height: 2px;\n  background-color: #fff;\n  display: inline-block;\n}\n.float-nav__icon:before, .float-nav__icon:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  transition: all 0.2s;\n}\n.float-nav__icon:before {\n  top: -1rem;\n}\n.float-nav__icon:after {\n  top: 1rem;\n}\n.float-nav__button:hover .float-nav__icon::before {\n  top: -1.2rem;\n}\n.float-nav__button:hover .float-nav__icon::after {\n  top: 1.2rem;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon {\n  background-color: transparent;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:before {\n  top: -1rem;\n  transform: translateY(1rem) rotate(225deg);\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:after {\n  top: 1rem;\n  transform: translateY(-1rem) rotate(-225deg);\n}\n.float-nav__nav {\n  position: fixed;\n  top: 0;\n  left: -200rem;\n  z-index: 1500;\n  height: 100vh;\n  width: 100%;\n  opacity: 0;\n  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.float-nav__nav > * {\n  position: absolute;\n  top: 20%;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 25rem;\n}\n.float-nav__checkbox:checked ~ .float-nav__nav {\n  opacity: 1;\n  left: 0;\n}\n\n.name {\n  text-align: center;\n  padding: 1rem 1.5rem;\n  color: #E5E6E4;\n  user-select: none;\n  text-transform: uppercase;\n}\n.name__job {\n  color: #003241;\n  font-size: 1.3rem;\n  font-weight: 700;\n  letter-spacing: 0.2rem;\n}\n.name:after {\n  content: \"\";\n  display: block;\n  height: 1px;\n  background-color: #fff;\n  margin-top: 3rem;\n}\n\n.legal {\n  align-self: center;\n  margin-top: auto;\n  margin-bottom: 2rem;\n  color: #E5E6E4;\n  font-size: 1.2rem;\n}\n\n.about {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 2rem;\n  justify-content: center;\n  align-items: center;\n}\n@media only screen and (max-width: 50rem) {\n  .about {\n    margin-top: 5rem;\n  }\n}\n.about__figure {\n  width: 30rem;\n  height: 30rem;\n  clip-path: circle(50% at 50% 50%);\n  position: relative;\n  overflow: hidden;\n  padding: 3px;\n  margin-bottom: 5rem;\n  flex: 0 0 auto;\n}\n@media only screen and (max-width: 50rem) {\n  .about__figure {\n    width: 25rem;\n    height: 25rem;\n  }\n}\n.about__picture {\n  height: 100%;\n  transform: scale(1.1);\n  transition: all 0.2s;\n  border-radius: 50%;\n}\n.about__caption {\n  font-size: 10rem;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, 200%);\n  transition: all 0.5s;\n}\n.about__figure:hover .about__picture {\n  transform: scale(1.2);\n  filter: blur(3px) brightness(80%);\n}\n.about__figure:hover .about__caption {\n  transform: translate(-50%, -50%);\n}\n.about__description {\n  font-size: 1.7rem;\n}\n.about__text {\n  flex: 1;\n  min-width: 50rem;\n}\n@media only screen and (max-width: 50rem) {\n  .about__text {\n    min-width: 0;\n  }\n}\n\n.link {\n  margin: 0 2px;\n  white-space: nowrap;\n}\n.link:visited, .link:link {\n  text-decoration: none;\n  color: #0081A7;\n  border-bottom: 1px solid transparent;\n}\n.link:hover {\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link:focus {\n  outline: none;\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link__arrow {\n  display: inline-block;\n  transition: all 0.2s;\n  margin: 0 3px;\n}\n.link:hover .link__arrow, .link:focus .link__arrow {\n  animation: arrowMoving 0.8s infinite;\n  color: #005a74;\n}\n\n@keyframes arrowMoving {\n  0% {\n    transform: translate(0, 0);\n  }\n  50% {\n    transform: translate(2px, -2px);\n  }\n  100% {\n    transform: translate(0, 0);\n  }\n}\n.location {\n  display: inline-block;\n  position: relative;\n  z-index: 200;\n  color: inherit;\n  font-weight: 700;\n  transition: all 0.2s;\n}\n.location:hover {\n  color: #6d6d6d;\n}\n.location:before {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -1;\n  filter: blur(2px) brightness(110%);\n  opacity: 0;\n  transition: all 0.2s;\n}\n.location:hover {\n  font-weight: 700;\n  text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\n}\n.location:hover:before {\n  opacity: 1;\n}\n.location.NL:before {\n  background-image: linear-gradient(to bottom, rgba(33, 70, 139, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(174, 28, 40, 0.8) 66% 100%);\n}\n.location.NL:hover {\n  color: #eb7640;\n}\n.location.FR:before {\n  background-image: linear-gradient(to right, rgba(0, 85, 164, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(239, 65, 53, 0.8) 66% 100%);\n}\n.location.ES:before {\n  background-image: linear-gradient(to bottom, rgba(170, 21, 27, 0.8) 25%, rgba(241, 191, 0, 0.8) 25% 75%, rgba(170, 21, 27, 0.8) 75%);\n}\n.location.SW:before {\n  background-image: linear-gradient(to right, transparent 25%, #ffce00 25% 35%, transparent 35%), linear-gradient(to bottom, rgba(0, 85, 155, 0.8) 35%, rgba(255, 206, 0, 0.8) 35% 65%, rgba(0, 85, 155, 0.8) 65%);\n}\n\n.contact {\n  font-size: 2rem;\n  margin: 5rem;\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    top: 33%;\n    margin: 0;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    top: 40%;\n  }\n}\n.contact__item {\n  display: flex;\n  align-items: center;\n}\n.contact__item:not(:last-child) {\n  margin-bottom: 6rem;\n}\n.contact__item::before {\n  content: \"\";\n  display: inline-block;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  height: 5rem;\n  width: 5rem;\n  background-color: green;\n  margin-right: 2rem;\n}\n.contact__item--twitter:before {\n  background-color: #1da1f2;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.contact__item--linkedin:before {\n  background-color: #0a66c2;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.contact__item--github:before {\n  background-color: #000;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.contact__item--mail:before {\n  background-color: #0081A7;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n\n.resume-section {\n  width: 100%;\n}\n.resume-section:not(:last-child) {\n  margin-bottom: 4rem;\n}\n.resume-section__title {\n  font-size: 3rem;\n  font-weight: 300;\n  text-transform: uppercase;\n  color: #0081A7;\n  display: grid;\n  grid-template-columns: 1fr max-content 1fr;\n  align-items: center;\n  grid-column-gap: 3.5rem;\n}\n.resume-section__title:before, .resume-section__title:after {\n  content: \"\";\n  display: inline-block;\n  height: 1px;\n  background-color: #0081A7;\n}\n\n.education-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"date name location\" \". diploma .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-areas: \"date name location\" \". diploma diploma\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-areas: \"name name\" \"date location\" \"diploma diploma\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-areas: \"name\" \"date\" \"diploma\" \"location\" \"description\";\n  }\n}\n.education-entry__date {\n  grid-area: date;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__date.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__date {\n    justify-self: center;\n  }\n}\n.education-entry__name {\n  grid-area: name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__name {\n    justify-self: center;\n    font-size: 2.1rem;\n  }\n}\n.education-entry__location {\n  grid-area: location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__location {\n    justify-self: center;\n  }\n}\n.education-entry__diploma {\n  grid-area: diploma;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__diploma {\n    justify-self: center;\n  }\n}\n.education-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.experience-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"company-name title company-location\" \"duration date .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name title title\" \"duration date company-location\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name company-name\" \"title duration\" \"date company-location\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-areas: \"title\" \"company-name\" \"date\" \"duration\" \"company-location\" \"description\";\n  }\n}\n.experience-entry__date {\n  grid-area: date;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__date {\n    justify-self: center;\n  }\n}\n.experience-entry__title {\n  grid-area: title;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__title.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__title {\n    justify-self: center;\n  }\n}\n.experience-entry__company-name {\n  grid-area: company-name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__company-name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__company-name {\n    text-align: center;\n  }\n}\n.experience-entry__company-location {\n  grid-area: company-location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__company-location {\n    justify-self: center;\n  }\n}\n.experience-entry__duration {\n  grid-area: duration;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: start;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__duration {\n    justify-self: end;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__duration {\n    justify-self: center;\n  }\n}\n.experience-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.tools {\n  margin: 1rem 0;\n}\n.tools__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\n}\n.tools__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.tools__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.tools__item > span {\n  grid-area: text;\n}\n.tools__item:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  margin-top: 0.7rem;\n}\n\n.responsibilities {\n  margin: 1rem 0;\n}\n.responsibilities__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: 1fr;\n}\n.responsibilities__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.responsibilities__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.responsibilities__item > span {\n  grid-area: text;\n}\n.responsibilities__item:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n  margin-top: 0.65rem;\n}\n\n.skills {\n  padding: 2rem;\n  width: 75%;\n  margin: 0 auto;\n}\n@media only screen and (max-width: 62.5rem) {\n  .skills {\n    padding: 1rem;\n  }\n}\n.skills__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\n  grid-column-gap: 0.5rem;\n  grid-row-gap: 1rem;\n}\n.skills__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n  grid-template-columns: min-content max-content;\n}\n.skills__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.skills__item > span {\n  grid-area: text;\n}\n.skills__item:before {\n  height: 3rem;\n  width: 3rem;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.skills__item > span {\n  margin-top: 0.2rem;\n}\n.skills__item.datavis:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\n}\n.skills__item.international:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\n}\n.skills__item.react:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n}\n.skills__item.css:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\n}\n.skills__item.js:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ");\n}\n.skills__item.embed:before {\n  height: 2rem;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ");\n  margin-top: 0.3rem;\n}\n.skills__item.node:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_12___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_12___ + ");\n}\n.skills__item.database:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_13___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_13___ + ");\n}\n.skills__item.sass:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_14___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_14___ + ");\n}\n.skills__item.team:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_15___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_15___ + ");\n}\n\n.container {\n  background-color: #fff;\n  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);\n  height: 100%;\n  width: 100%;\n  display: flex;\n}\n\n.sidebar {\n  background-color: #00afb9;\n  flex: 0 0 23rem;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0.5rem 0 4rem rgba(0, 0, 0, 0.3);\n}\n@media only screen and (max-width: 50rem) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.content {\n  width: 100%;\n  height: 100%;\n  padding: 4rem;\n  overflow: auto;\n}", "",{"version":3,"sources":["webpack://./sass/abstracts/_mixins.scss","webpack://./sass/base/_base.scss","webpack://./sass/main.scss","webpack://./sass/abstracts/_variables.scss","webpack://./sass/base/_typography.scss","webpack://./sass/components/_side-nav.scss","webpack://./sass/components/_floating-nav.scss","webpack://./sass/components/_name.scss","webpack://./sass/components/_legal.scss","webpack://./sass/components/_about.scss","webpack://./sass/components/_link.scss","webpack://./sass/components/_location.scss","webpack://./sass/components/_contact.scss","webpack://./sass/components/resume/_resume-section.scss","webpack://./sass/components/resume/_education-entry.scss","webpack://./sass/components/resume/_resume-common.scss","webpack://./sass/components/resume/_experience-entry.scss","webpack://./sass/components/resume/_skills.scss","webpack://./sass/layout/_container.scss","webpack://./sass/layout/_sidebar.scss","webpack://./sass/layout/_content.scss"],"names":[],"mappings":"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","sourcesContent":["@mixin absoluteCentering() {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n@mixin focusRing() {\r\n  outline: none;\r\n  box-shadow: inset 0px 0px 0px 2px $color-primary,\r\n              inset 0px 0px 0px 4px $color-primary-light;\r\n}\r\n\r\n/*\r\n  MEDIA QUERY MANAGER\r\n*/\r\n@mixin respond($breakpoint) {\r\n  @if $breakpoint == largest {\r\n    @media only screen and (max-width: 75rem) { @content }; // 1200px /16px\r\n  }\r\n\r\n  @if $breakpoint == large {\r\n    @media only screen and (max-width: 62.5rem) { @content }; // 1000px /16px\r\n  }\r\n\r\n  @if $breakpoint == medium {\r\n    @media only screen and (max-width: 50rem) { @content }; // 800px /16px\r\n  }\r\n\r\n  @if $breakpoint == small { \r\n    @media only screen and (max-width: 37.5rem) { @content }; // 600px /16px\r\n  }\r\n\r\n  @if $breakpoint == smallest {\r\n    @media only screen and (max-width: 25rem) { @content }; // 400px /16px\r\n  }\r\n}","*,\r\n*::after,\r\n*::before {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: inherit; \r\n}\r\n\r\nhtml {\r\n  height: 100%;\r\n  // overflow: hidden;\r\n  // this defines what 1rem is\r\n  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%\r\n\r\n  //larger queries before, so the smaller ones apply\r\n\r\n  @include respond(large) { // width < 1200 ?\r\n    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%;\r\n  }\r\n}\r\n\r\nbody {\r\n  $first-color-height: 15rem;\r\n  background-image: linear-gradient(\r\n    180deg,\r\n    $color-primary-dark 0%,\r\n    $color-primary-dark $first-color-height,\r\n    $color-grey-light-2 $first-color-height\r\n  );\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  height: 100%;\r\n  box-sizing: border-box;\r\n}\r\n\r\n#root {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 3rem;\r\n\r\n  @include respond(largest) {\r\n    padding: 0;\r\n  }\r\n}\r\n\r\n::selection {\r\n  background-color: $color-primary;\r\n  color: $color-white;\r\n}","/*\n  MEDIA QUERY MANAGER\n*/\n*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit;\n}\n\nhtml {\n  height: 100%;\n  font-size: 62.5%;\n}\n@media only screen and (max-width: 62.5rem) {\n  html {\n    font-size: 56.25%;\n  }\n}\n\nbody {\n  background-image: linear-gradient(180deg, #005a74 0%, #005a74 15rem, #CFD2CD 15rem);\n  background-size: cover;\n  background-repeat: no-repeat;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n  padding: 3rem;\n}\n@media only screen and (max-width: 75rem) {\n  #root {\n    padding: 0;\n  }\n}\n\n::selection {\n  background-color: #0081A7;\n  color: #fff;\n}\n\nbody {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 1.6rem;\n  line-height: 1.7;\n  color: #777;\n}\n\n.heading-1 {\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: 300;\n  font-size: 2.5rem;\n}\n\n.heading-2 {\n  font-size: 2rem;\n  color: #6d6d6d;\n}\n\n.side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n}\n.side-nav__item {\n  position: relative;\n}\n.side-nav__item:not(:last-child) {\n  margin-bottom: 1rem;\n}\n.side-nav__button {\n  width: 100%;\n  border: none;\n  text-transform: uppercase;\n  display: block;\n  padding: 1.5rem 2rem;\n  color: #E5E6E4;\n  background-color: transparent;\n  position: relative;\n  z-index: 10;\n  font-size: 1.7rem;\n  cursor: pointer;\n}\n.side-nav__button:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 2px;\n  background-color: #005a74;\n  transform: scaleY(0);\n  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;\n}\n.side-nav__button:focus {\n  outline: none;\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:focus:before {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:hover:before {\n  transform: scaleY(1);\n  width: 100%;\n}\n.side-nav__button:active:before, .side-nav__button.active {\n  background-color: #003241;\n}\n\n.float-nav {\n  position: relative;\n  display: none;\n}\n.float-nav__checkbox {\n  display: none;\n}\n@media only screen and (max-width: 50rem) {\n  .float-nav {\n    display: block;\n  }\n}\n.float-nav__button {\n  background-color: #00afb9;\n  height: 7rem;\n  width: 7rem;\n  border-radius: 50%;\n  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);\n  z-index: 2000;\n  cursor: pointer;\n  position: fixed;\n  top: 3rem;\n  right: 3rem;\n}\n.float-nav__background {\n  background-image: radial-gradient(#00afb9, #001e20);\n  height: 3rem;\n  width: 3rem;\n  border-radius: 50%;\n  position: fixed;\n  top: 5rem;\n  right: 5rem;\n  z-index: 1000;\n  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);\n}\n.float-nav__checkbox:checked + .float-nav__button {\n  background-color: #0081A7;\n}\n.float-nav__checkbox:checked ~ .float-nav__background {\n  transform: scale(120);\n}\n.float-nav__icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.float-nav__icon, .float-nav__icon:before, .float-nav__icon:after {\n  width: 3rem;\n  height: 2px;\n  background-color: #fff;\n  display: inline-block;\n}\n.float-nav__icon:before, .float-nav__icon:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  transition: all 0.2s;\n}\n.float-nav__icon:before {\n  top: -1rem;\n}\n.float-nav__icon:after {\n  top: 1rem;\n}\n.float-nav__button:hover .float-nav__icon::before {\n  top: -1.2rem;\n}\n.float-nav__button:hover .float-nav__icon::after {\n  top: 1.2rem;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon {\n  background-color: transparent;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:before {\n  top: -1rem;\n  transform: translateY(1rem) rotate(225deg);\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:after {\n  top: 1rem;\n  transform: translateY(-1rem) rotate(-225deg);\n}\n.float-nav__nav {\n  position: fixed;\n  top: 0;\n  left: -200rem;\n  z-index: 1500;\n  height: 100vh;\n  width: 100%;\n  opacity: 0;\n  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.float-nav__nav > * {\n  position: absolute;\n  top: 20%;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 25rem;\n}\n.float-nav__checkbox:checked ~ .float-nav__nav {\n  opacity: 1;\n  left: 0;\n}\n\n.name {\n  text-align: center;\n  padding: 1rem 1.5rem;\n  color: #E5E6E4;\n  user-select: none;\n  text-transform: uppercase;\n}\n.name__job {\n  color: #003241;\n  font-size: 1.3rem;\n  font-weight: 700;\n  letter-spacing: 0.2rem;\n}\n.name:after {\n  content: \"\";\n  display: block;\n  height: 1px;\n  background-color: #fff;\n  margin-top: 3rem;\n}\n\n.legal {\n  align-self: center;\n  margin-top: auto;\n  margin-bottom: 2rem;\n  color: #E5E6E4;\n  font-size: 1.2rem;\n}\n\n.about {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 2rem;\n  justify-content: center;\n  align-items: center;\n}\n@media only screen and (max-width: 50rem) {\n  .about {\n    margin-top: 5rem;\n  }\n}\n.about__figure {\n  width: 30rem;\n  height: 30rem;\n  clip-path: circle(50% at 50% 50%);\n  position: relative;\n  overflow: hidden;\n  padding: 3px;\n  margin-bottom: 5rem;\n  flex: 0 0 auto;\n}\n@media only screen and (max-width: 50rem) {\n  .about__figure {\n    width: 25rem;\n    height: 25rem;\n  }\n}\n.about__picture {\n  height: 100%;\n  transform: scale(1.1);\n  transition: all 0.2s;\n  border-radius: 50%;\n}\n.about__caption {\n  font-size: 10rem;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, 200%);\n  transition: all 0.5s;\n}\n.about__figure:hover .about__picture {\n  transform: scale(1.2);\n  filter: blur(3px) brightness(80%);\n}\n.about__figure:hover .about__caption {\n  transform: translate(-50%, -50%);\n}\n.about__description {\n  font-size: 1.7rem;\n}\n.about__text {\n  flex: 1;\n  min-width: 50rem;\n}\n@media only screen and (max-width: 50rem) {\n  .about__text {\n    min-width: 0;\n  }\n}\n\n.link {\n  margin: 0 2px;\n  white-space: nowrap;\n}\n.link:visited, .link:link {\n  text-decoration: none;\n  color: #0081A7;\n  border-bottom: 1px solid transparent;\n}\n.link:hover {\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link:focus {\n  outline: none;\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link__arrow {\n  display: inline-block;\n  transition: all 0.2s;\n  margin: 0 3px;\n}\n.link:hover .link__arrow, .link:focus .link__arrow {\n  animation: arrowMoving 0.8s infinite;\n  color: #005a74;\n}\n\n@keyframes arrowMoving {\n  0% {\n    transform: translate(0, 0);\n  }\n  50% {\n    transform: translate(2px, -2px);\n  }\n  100% {\n    transform: translate(0, 0);\n  }\n}\n.location {\n  display: inline-block;\n  position: relative;\n  z-index: 200;\n  color: inherit;\n  font-weight: 700;\n  transition: all 0.2s;\n}\n.location:hover {\n  color: #6d6d6d;\n}\n.location:before {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -1;\n  filter: blur(2px) brightness(110%);\n  opacity: 0;\n  transition: all 0.2s;\n}\n.location:hover {\n  font-weight: 700;\n  text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\n}\n.location:hover:before {\n  opacity: 1;\n}\n.location.NL:before {\n  background-image: linear-gradient(to bottom, rgba(33, 70, 139, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(174, 28, 40, 0.8) 66% 100%);\n}\n.location.NL:hover {\n  color: #eb7640;\n}\n.location.FR:before {\n  background-image: linear-gradient(to right, rgba(0, 85, 164, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(239, 65, 53, 0.8) 66% 100%);\n}\n.location.ES:before {\n  background-image: linear-gradient(to bottom, rgba(170, 21, 27, 0.8) 25%, rgba(241, 191, 0, 0.8) 25% 75%, rgba(170, 21, 27, 0.8) 75%);\n}\n.location.SW:before {\n  background-image: linear-gradient(to right, transparent 25%, #ffce00 25% 35%, transparent 35%), linear-gradient(to bottom, rgba(0, 85, 155, 0.8) 35%, rgba(255, 206, 0, 0.8) 35% 65%, rgba(0, 85, 155, 0.8) 65%);\n}\n\n.contact {\n  font-size: 2rem;\n  margin: 5rem;\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    top: 33%;\n    margin: 0;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    top: 40%;\n  }\n}\n.contact__item {\n  display: flex;\n  align-items: center;\n}\n.contact__item:not(:last-child) {\n  margin-bottom: 6rem;\n}\n.contact__item::before {\n  content: \"\";\n  display: inline-block;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  height: 5rem;\n  width: 5rem;\n  background-color: green;\n  margin-right: 2rem;\n}\n.contact__item--twitter:before {\n  background-color: #1da1f2;\n  mask-image: url(/img/twitter.svg);\n  -webkit-mask-image: url(/img/twitter.svg);\n}\n.contact__item--linkedin:before {\n  background-color: #0a66c2;\n  mask-image: url(/img/linkedin.svg);\n  -webkit-mask-image: url(/img/linkedin.svg);\n}\n.contact__item--github:before {\n  background-color: #000;\n  mask-image: url(/img/github.svg);\n  -webkit-mask-image: url(/img/github.svg);\n}\n.contact__item--mail:before {\n  background-color: #0081A7;\n  mask-image: url(/img/mail.svg);\n  -webkit-mask-image: url(/img/mail.svg);\n}\n\n.resume-section {\n  width: 100%;\n}\n.resume-section:not(:last-child) {\n  margin-bottom: 4rem;\n}\n.resume-section__title {\n  font-size: 3rem;\n  font-weight: 300;\n  text-transform: uppercase;\n  color: #0081A7;\n  display: grid;\n  grid-template-columns: 1fr max-content 1fr;\n  align-items: center;\n  grid-column-gap: 3.5rem;\n}\n.resume-section__title:before, .resume-section__title:after {\n  content: \"\";\n  display: inline-block;\n  height: 1px;\n  background-color: #0081A7;\n}\n\n.education-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"date name location\" \". diploma .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-areas: \"date name location\" \". diploma diploma\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-areas: \"name name\" \"date location\" \"diploma diploma\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-areas: \"name\" \"date\" \"diploma\" \"location\" \"description\";\n  }\n}\n.education-entry__date {\n  grid-area: date;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__date.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__date {\n    justify-self: center;\n  }\n}\n.education-entry__name {\n  grid-area: name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__name {\n    justify-self: center;\n    font-size: 2.1rem;\n  }\n}\n.education-entry__location {\n  grid-area: location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__location {\n    justify-self: center;\n  }\n}\n.education-entry__diploma {\n  grid-area: diploma;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__diploma {\n    justify-self: center;\n  }\n}\n.education-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.experience-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"company-name title company-location\" \"duration date .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name title title\" \"duration date company-location\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name company-name\" \"title duration\" \"date company-location\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-areas: \"title\" \"company-name\" \"date\" \"duration\" \"company-location\" \"description\";\n  }\n}\n.experience-entry__date {\n  grid-area: date;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__date {\n    justify-self: center;\n  }\n}\n.experience-entry__title {\n  grid-area: title;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__title.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__title {\n    justify-self: center;\n  }\n}\n.experience-entry__company-name {\n  grid-area: company-name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__company-name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__company-name {\n    text-align: center;\n  }\n}\n.experience-entry__company-location {\n  grid-area: company-location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__company-location {\n    justify-self: center;\n  }\n}\n.experience-entry__duration {\n  grid-area: duration;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: start;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__duration {\n    justify-self: end;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__duration {\n    justify-self: center;\n  }\n}\n.experience-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.tools {\n  margin: 1rem 0;\n}\n.tools__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\n}\n.tools__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.tools__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.tools__item > span {\n  grid-area: text;\n}\n.tools__item:before {\n  mask-image: url(/img/wrench.svg);\n  -webkit-mask-image: url(/img/wrench.svg);\n  margin-top: 0.7rem;\n}\n\n.responsibilities {\n  margin: 1rem 0;\n}\n.responsibilities__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: 1fr;\n}\n.responsibilities__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.responsibilities__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.responsibilities__item > span {\n  grid-area: text;\n}\n.responsibilities__item:before {\n  mask-image: url(/img/laptop.svg);\n  -webkit-mask-image: url(/img/laptop.svg);\n  margin-top: 0.65rem;\n}\n\n.skills {\n  padding: 2rem;\n  width: 75%;\n  margin: 0 auto;\n}\n@media only screen and (max-width: 62.5rem) {\n  .skills {\n    padding: 1rem;\n  }\n}\n.skills__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\n  grid-column-gap: 0.5rem;\n  grid-row-gap: 1rem;\n}\n.skills__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n  grid-template-columns: min-content max-content;\n}\n.skills__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.skills__item > span {\n  grid-area: text;\n}\n.skills__item:before {\n  height: 3rem;\n  width: 3rem;\n  mask-image: url(/img/wrench.svg);\n  -webkit-mask-image: url(/img/wrench.svg);\n}\n.skills__item > span {\n  margin-top: 0.2rem;\n}\n.skills__item.datavis:before {\n  mask-image: url(/img/pie-chart.svg);\n  -webkit-mask-image: url(/img/pie-chart.svg);\n}\n.skills__item.international:before {\n  mask-image: url(/img/earth.svg);\n  -webkit-mask-image: url(/img/earth.svg);\n}\n.skills__item.react:before {\n  mask-image: url(/img/react.svg);\n  -webkit-mask-image: url(/img/react.svg);\n}\n.skills__item.css:before {\n  mask-image: url(/img/csswizardry.svg);\n  -webkit-mask-image: url(/img/csswizardry.svg);\n}\n.skills__item.js:before {\n  mask-image: url(/img/javascript.svg);\n  -webkit-mask-image: url(/img/javascript.svg);\n}\n.skills__item.embed:before {\n  height: 2rem;\n  mask-image: url(/img/embed2.svg);\n  -webkit-mask-image: url(/img/embed2.svg);\n  margin-top: 0.3rem;\n}\n.skills__item.node:before {\n  mask-image: url(/img/node-dot-js.svg);\n  -webkit-mask-image: url(/img/node-dot-js.svg);\n}\n.skills__item.database:before {\n  mask-image: url(/img/database.svg);\n  -webkit-mask-image: url(/img/database.svg);\n}\n.skills__item.sass:before {\n  mask-image: url(/img/sass.svg);\n  -webkit-mask-image: url(/img/sass.svg);\n}\n.skills__item.team:before {\n  mask-image: url(/img/users.svg);\n  -webkit-mask-image: url(/img/users.svg);\n}\n\n.container {\n  background-color: #fff;\n  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);\n  height: 100%;\n  width: 100%;\n  display: flex;\n}\n\n.sidebar {\n  background-color: #00afb9;\n  flex: 0 0 23rem;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0.5rem 0 4rem rgba(0, 0, 0, 0.3);\n}\n@media only screen and (max-width: 50rem) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.content {\n  width: 100%;\n  height: 100%;\n  padding: 4rem;\n  overflow: auto;\n}","// COLORS\r\n$color-primary: #0081A7;\r\n$color-primary-light: lighten($color-primary, 20%);\r\n$color-primary-dark: darken($color-primary, 10%);\r\n$color-primary-darker: darken($color-primary, 20%);\r\n\r\n$color-secondary: #00afb9;\r\n$color-secondary-light: lighten($color-secondary, 20%);\r\n$color-secondary-dark: darken($color-secondary, 10%);\r\n$color-secondary-darker: darken($color-secondary, 20%);\r\n\r\n$color-tertiary-light: #2998ff;\r\n$color-tertiary-dark: #5643fa;\r\n\r\n$color-grey-light-1: #E5E6E4;\r\n$color-grey-light-2: #CFD2CD;\r\n\r\n$color-grey-dark: #777;\r\n$color-grey-dark-2: #999;\r\n$color-grey-dark-3: #6d6d6d;\r\n$color-grey-dark-4: #555454;\r\n$color-grey-dark-5: #3f3f3f;\r\n\r\n$color-white: #fff;\r\n$color-black: #000;\r\n\r\n// DUTCH COLORS\r\n$color-dutch-blue: #21468B;\r\n$color-dutch-white: #fff;\r\n$color-dutch-red: #AE1C28;\r\n$color-dutch-orange: #eb7640;\r\n$color-dutch-orange-dark: darken($color-dutch-orange, 5%);\r\n\r\n// FRENCH COLORS\r\n$color-french-blue: #0055A4;\r\n$color-french-white: #fff;\r\n$color-french-red:#EF4135;\r\n\r\n// SPANISH COLORS\r\n$color-spanish-red: #AA151B;\r\n$color-spanish-yellow: #F1BF00;\r\n\r\n// SWEDISH COLORS\r\n$color-swedish-yellow: #ffce00;\r\n$color-swedish-blue: #00559b;\r\n\r\n// BRANDS\r\n$color-twitter: #1da1f2;\r\n$color-linkedin: #0a66c2;\r\n$color-github: #000;\r\n\r\n// FONT\r\n$default-font-size: 1.6rem;\r\n\r\n// box shadow\r\n$box-shadow-light: 0 2rem 4rem rgba($color-black, .2);\r\n$box-shadow-dark: 0 1rem 4rem rgba($color-black, .4);\r\n","body {\r\n  font-family: \"Lato\", sans-serif;\r\n  font-weight: 400;\r\n  font-size: $default-font-size;\r\n  line-height: 1.7;\r\n  color: $color-grey-dark;\r\n}\r\n\r\n.heading-1 {\r\n  color: $color-white;\r\n  text-transform: uppercase;\r\n  font-weight: 300;\r\n  font-size: 2.5rem;\r\n}\r\n\r\n.heading-2 {\r\n  font-size: 2rem;\r\n  color: $color-grey-dark-3;\r\n}",".side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n\n  &__item {\n    position: relative;\n\n    &:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n  }\n\n  &__button {\n    width: 100%;\n    border: none;\n    text-transform: uppercase;\n    display: block;\n    padding: 1.5rem 2rem;\n    color: $color-grey-light-1;\n    background-color: transparent;\n    position: relative;\n    z-index: 10;\n    font-size: 1.7rem;\n    cursor: pointer;\n\n    &:before {\n      content: \"\";\n      position: absolute;\n      z-index: -1 ;\n      top: 0;\n      left: 0;\n      height: 100%;\n      width: 2px;\n      background-color: $color-primary-dark;\n      transform: scaleY(0);\n      transition: transform .2s,\n                  width .4s cubic-bezier(1,0,0,1) .2s,\n                  background-color .1s;\n    }\n\n    &:focus {\n      outline: none;\n      @include focusRing;\n\n      &:before {\n        @include focusRing;\n      }\n    }\n\n    &:hover:before {\n      transform: scaleY(1);\n      width: 100%;\n    }\n\n    &:active:before,\n    &.active {\n      background-color: $color-primary-darker;\n    }\n\n  }\n}",".float-nav {\r\n  position: relative;\r\n  display: none; // by default not shown\r\n\r\n  &__checkbox {\r\n    display: none;\r\n  } \r\n\r\n  @include respond(medium) {\r\n    display: block;\r\n  }\r\n\r\n  // BUTTON\r\n  &__button {\r\n    background-color: $color-secondary;\r\n    height: 7rem;\r\n    width: 7rem;\r\n    border-radius: 50%;\r\n    box-shadow: $box-shadow-dark;\r\n    z-index: 2000;\r\n    cursor: pointer;\r\n\r\n    position: fixed;\r\n    top: 3rem;\r\n    right: 3rem;\r\n  }\r\n\r\n  // BACKGROUND\r\n  &__background {\r\n    background-image: radial-gradient(\r\n      $color-secondary, \r\n      darken($color-secondary-dark, 20%)\r\n    );\r\n    height: 3rem;\r\n    width: 3rem;\r\n    border-radius: 50%;\r\n\r\n    position: fixed;\r\n    top: 5rem;\r\n    right: 5rem;\r\n    z-index: 1000;\r\n\r\n    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);\r\n  }\r\n\r\n  &__checkbox:checked + &__button {\r\n    background-color: $color-primary;\r\n  }\r\n  \r\n  &__checkbox:checked ~ &__background {\r\n    transform: scale(120);\r\n  }\r\n\r\n  // ICON\r\n  &__icon {\r\n    @include absoluteCentering;\r\n\r\n    &,\r\n    &:before,\r\n    &:after {\r\n      width: 3rem;\r\n      height: 2px;\r\n      background-color: $color-white;\r\n      display: inline-block;\r\n    }\r\n\r\n    &:before,\r\n    &:after {\r\n      content: '';\r\n      position: absolute;\r\n      left: 0;\r\n      transition: all .2s;\r\n    }\r\n\r\n    &:before {\r\n      top: -1rem;\r\n    }\r\n\r\n    &:after {\r\n      top: 1rem;\r\n    }\r\n  }\r\n\r\n  &__button:hover &__icon::before {\r\n    top: -1.2rem;\r\n  }\r\n\r\n  &__button:hover &__icon::after {\r\n    top: +1.2rem;\r\n  }\r\n\r\n  &__checkbox:checked + &__button &__icon {\r\n    background-color: transparent;\r\n    &:before {\r\n      top: -1rem;\r\n      transform: translateY(1rem) rotate(225deg) ;\r\n    }\r\n\r\n    &:after {\r\n      top: 1rem;\r\n      transform: translateY(-1rem) rotate(-225deg);\r\n    }\r\n  }\r\n\r\n  // NAV LIST\r\n  &__nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: -200rem;\r\n    z-index: 1500;\r\n    height: 100vh;\r\n    width: 100%;\r\n    opacity: 0;\r\n    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\r\n\r\n    & > * {\r\n      position: absolute;\r\n      top: 20%;\r\n      left: 50%;\r\n      transform: translateX(-50%);\r\n      width: 25rem;\r\n    }\r\n  }\r\n\r\n  &__checkbox:checked ~ &__nav {\r\n    opacity: 1;\r\n    left: 0;\r\n  }\r\n\r\n}",".name {\r\n  text-align: center;\r\n  padding: 1rem 1.5rem;\r\n  color: $color-grey-light-1;\r\n  user-select: none;\r\n  text-transform: uppercase;\r\n\r\n  &__job {\r\n    color: $color-primary-darker;\r\n    font-size: 1.3rem;\r\n    font-weight: 700;\r\n    letter-spacing: .2rem;\r\n  }\r\n\r\n  &:after {\r\n    content: \"\";\r\n    display: block;\r\n    height: 1px;\r\n    background-color: $color-white;\r\n    margin-top: 3rem;\r\n  }\r\n}   ",".legal {\r\n  align-self: center;\r\n  margin-top: auto;\r\n  margin-bottom: 2rem;\r\n  color: $color-grey-light-1;\r\n  font-size: 1.2rem;\r\n}     ",".about {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-wrap: wrap;\r\n  padding: 2rem;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  @include respond(medium) {\r\n    margin-top: 5rem;\r\n  }\r\n\r\n\r\n  &__figure {\r\n    width: 30rem;\r\n    height: 30rem;\r\n    clip-path: circle(50% at 50% 50%);\r\n    position: relative;\r\n    overflow: hidden;\r\n    padding: 3px;\r\n    margin-bottom: 5rem;\r\n    flex: 0 0 auto;\r\n\r\n    @include respond(medium) {\r\n      width: 25rem;\r\n      height: 25rem;\r\n    }\r\n  }\r\n\r\n  &__picture {\r\n    height: 100%;\r\n    transform: scale(1.1);\r\n    transition: all .2s;\r\n    border-radius: 50%;\r\n  }\r\n\r\n  &__caption {\r\n    font-size: 10rem;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, 200%);\r\n    transition: all .5s;\r\n  }\r\n\r\n  &__figure:hover &__picture {\r\n    transform: scale(1.2);\r\n    filter: blur(3px) brightness(80%);\r\n  }\r\n\r\n  &__figure:hover &__caption {\r\n    transform: translate(-50%, -50%);\r\n  }\r\n\r\n  &__description {\r\n    font-size: 1.7rem;\r\n  }\r\n\r\n  &__text {\r\n    flex: 1;\r\n    min-width: 50rem;\r\n    \r\n    @include respond(medium) {\r\n      min-width: 0;\r\n    }\r\n  }\r\n}",".link {\r\n  margin: 0 2px;\r\n  white-space: nowrap;\r\n\r\n  &:visited,\r\n  &:link {\r\n    text-decoration: none;\r\n    color: $color-primary;\r\n    border-bottom: 1px solid transparent;\r\n  }\r\n\r\n  &:hover {\r\n    color: $color-primary-dark;\r\n    border-bottom: 1px solid $color-primary-dark;\r\n  }\r\n\r\n  &:focus {\r\n    outline: none;\r\n    color: $color-primary-dark;\r\n    border-bottom: 1px solid $color-primary-dark;\r\n  }\r\n\r\n  &__arrow {\r\n    display: inline-block;\r\n    transition: all .2s;\r\n    margin: 0 3px;\r\n  }\r\n\r\n  &:hover &__arrow,\r\n  &:focus &__arrow {\r\n    animation: arrowMoving .8s infinite;\r\n    color: $color-primary-dark;\r\n  }\r\n}\r\n\r\n@keyframes arrowMoving {\r\n  0%   { transform: translate(0, 0); }\r\n  50% { transform: translate(2px, -2px); }\r\n  100% { transform: translate(0, 0); }\r\n}",".location {\r\n  display: inline-block;\r\n  position: relative;\r\n  z-index: 200;\r\n  color: inherit;\r\n  font-weight: 700;\r\n  $flag-opacity: .8;\r\n  transition: all .2s;\r\n\r\n  &:hover {\r\n    color: $color-grey-dark-3;\r\n  }\r\n\r\n  &:before {\r\n    content: '';\r\n    display: inline-block;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: -1;\r\n    filter: blur(2px) brightness(110%);\r\n    opacity: 0;\r\n    transition: all .2s;\r\n  }\r\n\r\n  &:hover {\r\n    font-weight: 700;\r\n    text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\r\n    &:before { opacity: 1; } \r\n  }\r\n\r\n  // DUTCH FLAG\r\n  &.NL {\r\n    &:before {\r\n      background-image: linear-gradient(\r\n        to bottom,\r\n        rgba($color-dutch-blue, $flag-opacity) 33%,\r\n        rgba($color-dutch-white, $flag-opacity) 33% 66%,\r\n        rgba($color-dutch-red, $flag-opacity) 66% 100%\r\n      );\r\n    }\r\n\r\n    &:hover {\r\n      color: $color-dutch-orange;\r\n    }\r\n  }\r\n\r\n  // FRENCH FLAG\r\n  &.FR:before {\r\n    background-image: linear-gradient(\r\n      to right,\r\n      rgba($color-french-blue, $flag-opacity) 33%,\r\n      rgba($color-french-white, $flag-opacity) 33% 66%,\r\n      rgba($color-french-red, $flag-opacity) 66% 100%\r\n    );\r\n  }\r\n\r\n  // SPANISH FLAG\r\n  &.ES:before {\r\n    background-image: linear-gradient(\r\n      to bottom,\r\n      rgba($color-spanish-red, $flag-opacity) 25%,\r\n      rgba($color-spanish-yellow, $flag-opacity) 25% 75%,\r\n      rgba($color-spanish-red, $flag-opacity) 75%,\r\n    );\r\n  }\r\n\r\n  // SWEDISH FLAG \r\n  &.SW:before {\r\n    background-image: linear-gradient(\r\n    to right,\r\n    transparent 25%,\r\n    $color-swedish-yellow 25% 35%,\r\n    transparent 35%\r\n    ),\r\n    linear-gradient(\r\n      to bottom,\r\n      rgba($color-swedish-blue, $flag-opacity) 35%,\r\n      rgba($color-swedish-yellow, $flag-opacity) 35% 65%,\r\n      rgba($color-swedish-blue, $flag-opacity) 65%,\r\n    );\r\n  }\r\n}",".contact {\r\n  font-size: 2rem;\r\n  margin: 5rem;\r\n\r\n  @include respond(medium) {\r\n    @include absoluteCentering;\r\n    top: 33%;\r\n    margin: 0;\r\n  }\r\n\r\n  @include respond(medium) {\r\n    top: 40%;\r\n  }\r\n\r\n  &__item {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    &:not(:last-child) {\r\n      margin-bottom: 6rem;\r\n    }\r\n\r\n\r\n    &::before {\r\n      content: \"\";\r\n      display: inline-block;\r\n      mask-size: cover;\r\n      -webkit-mask-size: cover;\r\n      height: 5rem;\r\n      width: 5rem;\r\n      background-color: green;\r\n      margin-right: 2rem;\r\n    }\r\n\r\n    &--twitter:before {\r\n      background-color: $color-twitter;\r\n      mask-image: url(/img/twitter.svg); \r\n      -webkit-mask-image: url(/img/twitter.svg);\r\n    }\r\n\r\n    &--linkedin:before {\r\n      background-color: $color-linkedin;\r\n      mask-image: url(/img/linkedin.svg); \r\n      -webkit-mask-image: url(/img/linkedin.svg);\r\n    }\r\n\r\n    &--github:before {\r\n      background-color: $color-github;\r\n      mask-image: url(/img/github.svg); \r\n      -webkit-mask-image: url(/img/github.svg);\r\n    }\r\n\r\n    &--mail:before {\r\n      background-color: $color-primary;\r\n      mask-image: url(/img/mail.svg); \r\n      -webkit-mask-image: url(/img/mail.svg);\r\n    }\r\n  }\r\n}",".resume-section {\r\n  width: 100%;\r\n\r\n  &:not(:last-child) {\r\n    margin-bottom: 4rem;\r\n  }\r\n\r\n\r\n  &__title {\r\n    font-size: 3rem;\r\n    font-weight: 300;\r\n    text-transform: uppercase;\r\n    color: $color-primary;\r\n\r\n    display: grid;\r\n    grid-template-columns: 1fr max-content 1fr;\r\n    align-items: center;\r\n    grid-column-gap: 3.5rem;\r\n\r\n    &:before,\r\n    &:after {\r\n      content: '';\r\n      display: inline-block;\r\n      height: 1px;\r\n      background-color: $color-primary;\r\n    }\r\n  }\r\n} ",".education-entry {\r\n  @include grid-definition;\r\n  grid-template-areas: \r\n    \"date name location\"\r\n    \". diploma .\"\r\n    \". description .\";\r\n\r\n  @include respond(largest) {\r\n    grid-template-areas: \r\n    \"date name location\"\r\n    \". diploma diploma\"\r\n    \". description description\";\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-areas: \r\n    \"name name\"\r\n    \"date location\"\r\n    \"diploma diploma\"\r\n    \"description description\";\r\n  }\r\n\r\n  @include respond(medium) {\r\n    grid-template-areas: \r\n    \"name\"\r\n    \"date\"\r\n    \"diploma\"\r\n    \"location\"\r\n    \"description\";\r\n  }\r\n\r\n  &__date {\r\n    grid-area: date;\r\n    @include main-style;\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__name {\r\n    grid-area: name;\r\n    @include main-style;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n      font-size: 2.1rem; // to fit long names\r\n    }\r\n  }\r\n\r\n  &__location {\r\n    grid-area: location;\r\n    @include info-style;\r\n    justify-self: end;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__diploma {\r\n    grid-area: diploma;\r\n    @include main-sub-style;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__description {\r\n    grid-area: description;\r\n    @include description-style;\r\n  }\r\n}","@mixin grid-definition {\r\n  display: grid;\r\n  grid-template-columns: 15rem 1fr 21rem;\r\n  grid-template-rows: repeat(2, auto) 1fr;\r\n  grid-column-gap: 2rem;\r\n  grid-row-gap: .5rem;\r\n  padding: 1rem 0;\r\n  align-items: center;\r\n\r\n  @include respond(largest) {\r\n    grid-template-columns: 21rem repeat(2, 1fr);\r\n    grid-column-gap: 0rem;\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  @include respond(medium) {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@mixin info-style {\r\n  font-size: 1.8rem;\r\n  font-weight: 300;\r\n  color: $color-grey-dark-3;\r\n}\r\n\r\n@mixin description-style {\r\n  color: $color-grey-dark-3;\r\n  font-size: 1.8rem;\r\n  word-break: break-word;\r\n}\r\n\r\n@mixin main-style {\r\n  font-size: 2.2rem;\r\n  color: $color-grey-dark-4;\r\n\r\n  &.current {\r\n    color: $color-secondary;\r\n    font-weight: 700;\r\n  }\r\n}\r\n\r\n@mixin main-sub-style {\r\n  font-size: 2rem;\r\n  font-style: italic;\r\n  color: $color-grey-dark-3; \r\n}\r\n\r\n@mixin list-icon-def {\r\n  list-style: none;\r\n  padding: 0.2rem 2rem;\r\n  display: grid;\r\n  grid-row-gap: .2rem;\r\n}\r\n\r\n@mixin list-icon-item {\r\n  display: grid;\r\n  grid-template-columns: min-content 1fr;\r\n  grid-template-areas: \"icon text\" \". text\";\r\n  grid-column-gap: 1rem;\r\n  align-items: start;\r\n\r\n  &:before {\r\n    content: \"\";\r\n    display: inline-block;\r\n    height: 1.8rem;\r\n    width: 1.8rem;\r\n    background-color: $color-primary-dark;\r\n    mask-size: cover;\r\n    -webkit-mask-size: cover;\r\n\r\n    justify-self: center;\r\n    align-self: center;\r\n    grid-area: icon;\r\n  }\r\n\r\n  & > span {\r\n    grid-area: text;\r\n  }\r\n}",".experience-entry {\r\n  @include grid-definition;\r\n  grid-template-areas: \r\n    \"company-name title company-location\"\r\n    \"duration date .\"\r\n    \". description .\";\r\n\r\n  @include respond(largest) {\r\n    grid-template-areas: \r\n    \"company-name title title\"\r\n    \"duration date company-location\"\r\n    \". description description\";\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-areas: \r\n    \"company-name company-name\"\r\n    \"title duration\"\r\n    \"date company-location\"\r\n    \"description description\";\r\n  }\r\n\r\n  \r\n  @include respond(medium) {\r\n    grid-template-areas: \r\n    \"title\"\r\n    \"company-name\"\r\n    \"date\"\r\n    \"duration\"\r\n    \"company-location\"\r\n    \"description\";\r\n  }\r\n\r\n  &__date {\r\n    grid-area: date;\r\n    @include main-sub-style;\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__title {\r\n    grid-area: title;\r\n    @include main-style;\r\n\r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__company-name {\r\n    grid-area: company-name;\r\n    @include main-style;\r\n\r\n    @include respond(large) {\r\n      text-align: center;\r\n    }\r\n  }\r\n\r\n  &__company-location {\r\n    grid-area: company-location;\r\n    @include info-style;\r\n    justify-self: end;\r\n\r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__duration {\r\n    grid-area: duration;\r\n    @include info-style;\r\n    justify-self: start;\r\n    \r\n    @include respond(large) {\r\n      justify-self: end;\r\n    }\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__description {\r\n    grid-area: description;\r\n    @include description-style;\r\n  }\r\n}\r\n\r\n.tools {\r\n  margin: 1rem 0;\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\r\n  }\r\n    \r\n  &__item {\r\n    @include list-icon-item;\r\n    &:before {\r\n      mask-image: url(/img/wrench.svg);\r\n      -webkit-mask-image: url(/img/wrench.svg); \r\n      margin-top: .7rem;\r\n    }\r\n  }\r\n}\r\n\r\n.responsibilities {\r\n  margin: 1rem 0;\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  &__item {\r\n    @include list-icon-item;\r\n    &:before {\r\n      mask-image: url(/img/laptop.svg);\r\n      -webkit-mask-image: url(/img/laptop.svg); \r\n      margin-top: .65rem;\r\n    }\r\n  }\r\n}\r\n",".skills {\r\n  padding: 2rem;\r\n  width: 75%;\r\n  margin: 0 auto;\r\n\r\n  @include respond(large) {\r\n    padding: 1rem;\r\n  }\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\r\n    grid-column-gap: .5rem;\r\n    grid-row-gap: 1rem;\r\n  }\r\n\r\n  &__item {\r\n    @include list-icon-item;\r\n    grid-template-columns: min-content max-content;\r\n\r\n    &:before {\r\n      height: 3rem;\r\n      width: 3rem;\r\n      mask-image: url(/img/wrench.svg); \r\n      -webkit-mask-image: url(/img/wrench.svg);\r\n    }\r\n\r\n    & > span {\r\n      margin-top: .2rem; // aligning stuff is hard :(\r\n    }\r\n\r\n    // PIE ICON\r\n    &.datavis {\r\n      &:before {\r\n        mask-image: url(/img/pie-chart.svg); \r\n        -webkit-mask-image: url(/img/pie-chart.svg); \r\n      }\r\n    }\r\n\r\n    // EARTH ICON\r\n    &.international {\r\n      &:before {\r\n        mask-image: url(/img/earth.svg); \r\n        -webkit-mask-image: url(/img/earth.svg); \r\n      }\r\n    }\r\n\r\n    // REACT ICON\r\n    &.react {\r\n      &:before {\r\n        mask-image: url(/img/react.svg); \r\n        -webkit-mask-image: url(/img/react.svg); \r\n      }\r\n    }\r\n\r\n    // CSS ICON\r\n    &.css {\r\n      &:before {\r\n        mask-image: url(/img/csswizardry.svg); \r\n        -webkit-mask-image: url(/img/csswizardry.svg); \r\n      }\r\n    }\r\n\r\n    // JS ICON\r\n    &.js {\r\n      &:before {\r\n        mask-image: url(/img/javascript.svg); \r\n        -webkit-mask-image: url(/img/javascript.svg); \r\n      }\r\n    }\r\n\r\n    // EMBED ICON\r\n    &.embed {\r\n      &:before {\r\n        height: 2rem;\r\n        mask-image: url(/img/embed2.svg); \r\n        -webkit-mask-image: url(/img/embed2.svg); \r\n        margin-top: .3rem;\r\n      }\r\n    }\r\n\r\n    // NODE ICON\r\n    &.node {\r\n      &:before {\r\n        mask-image: url(/img/node-dot-js.svg); \r\n        -webkit-mask-image: url(/img/node-dot-js.svg); \r\n      }\r\n    }\r\n\r\n    // DATABASE ICON\r\n    &.database {\r\n      &:before {\r\n        mask-image: url(/img/database.svg); \r\n        -webkit-mask-image: url(/img/database.svg); \r\n      }\r\n    }\r\n\r\n    // SASS ICON\r\n    &.sass {\r\n      &:before {\r\n        mask-image: url(/img/sass.svg); \r\n        -webkit-mask-image: url(/img/sass.svg); \r\n      }\r\n    }\r\n\r\n    // TEAM ICON\r\n    &.team {\r\n      &:before {\r\n        mask-image: url(/img/users.svg); \r\n        -webkit-mask-image: url(/img/users.svg); \r\n      }\r\n    }\r\n\r\n  }\r\n}",".container {\r\n  background-color: $color-white;\r\n  box-shadow: $box-shadow-light;\r\n  height: 100%;\r\n  width: 100%;\r\n  display: flex;\r\n} ",".sidebar {\r\n  background-color: $color-secondary;\r\n  flex: 0 0 23rem;\r\n  overflow: auto;\r\n\r\n  \r\n  @include respond(medium) {\r\n    display: none;\r\n  }\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  box-shadow: .5rem 0 4rem rgba($color-black, .3);\r\n}  ",".content {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 4rem;\r\n  overflow: auto;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([ module.i, "/*\n  MEDIA QUERY MANAGER\n*/\n*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit;\n}\n\nhtml {\n  height: 100%;\n  font-size: 62.5%;\n}\n@media only screen and (max-width: 62.5rem) {\n  html {\n    font-size: 56.25%;\n  }\n}\n\nbody {\n  background-image: linear-gradient(180deg, #005a74 0%, #005a74 15rem, #CFD2CD 15rem);\n  background-size: cover;\n  background-repeat: no-repeat;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n  padding: 3rem;\n}\n@media only screen and (max-width: 75rem) {\n  #root {\n    padding: 0;\n  }\n}\n\n::selection {\n  background-color: #0081A7;\n  color: #fff;\n}\n\nbody {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 1.6rem;\n  line-height: 1.7;\n  color: #777;\n}\n\n.heading-1 {\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: 300;\n  font-size: 2.5rem;\n}\n\n.heading-2 {\n  font-size: 2rem;\n  color: #6d6d6d;\n}\n\n.side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n}\n.side-nav__item {\n  position: relative;\n}\n.side-nav__item:not(:last-child) {\n  margin-bottom: 1rem;\n}\n.side-nav__button {\n  width: 100%;\n  border: none;\n  text-transform: uppercase;\n  display: block;\n  padding: 1.5rem 2rem;\n  color: #E5E6E4;\n  background-color: transparent;\n  position: relative;\n  z-index: 10;\n  font-size: 1.7rem;\n  cursor: pointer;\n}\n.side-nav__button:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 2px;\n  background-color: #005a74;\n  transform: scaleY(0);\n  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;\n}\n.side-nav__button:focus {\n  outline: none;\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:focus:before {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:hover:before {\n  transform: scaleY(1);\n  width: 100%;\n}\n.side-nav__button:active:before, .side-nav__button.active {\n  background-color: #003241;\n}\n\n.float-nav {\n  position: relative;\n  display: none;\n}\n.float-nav__checkbox {\n  display: none;\n}\n@media only screen and (max-width: 50rem) {\n  .float-nav {\n    display: block;\n  }\n}\n.float-nav__button {\n  background-color: #00afb9;\n  height: 7rem;\n  width: 7rem;\n  border-radius: 50%;\n  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);\n  z-index: 2000;\n  cursor: pointer;\n  position: fixed;\n  top: 3rem;\n  right: 3rem;\n}\n.float-nav__background {\n  background-image: radial-gradient(#00afb9, #001e20);\n  height: 3rem;\n  width: 3rem;\n  border-radius: 50%;\n  position: fixed;\n  top: 5rem;\n  right: 5rem;\n  z-index: 1000;\n  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);\n}\n.float-nav__checkbox:checked + .float-nav__button {\n  background-color: #0081A7;\n}\n.float-nav__checkbox:checked ~ .float-nav__background {\n  transform: scale(120);\n}\n.float-nav__icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.float-nav__icon, .float-nav__icon:before, .float-nav__icon:after {\n  width: 3rem;\n  height: 2px;\n  background-color: #fff;\n  display: inline-block;\n}\n.float-nav__icon:before, .float-nav__icon:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  transition: all 0.2s;\n}\n.float-nav__icon:before {\n  top: -1rem;\n}\n.float-nav__icon:after {\n  top: 1rem;\n}\n.float-nav__button:hover .float-nav__icon::before {\n  top: -1.2rem;\n}\n.float-nav__button:hover .float-nav__icon::after {\n  top: 1.2rem;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon {\n  background-color: transparent;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:before {\n  top: -1rem;\n  transform: translateY(1rem) rotate(225deg);\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:after {\n  top: 1rem;\n  transform: translateY(-1rem) rotate(-225deg);\n}\n.float-nav__nav {\n  position: fixed;\n  top: 0;\n  left: -200rem;\n  z-index: 1500;\n  height: 100vh;\n  width: 100%;\n  opacity: 0;\n  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.float-nav__nav > * {\n  position: absolute;\n  top: 20%;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 25rem;\n}\n.float-nav__checkbox:checked ~ .float-nav__nav {\n  opacity: 1;\n  left: 0;\n}\n\n.name {\n  text-align: center;\n  padding: 1rem 1.5rem;\n  color: #E5E6E4;\n  user-select: none;\n  text-transform: uppercase;\n}\n.name__job {\n  color: #003241;\n  font-size: 1.3rem;\n  font-weight: 700;\n  letter-spacing: 0.2rem;\n}\n.name:after {\n  content: \"\";\n  display: block;\n  height: 1px;\n  background-color: #fff;\n  margin-top: 3rem;\n}\n\n.legal {\n  align-self: center;\n  margin-top: auto;\n  margin-bottom: 2rem;\n  color: #E5E6E4;\n  font-size: 1.2rem;\n}\n\n.about {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 2rem;\n  justify-content: center;\n  align-items: center;\n}\n@media only screen and (max-width: 50rem) {\n  .about {\n    margin-top: 5rem;\n  }\n}\n.about__figure {\n  width: 30rem;\n  height: 30rem;\n  clip-path: circle(50% at 50% 50%);\n  position: relative;\n  overflow: hidden;\n  padding: 3px;\n  margin-bottom: 5rem;\n  flex: 0 0 auto;\n}\n@media only screen and (max-width: 50rem) {\n  .about__figure {\n    width: 25rem;\n    height: 25rem;\n  }\n}\n.about__picture {\n  height: 100%;\n  transform: scale(1.1);\n  transition: all 0.2s;\n  border-radius: 50%;\n}\n.about__caption {\n  font-size: 10rem;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, 200%);\n  transition: all 0.5s;\n}\n.about__figure:hover .about__picture {\n  transform: scale(1.2);\n  filter: blur(3px) brightness(80%);\n}\n.about__figure:hover .about__caption {\n  transform: translate(-50%, -50%);\n}\n.about__description {\n  font-size: 1.7rem;\n}\n.about__text {\n  flex: 1;\n  min-width: 50rem;\n}\n@media only screen and (max-width: 50rem) {\n  .about__text {\n    min-width: 0;\n  }\n}\n\n.link {\n  margin: 0 2px;\n  white-space: nowrap;\n}\n.link:visited, .link:link {\n  text-decoration: none;\n  color: #0081A7;\n  border-bottom: 1px solid transparent;\n}\n.link:hover {\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link:focus {\n  outline: none;\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link__arrow {\n  display: inline-block;\n  transition: all 0.2s;\n  margin: 0 3px;\n}\n.link:hover .link__arrow, .link:focus .link__arrow {\n  animation: arrowMoving 0.8s infinite;\n  color: #005a74;\n}\n\n@keyframes arrowMoving {\n  0% {\n    transform: translate(0, 0);\n  }\n  50% {\n    transform: translate(2px, -2px);\n  }\n  100% {\n    transform: translate(0, 0);\n  }\n}\n.location {\n  display: inline-block;\n  position: relative;\n  z-index: 200;\n  color: inherit;\n  font-weight: 700;\n  transition: all 0.2s;\n}\n.location:hover {\n  color: #6d6d6d;\n}\n.location:before {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -1;\n  filter: blur(2px) brightness(110%);\n  opacity: 0;\n  transition: all 0.2s;\n}\n.location:hover {\n  font-weight: 700;\n  text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\n}\n.location:hover:before {\n  opacity: 1;\n}\n.location.NL:before {\n  background-image: linear-gradient(to bottom, rgba(33, 70, 139, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(174, 28, 40, 0.8) 66% 100%);\n}\n.location.NL:hover {\n  color: #eb7640;\n}\n.location.FR:before {\n  background-image: linear-gradient(to right, rgba(0, 85, 164, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(239, 65, 53, 0.8) 66% 100%);\n}\n.location.ES:before {\n  background-image: linear-gradient(to bottom, rgba(170, 21, 27, 0.8) 25%, rgba(241, 191, 0, 0.8) 25% 75%, rgba(170, 21, 27, 0.8) 75%);\n}\n.location.SW:before {\n  background-image: linear-gradient(to right, transparent 25%, #ffce00 25% 35%, transparent 35%), linear-gradient(to bottom, rgba(0, 85, 155, 0.8) 35%, rgba(255, 206, 0, 0.8) 35% 65%, rgba(0, 85, 155, 0.8) 65%);\n}\n\n.contact {\n  font-size: 2rem;\n  margin: 5rem;\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    top: 33%;\n    margin: 0;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    top: 40%;\n  }\n}\n.contact__item {\n  display: flex;\n  align-items: center;\n}\n.contact__item:not(:last-child) {\n  margin-bottom: 6rem;\n}\n.contact__item::before {\n  content: \"\";\n  display: inline-block;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  height: 5rem;\n  width: 5rem;\n  background-color: green;\n  margin-right: 2rem;\n}\n.contact__item--twitter:before {\n  background-color: #1da1f2;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n.contact__item--linkedin:before {\n  background-color: #0a66c2;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n.contact__item--github:before {\n  background-color: #000;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n}\n.contact__item--mail:before {\n  background-color: #0081A7;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n}\n\n.resume-section {\n  width: 100%;\n}\n.resume-section:not(:last-child) {\n  margin-bottom: 4rem;\n}\n.resume-section__title {\n  font-size: 3rem;\n  font-weight: 300;\n  text-transform: uppercase;\n  color: #0081A7;\n  display: grid;\n  grid-template-columns: 1fr max-content 1fr;\n  align-items: center;\n  grid-column-gap: 3.5rem;\n}\n.resume-section__title:before, .resume-section__title:after {\n  content: \"\";\n  display: inline-block;\n  height: 1px;\n  background-color: #0081A7;\n}\n\n.education-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"date name location\" \". diploma .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-areas: \"date name location\" \". diploma diploma\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-areas: \"name name\" \"date location\" \"diploma diploma\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-areas: \"name\" \"date\" \"diploma\" \"location\" \"description\";\n  }\n}\n.education-entry__date {\n  grid-area: date;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__date.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__date {\n    justify-self: center;\n  }\n}\n.education-entry__name {\n  grid-area: name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__name {\n    justify-self: center;\n    font-size: 2.1rem;\n  }\n}\n.education-entry__location {\n  grid-area: location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__location {\n    justify-self: center;\n  }\n}\n.education-entry__diploma {\n  grid-area: diploma;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__diploma {\n    justify-self: center;\n  }\n}\n.education-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.experience-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"company-name title company-location\" \"duration date .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name title title\" \"duration date company-location\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name company-name\" \"title duration\" \"date company-location\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-areas: \"title\" \"company-name\" \"date\" \"duration\" \"company-location\" \"description\";\n  }\n}\n.experience-entry__date {\n  grid-area: date;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__date {\n    justify-self: center;\n  }\n}\n.experience-entry__title {\n  grid-area: title;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__title.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__title {\n    justify-self: center;\n  }\n}\n.experience-entry__company-name {\n  grid-area: company-name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__company-name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__company-name {\n    text-align: center;\n  }\n}\n.experience-entry__company-location {\n  grid-area: company-location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__company-location {\n    justify-self: center;\n  }\n}\n.experience-entry__duration {\n  grid-area: duration;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: start;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__duration {\n    justify-self: end;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__duration {\n    justify-self: center;\n  }\n}\n.experience-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.tools {\n  margin: 1rem 0;\n}\n.tools__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\n}\n.tools__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.tools__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.tools__item > span {\n  grid-area: text;\n}\n.tools__item:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  margin-top: 0.7rem;\n}\n\n.responsibilities {\n  margin: 1rem 0;\n}\n.responsibilities__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: 1fr;\n}\n.responsibilities__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.responsibilities__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.responsibilities__item > span {\n  grid-area: text;\n}\n.responsibilities__item:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ");\n  margin-top: 0.65rem;\n}\n\n.skills {\n  padding: 2rem;\n  width: 75%;\n  margin: 0 auto;\n}\n@media only screen and (max-width: 62.5rem) {\n  .skills {\n    padding: 1rem;\n  }\n}\n.skills__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\n  grid-column-gap: 0.5rem;\n  grid-row-gap: 1rem;\n}\n.skills__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n  grid-template-columns: min-content max-content;\n}\n.skills__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.skills__item > span {\n  grid-area: text;\n}\n.skills__item:before {\n  height: 3rem;\n  width: 3rem;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n}\n.skills__item > span {\n  margin-top: 0.2rem;\n}\n.skills__item.datavis:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ");\n}\n.skills__item.international:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ");\n}\n.skills__item.react:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n}\n.skills__item.css:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ");\n}\n.skills__item.js:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ");\n}\n.skills__item.embed:before {\n  height: 2rem;\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ");\n  margin-top: 0.3rem;\n}\n.skills__item.node:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_12___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_12___ + ");\n}\n.skills__item.database:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_13___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_13___ + ");\n}\n.skills__item.sass:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_14___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_14___ + ");\n}\n.skills__item.team:before {\n  mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_15___ + ");\n  -webkit-mask-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_15___ + ");\n}\n\n.container {\n  background-color: #fff;\n  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);\n  height: 100%;\n  width: 100%;\n  display: flex;\n}\n\n.sidebar {\n  background-color: #00afb9;\n  flex: 0 0 23rem;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0.5rem 0 4rem rgba(0, 0, 0, 0.3);\n}\n@media only screen and (max-width: 50rem) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.content {\n  width: 100%;\n  height: 100%;\n  padding: 4rem;\n  overflow: auto;\n}", "",{ "version":3,"sources":[ "webpack://./sass/abstracts/_mixins.scss","webpack://./sass/base/_base.scss","webpack://./sass/main.scss","webpack://./sass/abstracts/_variables.scss","webpack://./sass/base/_typography.scss","webpack://./sass/components/_side-nav.scss","webpack://./sass/components/_floating-nav.scss","webpack://./sass/components/_name.scss","webpack://./sass/components/_legal.scss","webpack://./sass/components/_about.scss","webpack://./sass/components/_link.scss","webpack://./sass/components/_location.scss","webpack://./sass/components/_contact.scss","webpack://./sass/components/resume/_resume-section.scss","webpack://./sass/components/resume/_education-entry.scss","webpack://./sass/components/resume/_resume-common.scss","webpack://./sass/components/resume/_experience-entry.scss","webpack://./sass/components/resume/_skills.scss","webpack://./sass/layout/_container.scss","webpack://./sass/layout/_sidebar.scss","webpack://./sass/layout/_content.scss" ],"names":[],"mappings":"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","sourcesContent":[ "@mixin absoluteCentering() {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n@mixin focusRing() {\r\n  outline: none;\r\n  box-shadow: inset 0px 0px 0px 2px $color-primary,\r\n              inset 0px 0px 0px 4px $color-primary-light;\r\n}\r\n\r\n/*\r\n  MEDIA QUERY MANAGER\r\n*/\r\n@mixin respond($breakpoint) {\r\n  @if $breakpoint == largest {\r\n    @media only screen and (max-width: 75rem) { @content }; // 1200px /16px\r\n  }\r\n\r\n  @if $breakpoint == large {\r\n    @media only screen and (max-width: 62.5rem) { @content }; // 1000px /16px\r\n  }\r\n\r\n  @if $breakpoint == medium {\r\n    @media only screen and (max-width: 50rem) { @content }; // 800px /16px\r\n  }\r\n\r\n  @if $breakpoint == small { \r\n    @media only screen and (max-width: 37.5rem) { @content }; // 600px /16px\r\n  }\r\n\r\n  @if $breakpoint == smallest {\r\n    @media only screen and (max-width: 25rem) { @content }; // 400px /16px\r\n  }\r\n}","*,\r\n*::after,\r\n*::before {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: inherit; \r\n}\r\n\r\nhtml {\r\n  height: 100%;\r\n  // overflow: hidden;\r\n  // this defines what 1rem is\r\n  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%\r\n\r\n  //larger queries before, so the smaller ones apply\r\n\r\n  @include respond(large) { // width < 1200 ?\r\n    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%;\r\n  }\r\n}\r\n\r\nbody {\r\n  $first-color-height: 15rem;\r\n  background-image: linear-gradient(\r\n    180deg,\r\n    $color-primary-dark 0%,\r\n    $color-primary-dark $first-color-height,\r\n    $color-grey-light-2 $first-color-height\r\n  );\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  height: 100%;\r\n  box-sizing: border-box;\r\n}\r\n\r\n#root {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 3rem;\r\n\r\n  @include respond(largest) {\r\n    padding: 0;\r\n  }\r\n}\r\n\r\n::selection {\r\n  background-color: $color-primary;\r\n  color: $color-white;\r\n}","/*\n  MEDIA QUERY MANAGER\n*/\n*,\n*::after,\n*::before {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit;\n}\n\nhtml {\n  height: 100%;\n  font-size: 62.5%;\n}\n@media only screen and (max-width: 62.5rem) {\n  html {\n    font-size: 56.25%;\n  }\n}\n\nbody {\n  background-image: linear-gradient(180deg, #005a74 0%, #005a74 15rem, #CFD2CD 15rem);\n  background-size: cover;\n  background-repeat: no-repeat;\n  height: 100%;\n  box-sizing: border-box;\n}\n\n#root {\n  width: 100%;\n  height: 100%;\n  padding: 3rem;\n}\n@media only screen and (max-width: 75rem) {\n  #root {\n    padding: 0;\n  }\n}\n\n::selection {\n  background-color: #0081A7;\n  color: #fff;\n}\n\nbody {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 1.6rem;\n  line-height: 1.7;\n  color: #777;\n}\n\n.heading-1 {\n  color: #fff;\n  text-transform: uppercase;\n  font-weight: 300;\n  font-size: 2.5rem;\n}\n\n.heading-2 {\n  font-size: 2rem;\n  color: #6d6d6d;\n}\n\n.side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n}\n.side-nav__item {\n  position: relative;\n}\n.side-nav__item:not(:last-child) {\n  margin-bottom: 1rem;\n}\n.side-nav__button {\n  width: 100%;\n  border: none;\n  text-transform: uppercase;\n  display: block;\n  padding: 1.5rem 2rem;\n  color: #E5E6E4;\n  background-color: transparent;\n  position: relative;\n  z-index: 10;\n  font-size: 1.7rem;\n  cursor: pointer;\n}\n.side-nav__button:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 2px;\n  background-color: #005a74;\n  transform: scaleY(0);\n  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;\n}\n.side-nav__button:focus {\n  outline: none;\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:focus:before {\n  outline: none;\n  box-shadow: inset 0px 0px 0px 2px #0081A7, inset 0px 0px 0px 4px #0ec8ff;\n}\n.side-nav__button:hover:before {\n  transform: scaleY(1);\n  width: 100%;\n}\n.side-nav__button:active:before, .side-nav__button.active {\n  background-color: #003241;\n}\n\n.float-nav {\n  position: relative;\n  display: none;\n}\n.float-nav__checkbox {\n  display: none;\n}\n@media only screen and (max-width: 50rem) {\n  .float-nav {\n    display: block;\n  }\n}\n.float-nav__button {\n  background-color: #00afb9;\n  height: 7rem;\n  width: 7rem;\n  border-radius: 50%;\n  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);\n  z-index: 2000;\n  cursor: pointer;\n  position: fixed;\n  top: 3rem;\n  right: 3rem;\n}\n.float-nav__background {\n  background-image: radial-gradient(#00afb9, #001e20);\n  height: 3rem;\n  width: 3rem;\n  border-radius: 50%;\n  position: fixed;\n  top: 5rem;\n  right: 5rem;\n  z-index: 1000;\n  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);\n}\n.float-nav__checkbox:checked + .float-nav__button {\n  background-color: #0081A7;\n}\n.float-nav__checkbox:checked ~ .float-nav__background {\n  transform: scale(120);\n}\n.float-nav__icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.float-nav__icon, .float-nav__icon:before, .float-nav__icon:after {\n  width: 3rem;\n  height: 2px;\n  background-color: #fff;\n  display: inline-block;\n}\n.float-nav__icon:before, .float-nav__icon:after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  transition: all 0.2s;\n}\n.float-nav__icon:before {\n  top: -1rem;\n}\n.float-nav__icon:after {\n  top: 1rem;\n}\n.float-nav__button:hover .float-nav__icon::before {\n  top: -1.2rem;\n}\n.float-nav__button:hover .float-nav__icon::after {\n  top: 1.2rem;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon {\n  background-color: transparent;\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:before {\n  top: -1rem;\n  transform: translateY(1rem) rotate(225deg);\n}\n.float-nav__checkbox:checked + .float-nav__button .float-nav__icon:after {\n  top: 1rem;\n  transform: translateY(-1rem) rotate(-225deg);\n}\n.float-nav__nav {\n  position: fixed;\n  top: 0;\n  left: -200rem;\n  z-index: 1500;\n  height: 100vh;\n  width: 100%;\n  opacity: 0;\n  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.float-nav__nav > * {\n  position: absolute;\n  top: 20%;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 25rem;\n}\n.float-nav__checkbox:checked ~ .float-nav__nav {\n  opacity: 1;\n  left: 0;\n}\n\n.name {\n  text-align: center;\n  padding: 1rem 1.5rem;\n  color: #E5E6E4;\n  user-select: none;\n  text-transform: uppercase;\n}\n.name__job {\n  color: #003241;\n  font-size: 1.3rem;\n  font-weight: 700;\n  letter-spacing: 0.2rem;\n}\n.name:after {\n  content: \"\";\n  display: block;\n  height: 1px;\n  background-color: #fff;\n  margin-top: 3rem;\n}\n\n.legal {\n  align-self: center;\n  margin-top: auto;\n  margin-bottom: 2rem;\n  color: #E5E6E4;\n  font-size: 1.2rem;\n}\n\n.about {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 2rem;\n  justify-content: center;\n  align-items: center;\n}\n@media only screen and (max-width: 50rem) {\n  .about {\n    margin-top: 5rem;\n  }\n}\n.about__figure {\n  width: 30rem;\n  height: 30rem;\n  clip-path: circle(50% at 50% 50%);\n  position: relative;\n  overflow: hidden;\n  padding: 3px;\n  margin-bottom: 5rem;\n  flex: 0 0 auto;\n}\n@media only screen and (max-width: 50rem) {\n  .about__figure {\n    width: 25rem;\n    height: 25rem;\n  }\n}\n.about__picture {\n  height: 100%;\n  transform: scale(1.1);\n  transition: all 0.2s;\n  border-radius: 50%;\n}\n.about__caption {\n  font-size: 10rem;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, 200%);\n  transition: all 0.5s;\n}\n.about__figure:hover .about__picture {\n  transform: scale(1.2);\n  filter: blur(3px) brightness(80%);\n}\n.about__figure:hover .about__caption {\n  transform: translate(-50%, -50%);\n}\n.about__description {\n  font-size: 1.7rem;\n}\n.about__text {\n  flex: 1;\n  min-width: 50rem;\n}\n@media only screen and (max-width: 50rem) {\n  .about__text {\n    min-width: 0;\n  }\n}\n\n.link {\n  margin: 0 2px;\n  white-space: nowrap;\n}\n.link:visited, .link:link {\n  text-decoration: none;\n  color: #0081A7;\n  border-bottom: 1px solid transparent;\n}\n.link:hover {\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link:focus {\n  outline: none;\n  color: #005a74;\n  border-bottom: 1px solid #005a74;\n}\n.link__arrow {\n  display: inline-block;\n  transition: all 0.2s;\n  margin: 0 3px;\n}\n.link:hover .link__arrow, .link:focus .link__arrow {\n  animation: arrowMoving 0.8s infinite;\n  color: #005a74;\n}\n\n@keyframes arrowMoving {\n  0% {\n    transform: translate(0, 0);\n  }\n  50% {\n    transform: translate(2px, -2px);\n  }\n  100% {\n    transform: translate(0, 0);\n  }\n}\n.location {\n  display: inline-block;\n  position: relative;\n  z-index: 200;\n  color: inherit;\n  font-weight: 700;\n  transition: all 0.2s;\n}\n.location:hover {\n  color: #6d6d6d;\n}\n.location:before {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -1;\n  filter: blur(2px) brightness(110%);\n  opacity: 0;\n  transition: all 0.2s;\n}\n.location:hover {\n  font-weight: 700;\n  text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\n}\n.location:hover:before {\n  opacity: 1;\n}\n.location.NL:before {\n  background-image: linear-gradient(to bottom, rgba(33, 70, 139, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(174, 28, 40, 0.8) 66% 100%);\n}\n.location.NL:hover {\n  color: #eb7640;\n}\n.location.FR:before {\n  background-image: linear-gradient(to right, rgba(0, 85, 164, 0.8) 33%, rgba(255, 255, 255, 0.8) 33% 66%, rgba(239, 65, 53, 0.8) 66% 100%);\n}\n.location.ES:before {\n  background-image: linear-gradient(to bottom, rgba(170, 21, 27, 0.8) 25%, rgba(241, 191, 0, 0.8) 25% 75%, rgba(170, 21, 27, 0.8) 75%);\n}\n.location.SW:before {\n  background-image: linear-gradient(to right, transparent 25%, #ffce00 25% 35%, transparent 35%), linear-gradient(to bottom, rgba(0, 85, 155, 0.8) 35%, rgba(255, 206, 0, 0.8) 35% 65%, rgba(0, 85, 155, 0.8) 65%);\n}\n\n.contact {\n  font-size: 2rem;\n  margin: 5rem;\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    top: 33%;\n    margin: 0;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .contact {\n    top: 40%;\n  }\n}\n.contact__item {\n  display: flex;\n  align-items: center;\n}\n.contact__item:not(:last-child) {\n  margin-bottom: 6rem;\n}\n.contact__item::before {\n  content: \"\";\n  display: inline-block;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  height: 5rem;\n  width: 5rem;\n  background-color: green;\n  margin-right: 2rem;\n}\n.contact__item--twitter:before {\n  background-color: #1da1f2;\n  mask-image: url(/img/twitter.svg);\n  -webkit-mask-image: url(/img/twitter.svg);\n}\n.contact__item--linkedin:before {\n  background-color: #0a66c2;\n  mask-image: url(/img/linkedin.svg);\n  -webkit-mask-image: url(/img/linkedin.svg);\n}\n.contact__item--github:before {\n  background-color: #000;\n  mask-image: url(/img/github.svg);\n  -webkit-mask-image: url(/img/github.svg);\n}\n.contact__item--mail:before {\n  background-color: #0081A7;\n  mask-image: url(/img/mail.svg);\n  -webkit-mask-image: url(/img/mail.svg);\n}\n\n.resume-section {\n  width: 100%;\n}\n.resume-section:not(:last-child) {\n  margin-bottom: 4rem;\n}\n.resume-section__title {\n  font-size: 3rem;\n  font-weight: 300;\n  text-transform: uppercase;\n  color: #0081A7;\n  display: grid;\n  grid-template-columns: 1fr max-content 1fr;\n  align-items: center;\n  grid-column-gap: 3.5rem;\n}\n.resume-section__title:before, .resume-section__title:after {\n  content: \"\";\n  display: inline-block;\n  height: 1px;\n  background-color: #0081A7;\n}\n\n.education-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"date name location\" \". diploma .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .education-entry {\n    grid-template-areas: \"date name location\" \". diploma diploma\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .education-entry {\n    grid-template-areas: \"name name\" \"date location\" \"diploma diploma\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry {\n    grid-template-areas: \"name\" \"date\" \"diploma\" \"location\" \"description\";\n  }\n}\n.education-entry__date {\n  grid-area: date;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__date.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__date {\n    justify-self: center;\n  }\n}\n.education-entry__name {\n  grid-area: name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.education-entry__name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__name {\n    justify-self: center;\n    font-size: 2.1rem;\n  }\n}\n.education-entry__location {\n  grid-area: location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__location {\n    justify-self: center;\n  }\n}\n.education-entry__diploma {\n  grid-area: diploma;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .education-entry__diploma {\n    justify-self: center;\n  }\n}\n.education-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.experience-entry {\n  display: grid;\n  grid-template-columns: 15rem 1fr 21rem;\n  grid-template-rows: repeat(2, auto) 1fr;\n  grid-column-gap: 2rem;\n  grid-row-gap: 0.5rem;\n  padding: 1rem 0;\n  align-items: center;\n  grid-template-areas: \"company-name title company-location\" \"duration date .\" \". description .\";\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-columns: 21rem repeat(2, 1fr);\n    grid-column-gap: 0rem;\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-columns: 1fr;\n  }\n}\n@media only screen and (max-width: 75rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name title title\" \"duration date company-location\" \". description description\";\n  }\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry {\n    grid-template-areas: \"company-name company-name\" \"title duration\" \"date company-location\" \"description description\";\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry {\n    grid-template-areas: \"title\" \"company-name\" \"date\" \"duration\" \"company-location\" \"description\";\n  }\n}\n.experience-entry__date {\n  grid-area: date;\n  font-size: 2rem;\n  font-style: italic;\n  color: #6d6d6d;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__date {\n    justify-self: center;\n  }\n}\n.experience-entry__title {\n  grid-area: title;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__title.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__title {\n    justify-self: center;\n  }\n}\n.experience-entry__company-name {\n  grid-area: company-name;\n  font-size: 2.2rem;\n  color: #555454;\n}\n.experience-entry__company-name.current {\n  color: #00afb9;\n  font-weight: 700;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__company-name {\n    text-align: center;\n  }\n}\n.experience-entry__company-location {\n  grid-area: company-location;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: end;\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__company-location {\n    justify-self: center;\n  }\n}\n.experience-entry__duration {\n  grid-area: duration;\n  font-size: 1.8rem;\n  font-weight: 300;\n  color: #6d6d6d;\n  justify-self: start;\n}\n@media only screen and (max-width: 62.5rem) {\n  .experience-entry__duration {\n    justify-self: end;\n  }\n}\n@media only screen and (max-width: 50rem) {\n  .experience-entry__duration {\n    justify-self: center;\n  }\n}\n.experience-entry__description {\n  grid-area: description;\n  color: #6d6d6d;\n  font-size: 1.8rem;\n  word-break: break-word;\n}\n\n.tools {\n  margin: 1rem 0;\n}\n.tools__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\n}\n.tools__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.tools__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.tools__item > span {\n  grid-area: text;\n}\n.tools__item:before {\n  mask-image: url(/img/wrench.svg);\n  -webkit-mask-image: url(/img/wrench.svg);\n  margin-top: 0.7rem;\n}\n\n.responsibilities {\n  margin: 1rem 0;\n}\n.responsibilities__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: 1fr;\n}\n.responsibilities__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n}\n.responsibilities__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.responsibilities__item > span {\n  grid-area: text;\n}\n.responsibilities__item:before {\n  mask-image: url(/img/laptop.svg);\n  -webkit-mask-image: url(/img/laptop.svg);\n  margin-top: 0.65rem;\n}\n\n.skills {\n  padding: 2rem;\n  width: 75%;\n  margin: 0 auto;\n}\n@media only screen and (max-width: 62.5rem) {\n  .skills {\n    padding: 1rem;\n  }\n}\n.skills__list {\n  list-style: none;\n  padding: 0.2rem 2rem;\n  display: grid;\n  grid-row-gap: 0.2rem;\n  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\n  grid-column-gap: 0.5rem;\n  grid-row-gap: 1rem;\n}\n.skills__item {\n  display: grid;\n  grid-template-columns: min-content 1fr;\n  grid-template-areas: \"icon text\" \". text\";\n  grid-column-gap: 1rem;\n  align-items: start;\n  grid-template-columns: min-content max-content;\n}\n.skills__item:before {\n  content: \"\";\n  display: inline-block;\n  height: 1.8rem;\n  width: 1.8rem;\n  background-color: #005a74;\n  mask-size: cover;\n  -webkit-mask-size: cover;\n  justify-self: center;\n  align-self: center;\n  grid-area: icon;\n}\n.skills__item > span {\n  grid-area: text;\n}\n.skills__item:before {\n  height: 3rem;\n  width: 3rem;\n  mask-image: url(/img/wrench.svg);\n  -webkit-mask-image: url(/img/wrench.svg);\n}\n.skills__item > span {\n  margin-top: 0.2rem;\n}\n.skills__item.datavis:before {\n  mask-image: url(/img/pie-chart.svg);\n  -webkit-mask-image: url(/img/pie-chart.svg);\n}\n.skills__item.international:before {\n  mask-image: url(/img/earth.svg);\n  -webkit-mask-image: url(/img/earth.svg);\n}\n.skills__item.react:before {\n  mask-image: url(/img/react.svg);\n  -webkit-mask-image: url(/img/react.svg);\n}\n.skills__item.css:before {\n  mask-image: url(/img/csswizardry.svg);\n  -webkit-mask-image: url(/img/csswizardry.svg);\n}\n.skills__item.js:before {\n  mask-image: url(/img/javascript.svg);\n  -webkit-mask-image: url(/img/javascript.svg);\n}\n.skills__item.embed:before {\n  height: 2rem;\n  mask-image: url(/img/embed2.svg);\n  -webkit-mask-image: url(/img/embed2.svg);\n  margin-top: 0.3rem;\n}\n.skills__item.node:before {\n  mask-image: url(/img/node-dot-js.svg);\n  -webkit-mask-image: url(/img/node-dot-js.svg);\n}\n.skills__item.database:before {\n  mask-image: url(/img/database.svg);\n  -webkit-mask-image: url(/img/database.svg);\n}\n.skills__item.sass:before {\n  mask-image: url(/img/sass.svg);\n  -webkit-mask-image: url(/img/sass.svg);\n}\n.skills__item.team:before {\n  mask-image: url(/img/users.svg);\n  -webkit-mask-image: url(/img/users.svg);\n}\n\n.container {\n  background-color: #fff;\n  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);\n  height: 100%;\n  width: 100%;\n  display: flex;\n}\n\n.sidebar {\n  background-color: #00afb9;\n  flex: 0 0 23rem;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 0.5rem 0 4rem rgba(0, 0, 0, 0.3);\n}\n@media only screen and (max-width: 50rem) {\n  .sidebar {\n    display: none;\n  }\n}\n\n.content {\n  width: 100%;\n  height: 100%;\n  padding: 4rem;\n  overflow: auto;\n}","// COLORS\r\n$color-primary: #0081A7;\r\n$color-primary-light: lighten($color-primary, 20%);\r\n$color-primary-dark: darken($color-primary, 10%);\r\n$color-primary-darker: darken($color-primary, 20%);\r\n\r\n$color-secondary: #00afb9;\r\n$color-secondary-light: lighten($color-secondary, 20%);\r\n$color-secondary-dark: darken($color-secondary, 10%);\r\n$color-secondary-darker: darken($color-secondary, 20%);\r\n\r\n$color-tertiary-light: #2998ff;\r\n$color-tertiary-dark: #5643fa;\r\n\r\n$color-grey-light-1: #E5E6E4;\r\n$color-grey-light-2: #CFD2CD;\r\n\r\n$color-grey-dark: #777;\r\n$color-grey-dark-2: #999;\r\n$color-grey-dark-3: #6d6d6d;\r\n$color-grey-dark-4: #555454;\r\n$color-grey-dark-5: #3f3f3f;\r\n\r\n$color-white: #fff;\r\n$color-black: #000;\r\n\r\n// DUTCH COLORS\r\n$color-dutch-blue: #21468B;\r\n$color-dutch-white: #fff;\r\n$color-dutch-red: #AE1C28;\r\n$color-dutch-orange: #eb7640;\r\n$color-dutch-orange-dark: darken($color-dutch-orange, 5%);\r\n\r\n// FRENCH COLORS\r\n$color-french-blue: #0055A4;\r\n$color-french-white: #fff;\r\n$color-french-red:#EF4135;\r\n\r\n// SPANISH COLORS\r\n$color-spanish-red: #AA151B;\r\n$color-spanish-yellow: #F1BF00;\r\n\r\n// SWEDISH COLORS\r\n$color-swedish-yellow: #ffce00;\r\n$color-swedish-blue: #00559b;\r\n\r\n// BRANDS\r\n$color-twitter: #1da1f2;\r\n$color-linkedin: #0a66c2;\r\n$color-github: #000;\r\n\r\n// FONT\r\n$default-font-size: 1.6rem;\r\n\r\n// box shadow\r\n$box-shadow-light: 0 2rem 4rem rgba($color-black, .2);\r\n$box-shadow-dark: 0 1rem 4rem rgba($color-black, .4);\r\n","body {\r\n  font-family: \"Lato\", sans-serif;\r\n  font-weight: 400;\r\n  font-size: $default-font-size;\r\n  line-height: 1.7;\r\n  color: $color-grey-dark;\r\n}\r\n\r\n.heading-1 {\r\n  color: $color-white;\r\n  text-transform: uppercase;\r\n  font-weight: 300;\r\n  font-size: 2.5rem;\r\n}\r\n\r\n.heading-2 {\r\n  font-size: 2rem;\r\n  color: $color-grey-dark-3;\r\n}",".side-nav {\n  font-size: 1.4rem;\n  list-style: none;\n  margin-top: 1rem;\n\n  &__item {\n    position: relative;\n\n    &:not(:last-child) {\n      margin-bottom: 1rem;\n    }\n  }\n\n  &__button {\n    width: 100%;\n    border: none;\n    text-transform: uppercase;\n    display: block;\n    padding: 1.5rem 2rem;\n    color: $color-grey-light-1;\n    background-color: transparent;\n    position: relative;\n    z-index: 10;\n    font-size: 1.7rem;\n    cursor: pointer;\n\n    &:before {\n      content: \"\";\n      position: absolute;\n      z-index: -1 ;\n      top: 0;\n      left: 0;\n      height: 100%;\n      width: 2px;\n      background-color: $color-primary-dark;\n      transform: scaleY(0);\n      transition: transform .2s,\n                  width .4s cubic-bezier(1,0,0,1) .2s,\n                  background-color .1s;\n    }\n\n    &:focus {\n      outline: none;\n      @include focusRing;\n\n      &:before {\n        @include focusRing;\n      }\n    }\n\n    &:hover:before {\n      transform: scaleY(1);\n      width: 100%;\n    }\n\n    &:active:before,\n    &.active {\n      background-color: $color-primary-darker;\n    }\n\n  }\n}",".float-nav {\r\n  position: relative;\r\n  display: none; // by default not shown\r\n\r\n  &__checkbox {\r\n    display: none;\r\n  } \r\n\r\n  @include respond(medium) {\r\n    display: block;\r\n  }\r\n\r\n  // BUTTON\r\n  &__button {\r\n    background-color: $color-secondary;\r\n    height: 7rem;\r\n    width: 7rem;\r\n    border-radius: 50%;\r\n    box-shadow: $box-shadow-dark;\r\n    z-index: 2000;\r\n    cursor: pointer;\r\n\r\n    position: fixed;\r\n    top: 3rem;\r\n    right: 3rem;\r\n  }\r\n\r\n  // BACKGROUND\r\n  &__background {\r\n    background-image: radial-gradient(\r\n      $color-secondary, \r\n      darken($color-secondary-dark, 20%)\r\n    );\r\n    height: 3rem;\r\n    width: 3rem;\r\n    border-radius: 50%;\r\n\r\n    position: fixed;\r\n    top: 5rem;\r\n    right: 5rem;\r\n    z-index: 1000;\r\n\r\n    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);\r\n  }\r\n\r\n  &__checkbox:checked + &__button {\r\n    background-color: $color-primary;\r\n  }\r\n  \r\n  &__checkbox:checked ~ &__background {\r\n    transform: scale(120);\r\n  }\r\n\r\n  // ICON\r\n  &__icon {\r\n    @include absoluteCentering;\r\n\r\n    &,\r\n    &:before,\r\n    &:after {\r\n      width: 3rem;\r\n      height: 2px;\r\n      background-color: $color-white;\r\n      display: inline-block;\r\n    }\r\n\r\n    &:before,\r\n    &:after {\r\n      content: '';\r\n      position: absolute;\r\n      left: 0;\r\n      transition: all .2s;\r\n    }\r\n\r\n    &:before {\r\n      top: -1rem;\r\n    }\r\n\r\n    &:after {\r\n      top: 1rem;\r\n    }\r\n  }\r\n\r\n  &__button:hover &__icon::before {\r\n    top: -1.2rem;\r\n  }\r\n\r\n  &__button:hover &__icon::after {\r\n    top: +1.2rem;\r\n  }\r\n\r\n  &__checkbox:checked + &__button &__icon {\r\n    background-color: transparent;\r\n    &:before {\r\n      top: -1rem;\r\n      transform: translateY(1rem) rotate(225deg) ;\r\n    }\r\n\r\n    &:after {\r\n      top: 1rem;\r\n      transform: translateY(-1rem) rotate(-225deg);\r\n    }\r\n  }\r\n\r\n  // NAV LIST\r\n  &__nav {\r\n    position: fixed;\r\n    top: 0;\r\n    left: -200rem;\r\n    z-index: 1500;\r\n    height: 100vh;\r\n    width: 100%;\r\n    opacity: 0;\r\n    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);\r\n\r\n    & > * {\r\n      position: absolute;\r\n      top: 20%;\r\n      left: 50%;\r\n      transform: translateX(-50%);\r\n      width: 25rem;\r\n    }\r\n  }\r\n\r\n  &__checkbox:checked ~ &__nav {\r\n    opacity: 1;\r\n    left: 0;\r\n  }\r\n\r\n}",".name {\r\n  text-align: center;\r\n  padding: 1rem 1.5rem;\r\n  color: $color-grey-light-1;\r\n  user-select: none;\r\n  text-transform: uppercase;\r\n\r\n  &__job {\r\n    color: $color-primary-darker;\r\n    font-size: 1.3rem;\r\n    font-weight: 700;\r\n    letter-spacing: .2rem;\r\n  }\r\n\r\n  &:after {\r\n    content: \"\";\r\n    display: block;\r\n    height: 1px;\r\n    background-color: $color-white;\r\n    margin-top: 3rem;\r\n  }\r\n}   ",".legal {\r\n  align-self: center;\r\n  margin-top: auto;\r\n  margin-bottom: 2rem;\r\n  color: $color-grey-light-1;\r\n  font-size: 1.2rem;\r\n}     ",".about {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-wrap: wrap;\r\n  padding: 2rem;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  @include respond(medium) {\r\n    margin-top: 5rem;\r\n  }\r\n\r\n\r\n  &__figure {\r\n    width: 30rem;\r\n    height: 30rem;\r\n    clip-path: circle(50% at 50% 50%);\r\n    position: relative;\r\n    overflow: hidden;\r\n    padding: 3px;\r\n    margin-bottom: 5rem;\r\n    flex: 0 0 auto;\r\n\r\n    @include respond(medium) {\r\n      width: 25rem;\r\n      height: 25rem;\r\n    }\r\n  }\r\n\r\n  &__picture {\r\n    height: 100%;\r\n    transform: scale(1.1);\r\n    transition: all .2s;\r\n    border-radius: 50%;\r\n  }\r\n\r\n  &__caption {\r\n    font-size: 10rem;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, 200%);\r\n    transition: all .5s;\r\n  }\r\n\r\n  &__figure:hover &__picture {\r\n    transform: scale(1.2);\r\n    filter: blur(3px) brightness(80%);\r\n  }\r\n\r\n  &__figure:hover &__caption {\r\n    transform: translate(-50%, -50%);\r\n  }\r\n\r\n  &__description {\r\n    font-size: 1.7rem;\r\n  }\r\n\r\n  &__text {\r\n    flex: 1;\r\n    min-width: 50rem;\r\n    \r\n    @include respond(medium) {\r\n      min-width: 0;\r\n    }\r\n  }\r\n}",".link {\r\n  margin: 0 2px;\r\n  white-space: nowrap;\r\n\r\n  &:visited,\r\n  &:link {\r\n    text-decoration: none;\r\n    color: $color-primary;\r\n    border-bottom: 1px solid transparent;\r\n  }\r\n\r\n  &:hover {\r\n    color: $color-primary-dark;\r\n    border-bottom: 1px solid $color-primary-dark;\r\n  }\r\n\r\n  &:focus {\r\n    outline: none;\r\n    color: $color-primary-dark;\r\n    border-bottom: 1px solid $color-primary-dark;\r\n  }\r\n\r\n  &__arrow {\r\n    display: inline-block;\r\n    transition: all .2s;\r\n    margin: 0 3px;\r\n  }\r\n\r\n  &:hover &__arrow,\r\n  &:focus &__arrow {\r\n    animation: arrowMoving .8s infinite;\r\n    color: $color-primary-dark;\r\n  }\r\n}\r\n\r\n@keyframes arrowMoving {\r\n  0%   { transform: translate(0, 0); }\r\n  50% { transform: translate(2px, -2px); }\r\n  100% { transform: translate(0, 0); }\r\n}",".location {\r\n  display: inline-block;\r\n  position: relative;\r\n  z-index: 200;\r\n  color: inherit;\r\n  font-weight: 700;\r\n  $flag-opacity: .8;\r\n  transition: all .2s;\r\n\r\n  &:hover {\r\n    color: $color-grey-dark-3;\r\n  }\r\n\r\n  &:before {\r\n    content: '';\r\n    display: inline-block;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: -1;\r\n    filter: blur(2px) brightness(110%);\r\n    opacity: 0;\r\n    transition: all .2s;\r\n  }\r\n\r\n  &:hover {\r\n    font-weight: 700;\r\n    text-shadow: 0px 2px 2px #fff, 0px -2px 2px #fff;\r\n    &:before { opacity: 1; } \r\n  }\r\n\r\n  // DUTCH FLAG\r\n  &.NL {\r\n    &:before {\r\n      background-image: linear-gradient(\r\n        to bottom,\r\n        rgba($color-dutch-blue, $flag-opacity) 33%,\r\n        rgba($color-dutch-white, $flag-opacity) 33% 66%,\r\n        rgba($color-dutch-red, $flag-opacity) 66% 100%\r\n      );\r\n    }\r\n\r\n    &:hover {\r\n      color: $color-dutch-orange;\r\n    }\r\n  }\r\n\r\n  // FRENCH FLAG\r\n  &.FR:before {\r\n    background-image: linear-gradient(\r\n      to right,\r\n      rgba($color-french-blue, $flag-opacity) 33%,\r\n      rgba($color-french-white, $flag-opacity) 33% 66%,\r\n      rgba($color-french-red, $flag-opacity) 66% 100%\r\n    );\r\n  }\r\n\r\n  // SPANISH FLAG\r\n  &.ES:before {\r\n    background-image: linear-gradient(\r\n      to bottom,\r\n      rgba($color-spanish-red, $flag-opacity) 25%,\r\n      rgba($color-spanish-yellow, $flag-opacity) 25% 75%,\r\n      rgba($color-spanish-red, $flag-opacity) 75%,\r\n    );\r\n  }\r\n\r\n  // SWEDISH FLAG \r\n  &.SW:before {\r\n    background-image: linear-gradient(\r\n    to right,\r\n    transparent 25%,\r\n    $color-swedish-yellow 25% 35%,\r\n    transparent 35%\r\n    ),\r\n    linear-gradient(\r\n      to bottom,\r\n      rgba($color-swedish-blue, $flag-opacity) 35%,\r\n      rgba($color-swedish-yellow, $flag-opacity) 35% 65%,\r\n      rgba($color-swedish-blue, $flag-opacity) 65%,\r\n    );\r\n  }\r\n}",".contact {\r\n  font-size: 2rem;\r\n  margin: 5rem;\r\n\r\n  @include respond(medium) {\r\n    @include absoluteCentering;\r\n    top: 33%;\r\n    margin: 0;\r\n  }\r\n\r\n  @include respond(medium) {\r\n    top: 40%;\r\n  }\r\n\r\n  &__item {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    &:not(:last-child) {\r\n      margin-bottom: 6rem;\r\n    }\r\n\r\n\r\n    &::before {\r\n      content: \"\";\r\n      display: inline-block;\r\n      mask-size: cover;\r\n      -webkit-mask-size: cover;\r\n      height: 5rem;\r\n      width: 5rem;\r\n      background-color: green;\r\n      margin-right: 2rem;\r\n    }\r\n\r\n    &--twitter:before {\r\n      background-color: $color-twitter;\r\n      mask-image: url(/img/twitter.svg); \r\n      -webkit-mask-image: url(/img/twitter.svg);\r\n    }\r\n\r\n    &--linkedin:before {\r\n      background-color: $color-linkedin;\r\n      mask-image: url(/img/linkedin.svg); \r\n      -webkit-mask-image: url(/img/linkedin.svg);\r\n    }\r\n\r\n    &--github:before {\r\n      background-color: $color-github;\r\n      mask-image: url(/img/github.svg); \r\n      -webkit-mask-image: url(/img/github.svg);\r\n    }\r\n\r\n    &--mail:before {\r\n      background-color: $color-primary;\r\n      mask-image: url(/img/mail.svg); \r\n      -webkit-mask-image: url(/img/mail.svg);\r\n    }\r\n  }\r\n}",".resume-section {\r\n  width: 100%;\r\n\r\n  &:not(:last-child) {\r\n    margin-bottom: 4rem;\r\n  }\r\n\r\n\r\n  &__title {\r\n    font-size: 3rem;\r\n    font-weight: 300;\r\n    text-transform: uppercase;\r\n    color: $color-primary;\r\n\r\n    display: grid;\r\n    grid-template-columns: 1fr max-content 1fr;\r\n    align-items: center;\r\n    grid-column-gap: 3.5rem;\r\n\r\n    &:before,\r\n    &:after {\r\n      content: '';\r\n      display: inline-block;\r\n      height: 1px;\r\n      background-color: $color-primary;\r\n    }\r\n  }\r\n} ",".education-entry {\r\n  @include grid-definition;\r\n  grid-template-areas: \r\n    \"date name location\"\r\n    \". diploma .\"\r\n    \". description .\";\r\n\r\n  @include respond(largest) {\r\n    grid-template-areas: \r\n    \"date name location\"\r\n    \". diploma diploma\"\r\n    \". description description\";\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-areas: \r\n    \"name name\"\r\n    \"date location\"\r\n    \"diploma diploma\"\r\n    \"description description\";\r\n  }\r\n\r\n  @include respond(medium) {\r\n    grid-template-areas: \r\n    \"name\"\r\n    \"date\"\r\n    \"diploma\"\r\n    \"location\"\r\n    \"description\";\r\n  }\r\n\r\n  &__date {\r\n    grid-area: date;\r\n    @include main-style;\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__name {\r\n    grid-area: name;\r\n    @include main-style;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n      font-size: 2.1rem; // to fit long names\r\n    }\r\n  }\r\n\r\n  &__location {\r\n    grid-area: location;\r\n    @include info-style;\r\n    justify-self: end;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__diploma {\r\n    grid-area: diploma;\r\n    @include main-sub-style;\r\n\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__description {\r\n    grid-area: description;\r\n    @include description-style;\r\n  }\r\n}","@mixin grid-definition {\r\n  display: grid;\r\n  grid-template-columns: 15rem 1fr 21rem;\r\n  grid-template-rows: repeat(2, auto) 1fr;\r\n  grid-column-gap: 2rem;\r\n  grid-row-gap: .5rem;\r\n  padding: 1rem 0;\r\n  align-items: center;\r\n\r\n  @include respond(largest) {\r\n    grid-template-columns: 21rem repeat(2, 1fr);\r\n    grid-column-gap: 0rem;\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  @include respond(medium) {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@mixin info-style {\r\n  font-size: 1.8rem;\r\n  font-weight: 300;\r\n  color: $color-grey-dark-3;\r\n}\r\n\r\n@mixin description-style {\r\n  color: $color-grey-dark-3;\r\n  font-size: 1.8rem;\r\n  word-break: break-word;\r\n}\r\n\r\n@mixin main-style {\r\n  font-size: 2.2rem;\r\n  color: $color-grey-dark-4;\r\n\r\n  &.current {\r\n    color: $color-secondary;\r\n    font-weight: 700;\r\n  }\r\n}\r\n\r\n@mixin main-sub-style {\r\n  font-size: 2rem;\r\n  font-style: italic;\r\n  color: $color-grey-dark-3; \r\n}\r\n\r\n@mixin list-icon-def {\r\n  list-style: none;\r\n  padding: 0.2rem 2rem;\r\n  display: grid;\r\n  grid-row-gap: .2rem;\r\n}\r\n\r\n@mixin list-icon-item {\r\n  display: grid;\r\n  grid-template-columns: min-content 1fr;\r\n  grid-template-areas: \"icon text\" \". text\";\r\n  grid-column-gap: 1rem;\r\n  align-items: start;\r\n\r\n  &:before {\r\n    content: \"\";\r\n    display: inline-block;\r\n    height: 1.8rem;\r\n    width: 1.8rem;\r\n    background-color: $color-primary-dark;\r\n    mask-size: cover;\r\n    -webkit-mask-size: cover;\r\n\r\n    justify-self: center;\r\n    align-self: center;\r\n    grid-area: icon;\r\n  }\r\n\r\n  & > span {\r\n    grid-area: text;\r\n  }\r\n}",".experience-entry {\r\n  @include grid-definition;\r\n  grid-template-areas: \r\n    \"company-name title company-location\"\r\n    \"duration date .\"\r\n    \". description .\";\r\n\r\n  @include respond(largest) {\r\n    grid-template-areas: \r\n    \"company-name title title\"\r\n    \"duration date company-location\"\r\n    \". description description\";\r\n  }\r\n\r\n  @include respond(large) {\r\n    grid-template-areas: \r\n    \"company-name company-name\"\r\n    \"title duration\"\r\n    \"date company-location\"\r\n    \"description description\";\r\n  }\r\n\r\n  \r\n  @include respond(medium) {\r\n    grid-template-areas: \r\n    \"title\"\r\n    \"company-name\"\r\n    \"date\"\r\n    \"duration\"\r\n    \"company-location\"\r\n    \"description\";\r\n  }\r\n\r\n  &__date {\r\n    grid-area: date;\r\n    @include main-sub-style;\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__title {\r\n    grid-area: title;\r\n    @include main-style;\r\n\r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__company-name {\r\n    grid-area: company-name;\r\n    @include main-style;\r\n\r\n    @include respond(large) {\r\n      text-align: center;\r\n    }\r\n  }\r\n\r\n  &__company-location {\r\n    grid-area: company-location;\r\n    @include info-style;\r\n    justify-self: end;\r\n\r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__duration {\r\n    grid-area: duration;\r\n    @include info-style;\r\n    justify-self: start;\r\n    \r\n    @include respond(large) {\r\n      justify-self: end;\r\n    }\r\n    \r\n    @include respond(medium) {\r\n      justify-self: center;\r\n    }\r\n  }\r\n\r\n  &__description {\r\n    grid-area: description;\r\n    @include description-style;\r\n  }\r\n}\r\n\r\n.tools {\r\n  margin: 1rem 0;\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));\r\n  }\r\n    \r\n  &__item {\r\n    @include list-icon-item;\r\n    &:before {\r\n      mask-image: url(/img/wrench.svg);\r\n      -webkit-mask-image: url(/img/wrench.svg); \r\n      margin-top: .7rem;\r\n    }\r\n  }\r\n}\r\n\r\n.responsibilities {\r\n  margin: 1rem 0;\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  &__item {\r\n    @include list-icon-item;\r\n    &:before {\r\n      mask-image: url(/img/laptop.svg);\r\n      -webkit-mask-image: url(/img/laptop.svg); \r\n      margin-top: .65rem;\r\n    }\r\n  }\r\n}\r\n",".skills {\r\n  padding: 2rem;\r\n  width: 75%;\r\n  margin: 0 auto;\r\n\r\n  @include respond(large) {\r\n    padding: 1rem;\r\n  }\r\n\r\n  &__list {\r\n    @include list-icon-def;\r\n    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));\r\n    grid-column-gap: .5rem;\r\n    grid-row-gap: 1rem;\r\n  }\r\n\r\n  &__item {\r\n    @include list-icon-item;\r\n    grid-template-columns: min-content max-content;\r\n\r\n    &:before {\r\n      height: 3rem;\r\n      width: 3rem;\r\n      mask-image: url(/img/wrench.svg); \r\n      -webkit-mask-image: url(/img/wrench.svg);\r\n    }\r\n\r\n    & > span {\r\n      margin-top: .2rem; // aligning stuff is hard :(\r\n    }\r\n\r\n    // PIE ICON\r\n    &.datavis {\r\n      &:before {\r\n        mask-image: url(/img/pie-chart.svg); \r\n        -webkit-mask-image: url(/img/pie-chart.svg); \r\n      }\r\n    }\r\n\r\n    // EARTH ICON\r\n    &.international {\r\n      &:before {\r\n        mask-image: url(/img/earth.svg); \r\n        -webkit-mask-image: url(/img/earth.svg); \r\n      }\r\n    }\r\n\r\n    // REACT ICON\r\n    &.react {\r\n      &:before {\r\n        mask-image: url(/img/react.svg); \r\n        -webkit-mask-image: url(/img/react.svg); \r\n      }\r\n    }\r\n\r\n    // CSS ICON\r\n    &.css {\r\n      &:before {\r\n        mask-image: url(/img/csswizardry.svg); \r\n        -webkit-mask-image: url(/img/csswizardry.svg); \r\n      }\r\n    }\r\n\r\n    // JS ICON\r\n    &.js {\r\n      &:before {\r\n        mask-image: url(/img/javascript.svg); \r\n        -webkit-mask-image: url(/img/javascript.svg); \r\n      }\r\n    }\r\n\r\n    // EMBED ICON\r\n    &.embed {\r\n      &:before {\r\n        height: 2rem;\r\n        mask-image: url(/img/embed2.svg); \r\n        -webkit-mask-image: url(/img/embed2.svg); \r\n        margin-top: .3rem;\r\n      }\r\n    }\r\n\r\n    // NODE ICON\r\n    &.node {\r\n      &:before {\r\n        mask-image: url(/img/node-dot-js.svg); \r\n        -webkit-mask-image: url(/img/node-dot-js.svg); \r\n      }\r\n    }\r\n\r\n    // DATABASE ICON\r\n    &.database {\r\n      &:before {\r\n        mask-image: url(/img/database.svg); \r\n        -webkit-mask-image: url(/img/database.svg); \r\n      }\r\n    }\r\n\r\n    // SASS ICON\r\n    &.sass {\r\n      &:before {\r\n        mask-image: url(/img/sass.svg); \r\n        -webkit-mask-image: url(/img/sass.svg); \r\n      }\r\n    }\r\n\r\n    // TEAM ICON\r\n    &.team {\r\n      &:before {\r\n        mask-image: url(/img/users.svg); \r\n        -webkit-mask-image: url(/img/users.svg); \r\n      }\r\n    }\r\n\r\n  }\r\n}",".container {\r\n  background-color: $color-white;\r\n  box-shadow: $box-shadow-light;\r\n  height: 100%;\r\n  width: 100%;\r\n  display: flex;\r\n} ",".sidebar {\r\n  background-color: $color-secondary;\r\n  flex: 0 0 23rem;\r\n  overflow: auto;\r\n\r\n  \r\n  @include respond(medium) {\r\n    display: none;\r\n  }\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  box-shadow: .5rem 0 4rem rgba($color-black, .3);\r\n}  ",".content {\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 4rem;\r\n  overflow: auto;\r\n}" ],"sourceRoot":"" } ]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -1192,7 +1192,7 @@ module.exports = function (cssWithMappingToString) {
   list.i = function (modules, mediaQuery, dedupe) {
     if (typeof modules === "string") {
       // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
+      modules = [ [ null, modules, "" ] ];
     }
 
     var alreadyImportedModules = {};
@@ -1268,10 +1268,10 @@ module.exports = function cssWithMappingToString(item) {
     var sourceURLs = cssMapping.sources.map(function (source) {
       return "/*# sourceURL=".concat(cssMapping.sourceRoot || "").concat(source, " */");
     });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join("\n");
+    return [ content ].concat(sourceURLs).concat([ sourceMapping ]).join("\n");
   }
 
-  return [content].join("\n");
+  return [ content ].join("\n");
 };
 
 /***/ }),
@@ -1486,7 +1486,7 @@ function printWarning(level, format, args) {
 
     if (stack !== '') {
       format += '%s';
-      args = args.concat([stack]);
+      args = args.concat([ stack ]);
     }
 
     var argsWithFormat = args.map(function (item) {
@@ -1745,10 +1745,10 @@ function PropertyInfoRecord(name, type, mustUseProperty, attributeName, attribut
 
 var properties = {}; // These props are reserved by React. They shouldn't be written to the DOM.
 
-var reservedProps = ['children', 'dangerouslySetInnerHTML', // TODO: This prevents the assignment of defaultValue to regular
+var reservedProps = [ 'children', 'dangerouslySetInnerHTML', // TODO: This prevents the assignment of defaultValue to regular
 // elements (not just inputs). Now that ReactDOMInput assigns to the
 // defaultValue property -- do we need this?
-'defaultValue', 'defaultChecked', 'innerHTML', 'suppressContentEditableWarning', 'suppressHydrationWarning', 'style'];
+'defaultValue', 'defaultChecked', 'innerHTML', 'suppressContentEditableWarning', 'suppressHydrationWarning', 'style' ];
 reservedProps.forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, RESERVED, false, // mustUseProperty
   name, // attributeName
@@ -1758,7 +1758,7 @@ reservedProps.forEach(function (name) {
 }); // A few React string attributes have a different name.
 // This is a mapping from React prop names to the attribute names.
 
-[['acceptCharset', 'accept-charset'], ['className', 'class'], ['htmlFor', 'for'], ['httpEquiv', 'http-equiv']].forEach(function (_ref) {
+[ [ 'acceptCharset', 'accept-charset' ], [ 'className', 'class' ], [ 'htmlFor', 'for' ], [ 'httpEquiv', 'http-equiv' ] ].forEach(function (_ref) {
   var name = _ref[0],
       attributeName = _ref[1];
   properties[name] = new PropertyInfoRecord(name, STRING, false, // mustUseProperty
@@ -1770,7 +1770,7 @@ reservedProps.forEach(function (name) {
 // In React, we let users pass `true` and `false` even though technically
 // these aren't boolean attributes (they are coerced to strings).
 
-['contentEditable', 'draggable', 'spellCheck', 'value'].forEach(function (name) {
+[ 'contentEditable', 'draggable', 'spellCheck', 'value' ].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, BOOLEANISH_STRING, false, // mustUseProperty
   name.toLowerCase(), // attributeName
   null, // attributeNamespace
@@ -1781,7 +1781,7 @@ reservedProps.forEach(function (name) {
 // these aren't boolean attributes (they are coerced to strings).
 // Since these are SVG attributes, their attribute names are case-sensitive.
 
-['autoReverse', 'externalResourcesRequired', 'focusable', 'preserveAlpha'].forEach(function (name) {
+[ 'autoReverse', 'externalResourcesRequired', 'focusable', 'preserveAlpha' ].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, BOOLEANISH_STRING, false, // mustUseProperty
   name, // attributeName
   null, // attributeNamespace
@@ -1789,10 +1789,10 @@ reservedProps.forEach(function (name) {
   false);
 }); // These are HTML boolean attributes.
 
-['allowFullScreen', 'async', // Note: there is a special case that prevents it from being written to the DOM
+[ 'allowFullScreen', 'async', // Note: there is a special case that prevents it from being written to the DOM
 // on the client side because the browsers are inconsistent. Instead we call focus().
 'autoFocus', 'autoPlay', 'controls', 'default', 'defer', 'disabled', 'disablePictureInPicture', 'disableRemotePlayback', 'formNoValidate', 'hidden', 'loop', 'noModule', 'noValidate', 'open', 'playsInline', 'readOnly', 'required', 'reversed', 'scoped', 'seamless', // Microdata
-'itemScope'].forEach(function (name) {
+'itemScope' ].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, BOOLEAN, false, // mustUseProperty
   name.toLowerCase(), // attributeName
   null, // attributeNamespace
@@ -1801,7 +1801,7 @@ reservedProps.forEach(function (name) {
 }); // These are the few React props that we set as DOM properties
 // rather than attributes. These are all booleans.
 
-['checked', // Note: `option.selected` is not updated if `select.multiple` is
+[ 'checked', // Note: `option.selected` is not updated if `select.multiple` is
 // disabled with `removeAttribute`. We have special logic for handling this.
 'multiple', 'muted', 'selected' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
@@ -1815,7 +1815,7 @@ reservedProps.forEach(function (name) {
 }); // These are HTML attributes that are "overloaded booleans": they behave like
 // booleans, but can also accept a string value.
 
-['capture', 'download' // NOTE: if you add a camelCased prop to this list,
+[ 'capture', 'download' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
 // instead in the assignment below.
 ].forEach(function (name) {
@@ -1826,7 +1826,7 @@ reservedProps.forEach(function (name) {
   false);
 }); // These are HTML attributes that must be positive numbers.
 
-['cols', 'rows', 'size', 'span' // NOTE: if you add a camelCased prop to this list,
+[ 'cols', 'rows', 'size', 'span' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
 // instead in the assignment below.
 ].forEach(function (name) {
@@ -1837,7 +1837,7 @@ reservedProps.forEach(function (name) {
   false);
 }); // These are HTML attributes that must be numbers.
 
-['rowSpan', 'start'].forEach(function (name) {
+[ 'rowSpan', 'start' ].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, NUMERIC, false, // mustUseProperty
   name.toLowerCase(), // attributeName
   null, // attributeNamespace
@@ -1855,7 +1855,7 @@ var capitalize = function (token) {
 // scraping the MDN documentation.
 
 
-['accent-height', 'alignment-baseline', 'arabic-form', 'baseline-shift', 'cap-height', 'clip-path', 'clip-rule', 'color-interpolation', 'color-interpolation-filters', 'color-profile', 'color-rendering', 'dominant-baseline', 'enable-background', 'fill-opacity', 'fill-rule', 'flood-color', 'flood-opacity', 'font-family', 'font-size', 'font-size-adjust', 'font-stretch', 'font-style', 'font-variant', 'font-weight', 'glyph-name', 'glyph-orientation-horizontal', 'glyph-orientation-vertical', 'horiz-adv-x', 'horiz-origin-x', 'image-rendering', 'letter-spacing', 'lighting-color', 'marker-end', 'marker-mid', 'marker-start', 'overline-position', 'overline-thickness', 'paint-order', 'panose-1', 'pointer-events', 'rendering-intent', 'shape-rendering', 'stop-color', 'stop-opacity', 'strikethrough-position', 'strikethrough-thickness', 'stroke-dasharray', 'stroke-dashoffset', 'stroke-linecap', 'stroke-linejoin', 'stroke-miterlimit', 'stroke-opacity', 'stroke-width', 'text-anchor', 'text-decoration', 'text-rendering', 'underline-position', 'underline-thickness', 'unicode-bidi', 'unicode-range', 'units-per-em', 'v-alphabetic', 'v-hanging', 'v-ideographic', 'v-mathematical', 'vector-effect', 'vert-adv-y', 'vert-origin-x', 'vert-origin-y', 'word-spacing', 'writing-mode', 'xmlns:xlink', 'x-height' // NOTE: if you add a camelCased prop to this list,
+[ 'accent-height', 'alignment-baseline', 'arabic-form', 'baseline-shift', 'cap-height', 'clip-path', 'clip-rule', 'color-interpolation', 'color-interpolation-filters', 'color-profile', 'color-rendering', 'dominant-baseline', 'enable-background', 'fill-opacity', 'fill-rule', 'flood-color', 'flood-opacity', 'font-family', 'font-size', 'font-size-adjust', 'font-stretch', 'font-style', 'font-variant', 'font-weight', 'glyph-name', 'glyph-orientation-horizontal', 'glyph-orientation-vertical', 'horiz-adv-x', 'horiz-origin-x', 'image-rendering', 'letter-spacing', 'lighting-color', 'marker-end', 'marker-mid', 'marker-start', 'overline-position', 'overline-thickness', 'paint-order', 'panose-1', 'pointer-events', 'rendering-intent', 'shape-rendering', 'stop-color', 'stop-opacity', 'strikethrough-position', 'strikethrough-thickness', 'stroke-dasharray', 'stroke-dashoffset', 'stroke-linecap', 'stroke-linejoin', 'stroke-miterlimit', 'stroke-opacity', 'stroke-width', 'text-anchor', 'text-decoration', 'text-rendering', 'underline-position', 'underline-thickness', 'unicode-bidi', 'unicode-range', 'units-per-em', 'v-alphabetic', 'v-hanging', 'v-ideographic', 'v-mathematical', 'vector-effect', 'vert-adv-y', 'vert-origin-x', 'vert-origin-y', 'word-spacing', 'writing-mode', 'xmlns:xlink', 'x-height' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
 // instead in the assignment below.
 ].forEach(function (attributeName) {
@@ -1866,7 +1866,7 @@ var capitalize = function (token) {
   false);
 }); // String SVG attributes with the xlink namespace.
 
-['xlink:actuate', 'xlink:arcrole', 'xlink:role', 'xlink:show', 'xlink:title', 'xlink:type' // NOTE: if you add a camelCased prop to this list,
+[ 'xlink:actuate', 'xlink:arcrole', 'xlink:role', 'xlink:show', 'xlink:title', 'xlink:type' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
 // instead in the assignment below.
 ].forEach(function (attributeName) {
@@ -1876,7 +1876,7 @@ var capitalize = function (token) {
   false);
 }); // String SVG attributes with the xml namespace.
 
-['xml:base', 'xml:lang', 'xml:space' // NOTE: if you add a camelCased prop to this list,
+[ 'xml:base', 'xml:lang', 'xml:space' // NOTE: if you add a camelCased prop to this list,
 // you'll need to set attributeName to name.toLowerCase()
 // instead in the assignment below.
 ].forEach(function (attributeName) {
@@ -1888,7 +1888,7 @@ var capitalize = function (token) {
 // The attribute name is case-sensitive in SVG so we can't just use
 // the React name like we do for attributes that exist only in HTML.
 
-['tabIndex', 'crossOrigin'].forEach(function (attributeName) {
+[ 'tabIndex', 'crossOrigin' ].forEach(function (attributeName) {
   properties[attributeName] = new PropertyInfoRecord(attributeName, STRING, false, // mustUseProperty
   attributeName.toLowerCase(), // attributeName
   null, // attributeNamespace
@@ -1901,7 +1901,7 @@ var xlinkHref = 'xlinkHref';
 properties[xlinkHref] = new PropertyInfoRecord('xlinkHref', STRING, false, // mustUseProperty
 'xlink:href', 'http://www.w3.org/1999/xlink', true, // sanitizeURL
 false);
-['src', 'href', 'action', 'formAction'].forEach(function (attributeName) {
+[ 'src', 'href', 'action', 'formAction' ].forEach(function (attributeName) {
   properties[attributeName] = new PropertyInfoRecord(attributeName, STRING, false, // mustUseProperty
   attributeName.toLowerCase(), // attributeName
   null, // attributeNamespace
@@ -3253,7 +3253,7 @@ function getDeclarationErrorAddendum() {
   return '';
 }
 
-var valuePropNames = ['value', 'defaultValue'];
+var valuePropNames = [ 'value', 'defaultValue' ];
 /**
  * Validation function for `value` and `defaultValue`.
  */
@@ -3672,53 +3672,53 @@ var setTextContent = function (node, text) {
 // List derived from Gecko source code:
 // https://github.com/mozilla/gecko-dev/blob/4e638efc71/layout/style/test/property_database.js
 var shorthandToLonghand = {
-  animation: ['animationDelay', 'animationDirection', 'animationDuration', 'animationFillMode', 'animationIterationCount', 'animationName', 'animationPlayState', 'animationTimingFunction'],
-  background: ['backgroundAttachment', 'backgroundClip', 'backgroundColor', 'backgroundImage', 'backgroundOrigin', 'backgroundPositionX', 'backgroundPositionY', 'backgroundRepeat', 'backgroundSize'],
-  backgroundPosition: ['backgroundPositionX', 'backgroundPositionY'],
-  border: ['borderBottomColor', 'borderBottomStyle', 'borderBottomWidth', 'borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageWidth', 'borderLeftColor', 'borderLeftStyle', 'borderLeftWidth', 'borderRightColor', 'borderRightStyle', 'borderRightWidth', 'borderTopColor', 'borderTopStyle', 'borderTopWidth'],
-  borderBlockEnd: ['borderBlockEndColor', 'borderBlockEndStyle', 'borderBlockEndWidth'],
-  borderBlockStart: ['borderBlockStartColor', 'borderBlockStartStyle', 'borderBlockStartWidth'],
-  borderBottom: ['borderBottomColor', 'borderBottomStyle', 'borderBottomWidth'],
-  borderColor: ['borderBottomColor', 'borderLeftColor', 'borderRightColor', 'borderTopColor'],
-  borderImage: ['borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageWidth'],
-  borderInlineEnd: ['borderInlineEndColor', 'borderInlineEndStyle', 'borderInlineEndWidth'],
-  borderInlineStart: ['borderInlineStartColor', 'borderInlineStartStyle', 'borderInlineStartWidth'],
-  borderLeft: ['borderLeftColor', 'borderLeftStyle', 'borderLeftWidth'],
-  borderRadius: ['borderBottomLeftRadius', 'borderBottomRightRadius', 'borderTopLeftRadius', 'borderTopRightRadius'],
-  borderRight: ['borderRightColor', 'borderRightStyle', 'borderRightWidth'],
-  borderStyle: ['borderBottomStyle', 'borderLeftStyle', 'borderRightStyle', 'borderTopStyle'],
-  borderTop: ['borderTopColor', 'borderTopStyle', 'borderTopWidth'],
-  borderWidth: ['borderBottomWidth', 'borderLeftWidth', 'borderRightWidth', 'borderTopWidth'],
-  columnRule: ['columnRuleColor', 'columnRuleStyle', 'columnRuleWidth'],
-  columns: ['columnCount', 'columnWidth'],
-  flex: ['flexBasis', 'flexGrow', 'flexShrink'],
-  flexFlow: ['flexDirection', 'flexWrap'],
-  font: ['fontFamily', 'fontFeatureSettings', 'fontKerning', 'fontLanguageOverride', 'fontSize', 'fontSizeAdjust', 'fontStretch', 'fontStyle', 'fontVariant', 'fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition', 'fontWeight', 'lineHeight'],
-  fontVariant: ['fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition'],
-  gap: ['columnGap', 'rowGap'],
-  grid: ['gridAutoColumns', 'gridAutoFlow', 'gridAutoRows', 'gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows'],
-  gridArea: ['gridColumnEnd', 'gridColumnStart', 'gridRowEnd', 'gridRowStart'],
-  gridColumn: ['gridColumnEnd', 'gridColumnStart'],
-  gridColumnGap: ['columnGap'],
-  gridGap: ['columnGap', 'rowGap'],
-  gridRow: ['gridRowEnd', 'gridRowStart'],
-  gridRowGap: ['rowGap'],
-  gridTemplate: ['gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows'],
-  listStyle: ['listStyleImage', 'listStylePosition', 'listStyleType'],
-  margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],
-  marker: ['markerEnd', 'markerMid', 'markerStart'],
-  mask: ['maskClip', 'maskComposite', 'maskImage', 'maskMode', 'maskOrigin', 'maskPositionX', 'maskPositionY', 'maskRepeat', 'maskSize'],
-  maskPosition: ['maskPositionX', 'maskPositionY'],
-  outline: ['outlineColor', 'outlineStyle', 'outlineWidth'],
-  overflow: ['overflowX', 'overflowY'],
-  padding: ['paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop'],
-  placeContent: ['alignContent', 'justifyContent'],
-  placeItems: ['alignItems', 'justifyItems'],
-  placeSelf: ['alignSelf', 'justifySelf'],
-  textDecoration: ['textDecorationColor', 'textDecorationLine', 'textDecorationStyle'],
-  textEmphasis: ['textEmphasisColor', 'textEmphasisStyle'],
-  transition: ['transitionDelay', 'transitionDuration', 'transitionProperty', 'transitionTimingFunction'],
-  wordWrap: ['overflowWrap']
+  animation: [ 'animationDelay', 'animationDirection', 'animationDuration', 'animationFillMode', 'animationIterationCount', 'animationName', 'animationPlayState', 'animationTimingFunction' ],
+  background: [ 'backgroundAttachment', 'backgroundClip', 'backgroundColor', 'backgroundImage', 'backgroundOrigin', 'backgroundPositionX', 'backgroundPositionY', 'backgroundRepeat', 'backgroundSize' ],
+  backgroundPosition: [ 'backgroundPositionX', 'backgroundPositionY' ],
+  border: [ 'borderBottomColor', 'borderBottomStyle', 'borderBottomWidth', 'borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageWidth', 'borderLeftColor', 'borderLeftStyle', 'borderLeftWidth', 'borderRightColor', 'borderRightStyle', 'borderRightWidth', 'borderTopColor', 'borderTopStyle', 'borderTopWidth' ],
+  borderBlockEnd: [ 'borderBlockEndColor', 'borderBlockEndStyle', 'borderBlockEndWidth' ],
+  borderBlockStart: [ 'borderBlockStartColor', 'borderBlockStartStyle', 'borderBlockStartWidth' ],
+  borderBottom: [ 'borderBottomColor', 'borderBottomStyle', 'borderBottomWidth' ],
+  borderColor: [ 'borderBottomColor', 'borderLeftColor', 'borderRightColor', 'borderTopColor' ],
+  borderImage: [ 'borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageWidth' ],
+  borderInlineEnd: [ 'borderInlineEndColor', 'borderInlineEndStyle', 'borderInlineEndWidth' ],
+  borderInlineStart: [ 'borderInlineStartColor', 'borderInlineStartStyle', 'borderInlineStartWidth' ],
+  borderLeft: [ 'borderLeftColor', 'borderLeftStyle', 'borderLeftWidth' ],
+  borderRadius: [ 'borderBottomLeftRadius', 'borderBottomRightRadius', 'borderTopLeftRadius', 'borderTopRightRadius' ],
+  borderRight: [ 'borderRightColor', 'borderRightStyle', 'borderRightWidth' ],
+  borderStyle: [ 'borderBottomStyle', 'borderLeftStyle', 'borderRightStyle', 'borderTopStyle' ],
+  borderTop: [ 'borderTopColor', 'borderTopStyle', 'borderTopWidth' ],
+  borderWidth: [ 'borderBottomWidth', 'borderLeftWidth', 'borderRightWidth', 'borderTopWidth' ],
+  columnRule: [ 'columnRuleColor', 'columnRuleStyle', 'columnRuleWidth' ],
+  columns: [ 'columnCount', 'columnWidth' ],
+  flex: [ 'flexBasis', 'flexGrow', 'flexShrink' ],
+  flexFlow: [ 'flexDirection', 'flexWrap' ],
+  font: [ 'fontFamily', 'fontFeatureSettings', 'fontKerning', 'fontLanguageOverride', 'fontSize', 'fontSizeAdjust', 'fontStretch', 'fontStyle', 'fontVariant', 'fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition', 'fontWeight', 'lineHeight' ],
+  fontVariant: [ 'fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition' ],
+  gap: [ 'columnGap', 'rowGap' ],
+  grid: [ 'gridAutoColumns', 'gridAutoFlow', 'gridAutoRows', 'gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows' ],
+  gridArea: [ 'gridColumnEnd', 'gridColumnStart', 'gridRowEnd', 'gridRowStart' ],
+  gridColumn: [ 'gridColumnEnd', 'gridColumnStart' ],
+  gridColumnGap: [ 'columnGap' ],
+  gridGap: [ 'columnGap', 'rowGap' ],
+  gridRow: [ 'gridRowEnd', 'gridRowStart' ],
+  gridRowGap: [ 'rowGap' ],
+  gridTemplate: [ 'gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows' ],
+  listStyle: [ 'listStyleImage', 'listStylePosition', 'listStyleType' ],
+  margin: [ 'marginBottom', 'marginLeft', 'marginRight', 'marginTop' ],
+  marker: [ 'markerEnd', 'markerMid', 'markerStart' ],
+  mask: [ 'maskClip', 'maskComposite', 'maskImage', 'maskMode', 'maskOrigin', 'maskPositionX', 'maskPositionY', 'maskRepeat', 'maskSize' ],
+  maskPosition: [ 'maskPositionX', 'maskPositionY' ],
+  outline: [ 'outlineColor', 'outlineStyle', 'outlineWidth' ],
+  overflow: [ 'overflowX', 'overflowY' ],
+  padding: [ 'paddingBottom', 'paddingLeft', 'paddingRight', 'paddingTop' ],
+  placeContent: [ 'alignContent', 'justifyContent' ],
+  placeItems: [ 'alignItems', 'justifyItems' ],
+  placeSelf: [ 'alignSelf', 'justifySelf' ],
+  textDecoration: [ 'textDecorationColor', 'textDecorationLine', 'textDecorationStyle' ],
+  textEmphasis: [ 'textEmphasisColor', 'textEmphasisStyle' ],
+  transition: [ 'transitionDelay', 'transitionDuration', 'transitionProperty', 'transitionTimingFunction' ],
+  wordWrap: [ 'overflowWrap' ]
 };
 
 /**
@@ -3785,7 +3785,7 @@ function prefixKey(prefix, key) {
  */
 
 
-var prefixes = ['Webkit', 'ms', 'Moz', 'O']; // Using Object.keys here, or else the vanilla for-in loop makes IE8 go into an
+var prefixes = [ 'Webkit', 'ms', 'Moz', 'O' ]; // Using Object.keys here, or else the vanilla for-in loop makes IE8 go into an
 // infinite loop, because it iterates over the newly added props too.
 
 Object.keys(isUnitlessNumber).forEach(function (prop) {
@@ -4030,7 +4030,7 @@ function expandShorthandMap(styles) {
   var expanded = {};
 
   for (var key in styles) {
-    var longhands = shorthandToLonghand[key] || [key];
+    var longhands = shorthandToLonghand[key] || [ key ];
 
     for (var i = 0; i < longhands.length; i++) {
       expanded[longhands[i]] = key;
@@ -5086,7 +5086,7 @@ function enqueueStateRestore(target) {
     if (restoreQueue) {
       restoreQueue.push(target);
     } else {
-      restoreQueue = [target];
+      restoreQueue = [ target ];
     }
   } else {
     restoreTarget = target;
@@ -5928,10 +5928,6 @@ function findCurrentHostFiber(parent) {
     node.sibling.return = node.return;
     node = node.sibling;
   } // Flow needs the return null here, but ESLint complains about it.
-  // eslint-disable-next-line no-unreachable
-
-
-  return null;
 }
 function findCurrentHostFiberWithNoPortals(parent) {
   var currentParent = findCurrentFiberUsingSlowPath(parent);
@@ -5967,10 +5963,6 @@ function findCurrentHostFiberWithNoPortals(parent) {
     node.sibling.return = node.return;
     node = node.sibling;
   } // Flow needs the return null here, but ESLint complains about it.
-  // eslint-disable-next-line no-unreachable
-
-
-  return null;
 }
 function doesFiberContain(parentFiber, childFiber) {
   var node = childFiber;
@@ -6019,8 +6011,8 @@ var queuedExplicitHydrationTargets = [];
 function hasQueuedDiscreteEvents() {
   return queuedDiscreteEvents.length > 0;
 }
-var discreteReplayableEvents = ['mousedown', 'mouseup', 'touchcancel', 'touchend', 'touchstart', 'auxclick', 'dblclick', 'pointercancel', 'pointerdown', 'pointerup', 'dragend', 'dragstart', 'drop', 'compositionend', 'compositionstart', 'keydown', 'keypress', 'keyup', 'input', 'textInput', // Intentionally camelCase
-'copy', 'cut', 'paste', 'click', 'change', 'contextmenu', 'reset', 'submit'];
+var discreteReplayableEvents = [ 'mousedown', 'mouseup', 'touchcancel', 'touchend', 'touchstart', 'auxclick', 'dblclick', 'pointercancel', 'pointerdown', 'pointerup', 'dragend', 'dragstart', 'drop', 'compositionend', 'compositionstart', 'keydown', 'keypress', 'keyup', 'input', 'textInput', // Intentionally camelCase
+'copy', 'cut', 'paste', 'click', 'change', 'contextmenu', 'reset', 'submit' ];
 function isReplayableDiscreteEvent(eventType) {
   return discreteReplayableEvents.indexOf(eventType) > -1;
 }
@@ -6031,7 +6023,7 @@ function createQueuedReplayableEvent(blockedOn, domEventName, eventSystemFlags, 
     domEventName: domEventName,
     eventSystemFlags: eventSystemFlags | IS_REPLAYED,
     nativeEvent: nativeEvent,
-    targetContainers: [targetContainer]
+    targetContainers: [ targetContainer ]
   };
 }
 
@@ -6464,16 +6456,16 @@ var eventPriorities = new Map(); // We store most of the events in this module i
 // Lastly, we ignore prettier so we can keep the formatting sane.
 // prettier-ignore
 
-var discreteEventPairsForSimpleEventPlugin = ['cancel', 'cancel', 'click', 'click', 'close', 'close', 'contextmenu', 'contextMenu', 'copy', 'copy', 'cut', 'cut', 'auxclick', 'auxClick', 'dblclick', 'doubleClick', // Careful!
+var discreteEventPairsForSimpleEventPlugin = [ 'cancel', 'cancel', 'click', 'click', 'close', 'close', 'contextmenu', 'contextMenu', 'copy', 'copy', 'cut', 'cut', 'auxclick', 'auxClick', 'dblclick', 'doubleClick', // Careful!
 'dragend', 'dragEnd', 'dragstart', 'dragStart', 'drop', 'drop', 'focusin', 'focus', // Careful!
 'focusout', 'blur', // Careful!
-'input', 'input', 'invalid', 'invalid', 'keydown', 'keyDown', 'keypress', 'keyPress', 'keyup', 'keyUp', 'mousedown', 'mouseDown', 'mouseup', 'mouseUp', 'paste', 'paste', 'pause', 'pause', 'play', 'play', 'pointercancel', 'pointerCancel', 'pointerdown', 'pointerDown', 'pointerup', 'pointerUp', 'ratechange', 'rateChange', 'reset', 'reset', 'seeked', 'seeked', 'submit', 'submit', 'touchcancel', 'touchCancel', 'touchend', 'touchEnd', 'touchstart', 'touchStart', 'volumechange', 'volumeChange'];
-var otherDiscreteEvents = ['change', 'selectionchange', 'textInput', 'compositionstart', 'compositionend', 'compositionupdate'];
+'input', 'input', 'invalid', 'invalid', 'keydown', 'keyDown', 'keypress', 'keyPress', 'keyup', 'keyUp', 'mousedown', 'mouseDown', 'mouseup', 'mouseUp', 'paste', 'paste', 'pause', 'pause', 'play', 'play', 'pointercancel', 'pointerCancel', 'pointerdown', 'pointerDown', 'pointerup', 'pointerUp', 'ratechange', 'rateChange', 'reset', 'reset', 'seeked', 'seeked', 'submit', 'submit', 'touchcancel', 'touchCancel', 'touchend', 'touchEnd', 'touchstart', 'touchStart', 'volumechange', 'volumeChange' ];
+var otherDiscreteEvents = [ 'change', 'selectionchange', 'textInput', 'compositionstart', 'compositionend', 'compositionupdate' ];
 
 
-var userBlockingPairsForSimpleEventPlugin = ['drag', 'drag', 'dragenter', 'dragEnter', 'dragexit', 'dragExit', 'dragleave', 'dragLeave', 'dragover', 'dragOver', 'mousemove', 'mouseMove', 'mouseout', 'mouseOut', 'mouseover', 'mouseOver', 'pointermove', 'pointerMove', 'pointerout', 'pointerOut', 'pointerover', 'pointerOver', 'scroll', 'scroll', 'toggle', 'toggle', 'touchmove', 'touchMove', 'wheel', 'wheel']; // prettier-ignore
+var userBlockingPairsForSimpleEventPlugin = [ 'drag', 'drag', 'dragenter', 'dragEnter', 'dragexit', 'dragExit', 'dragleave', 'dragLeave', 'dragover', 'dragOver', 'mousemove', 'mouseMove', 'mouseout', 'mouseOut', 'mouseover', 'mouseOver', 'pointermove', 'pointerMove', 'pointerout', 'pointerOut', 'pointerover', 'pointerOver', 'scroll', 'scroll', 'toggle', 'toggle', 'touchmove', 'touchMove', 'wheel', 'wheel' ]; // prettier-ignore
 
-var continuousPairsForSimpleEventPlugin = ['abort', 'abort', ANIMATION_END, 'animationEnd', ANIMATION_ITERATION, 'animationIteration', ANIMATION_START, 'animationStart', 'canplay', 'canPlay', 'canplaythrough', 'canPlayThrough', 'durationchange', 'durationChange', 'emptied', 'emptied', 'encrypted', 'encrypted', 'ended', 'ended', 'error', 'error', 'gotpointercapture', 'gotPointerCapture', 'load', 'load', 'loadeddata', 'loadedData', 'loadedmetadata', 'loadedMetadata', 'loadstart', 'loadStart', 'lostpointercapture', 'lostPointerCapture', 'playing', 'playing', 'progress', 'progress', 'seeking', 'seeking', 'stalled', 'stalled', 'suspend', 'suspend', 'timeupdate', 'timeUpdate', TRANSITION_END, 'transitionEnd', 'waiting', 'waiting'];
+var continuousPairsForSimpleEventPlugin = [ 'abort', 'abort', ANIMATION_END, 'animationEnd', ANIMATION_ITERATION, 'animationIteration', ANIMATION_START, 'animationStart', 'canplay', 'canPlay', 'canplaythrough', 'canPlayThrough', 'durationchange', 'durationChange', 'emptied', 'emptied', 'encrypted', 'encrypted', 'ended', 'ended', 'error', 'error', 'gotpointercapture', 'gotPointerCapture', 'load', 'load', 'loadeddata', 'loadedData', 'loadedmetadata', 'loadedMetadata', 'loadstart', 'loadStart', 'lostpointercapture', 'lostPointerCapture', 'playing', 'playing', 'progress', 'progress', 'seeking', 'seeking', 'stalled', 'stalled', 'suspend', 'suspend', 'timeupdate', 'timeUpdate', TRANSITION_END, 'transitionEnd', 'waiting', 'waiting' ];
 /**
  * Turns
  * ['abort', ...]
@@ -6501,7 +6493,7 @@ function registerSimplePluginEventsAndSetTheirPriorities(eventTypes, priority) {
     var reactName = 'on' + capitalizedEvent;
     eventPriorities.set(topEvent, priority);
     topLevelEventsToReactNames.set(topEvent, reactName);
-    registerTwoPhaseEvent(reactName, [topEvent]);
+    registerTwoPhaseEvent(reactName, [ topEvent ]);
   }
 }
 
@@ -8086,7 +8078,7 @@ var WheelEventInterface = _assign({}, MouseEventInterface, {
 
 var SyntheticWheelEvent = createSyntheticEvent(WheelEventInterface);
 
-var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
+var END_KEYCODES = [ 9, 13, 27, 32 ]; // Tab, Return, Esc, Space
 
 var START_KEYCODE = 229;
 var canUseCompositionEvent = canUseDOM && 'CompositionEvent' in window;
@@ -8108,10 +8100,10 @@ var SPACEBAR_CODE = 32;
 var SPACEBAR_CHAR = String.fromCharCode(SPACEBAR_CODE);
 
 function registerEvents() {
-  registerTwoPhaseEvent('onBeforeInput', ['compositionend', 'keypress', 'textInput', 'paste']);
-  registerTwoPhaseEvent('onCompositionEnd', ['compositionend', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown']);
-  registerTwoPhaseEvent('onCompositionStart', ['compositionstart', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown']);
-  registerTwoPhaseEvent('onCompositionUpdate', ['compositionupdate', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown']);
+  registerTwoPhaseEvent('onBeforeInput', [ 'compositionend', 'keypress', 'textInput', 'paste' ]);
+  registerTwoPhaseEvent('onCompositionEnd', [ 'compositionend', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown' ]);
+  registerTwoPhaseEvent('onCompositionStart', [ 'compositionstart', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown' ]);
+  registerTwoPhaseEvent('onCompositionUpdate', [ 'compositionupdate', 'focusout', 'keydown', 'keypress', 'keyup', 'mousedown' ]);
 } // Track whether we've ever handled a keypress on the space key.
 
 
@@ -8513,7 +8505,7 @@ function isEventSupported(eventNameSuffix) {
 }
 
 function registerEvents$1() {
-  registerTwoPhaseEvent('onChange', ['change', 'click', 'focusin', 'focusout', 'input', 'keydown', 'keyup', 'selectionchange']);
+  registerTwoPhaseEvent('onChange', [ 'change', 'click', 'focusin', 'focusout', 'input', 'keydown', 'keyup', 'selectionchange' ]);
 }
 
 function createAndAccumulateChangeEvent(dispatchQueue, inst, nativeEvent, target) {
@@ -8755,10 +8747,10 @@ function extractEvents$1(dispatchQueue, domEventName, targetInst, nativeEvent, n
 }
 
 function registerEvents$2() {
-  registerDirectEvent('onMouseEnter', ['mouseout', 'mouseover']);
-  registerDirectEvent('onMouseLeave', ['mouseout', 'mouseover']);
-  registerDirectEvent('onPointerEnter', ['pointerout', 'pointerover']);
-  registerDirectEvent('onPointerLeave', ['pointerout', 'pointerover']);
+  registerDirectEvent('onMouseEnter', [ 'mouseout', 'mouseover' ]);
+  registerDirectEvent('onMouseLeave', [ 'mouseout', 'mouseover' ]);
+  registerDirectEvent('onPointerEnter', [ 'pointerout', 'pointerover' ]);
+  registerDirectEvent('onPointerLeave', [ 'pointerout', 'pointerover' ]);
 }
 /**
  * For almost every interaction we care about, there will be both a top-level
@@ -9329,7 +9321,7 @@ function setSelection(input, offsets) {
 var skipSelectionChangeEvent = canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
 function registerEvents$3() {
-  registerTwoPhaseEvent('onSelect', ['focusout', 'contextmenu', 'dragend', 'focusin', 'keydown', 'keyup', 'mousedown', 'mouseup', 'selectionchange']);
+  registerTwoPhaseEvent('onSelect', [ 'focusout', 'contextmenu', 'dragend', 'focusin', 'keydown', 'keyup', 'mousedown', 'mouseup', 'selectionchange' ]);
 }
 
 var activeElement$1 = null;
@@ -9664,11 +9656,11 @@ function extractEvents$5(dispatchQueue, domEventName, targetInst, nativeEvent, n
 } // List of events that need to be individually attached to media elements.
 
 
-var mediaEventTypes = ['abort', 'canplay', 'canplaythrough', 'durationchange', 'emptied', 'encrypted', 'ended', 'error', 'loadeddata', 'loadedmetadata', 'loadstart', 'pause', 'play', 'playing', 'progress', 'ratechange', 'seeked', 'seeking', 'stalled', 'suspend', 'timeupdate', 'volumechange', 'waiting']; // We should not delegate these events to the container, but rather
+var mediaEventTypes = [ 'abort', 'canplay', 'canplaythrough', 'durationchange', 'emptied', 'encrypted', 'ended', 'error', 'loadeddata', 'loadedmetadata', 'loadstart', 'pause', 'play', 'playing', 'progress', 'ratechange', 'seeked', 'seeking', 'stalled', 'suspend', 'timeupdate', 'volumechange', 'waiting' ]; // We should not delegate these events to the container, but rather
 // set them on the actual target element itself. This is primarily
 // because these events do not consistently bubble in the DOM.
 
-var nonDelegatedEvents = new Set(['cancel', 'close', 'invalid', 'load', 'scroll', 'toggle'].concat(mediaEventTypes));
+var nonDelegatedEvents = new Set([ 'cancel', 'close', 'invalid', 'load', 'scroll', 'toggle' ].concat(mediaEventTypes));
 
 function executeDispatch(event, listener, currentTarget) {
   var type = event.type || 'unknown-event';
@@ -10976,7 +10968,7 @@ function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, root
             warnForTextDifference(domElement.textContent, nextProp);
           }
 
-          updatePayload = [CHILDREN, nextProp];
+          updatePayload = [ CHILDREN, nextProp ];
         }
       } else if (typeof nextProp === 'number') {
         if (domElement.textContent !== '' + nextProp) {
@@ -10984,7 +10976,7 @@ function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, root
             warnForTextDifference(domElement.textContent, nextProp);
           }
 
-          updatePayload = [CHILDREN, '' + nextProp];
+          updatePayload = [ CHILDREN, '' + nextProp ];
         }
       }
     } else if (registrationNameDependencies.hasOwnProperty(propKey)) {
@@ -11217,16 +11209,16 @@ var updatedAncestorInfo = function () {};
   // <p> tags where the beginning of the second element implicitly closes the
   // first, causing a confusing mess.
   // https://html.spec.whatwg.org/multipage/syntax.html#special
-  var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp']; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
+  var specialTags = [ 'address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp' ]; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
 
-  var inScopeTags = ['applet', 'caption', 'html', 'table', 'td', 'th', 'marquee', 'object', 'template', // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
+  var inScopeTags = [ 'applet', 'caption', 'html', 'table', 'td', 'th', 'marquee', 'object', 'template', // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
   // TODO: Distinguish by namespace here -- for <title>, including it here
   // errs on the side of fewer warnings
-  'foreignObject', 'desc', 'title']; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-button-scope
+  'foreignObject', 'desc', 'title' ]; // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-button-scope
 
-  var buttonScopeTags = inScopeTags.concat(['button']); // https://html.spec.whatwg.org/multipage/syntax.html#generate-implied-end-tags
+  var buttonScopeTags = inScopeTags.concat([ 'button' ]); // https://html.spec.whatwg.org/multipage/syntax.html#generate-implied-end-tags
 
-  var impliedEndTags = ['dd', 'dt', 'li', 'option', 'optgroup', 'p', 'rp', 'rt'];
+  var impliedEndTags = [ 'dd', 'dt', 'li', 'option', 'optgroup', 'p', 'rp', 'rt' ];
   var emptyAncestorInfo = {
     current: null,
     formTag: null,
@@ -12716,7 +12708,7 @@ function scheduleSyncCallback(callback) {
   // Push this callback into an internal queue. We'll flush these either in
   // the next tick, or earlier if something calls `flushSyncCallbackQueue`.
   if (syncQueue === null) {
-    syncQueue = [callback]; // Flush the queue in the next tick, at the earliest.
+    syncQueue = [ callback ]; // Flush the queue in the next tick, at the earliest.
 
     immediateQueueCallbackNode = Scheduler_scheduleCallback(Scheduler_ImmediatePriority, flushSyncCallbackQueueImpl);
   } else {
@@ -13688,7 +13680,7 @@ function processUpdateQueue(workInProgress, props, instance, renderLanes) {
           var effects = queue.effects;
 
           if (effects === null) {
-            queue.effects = [update];
+            queue.effects = [ update ];
           } else {
             effects.push(update);
           }
@@ -16271,7 +16263,7 @@ function mountHookTypesDev() {
     var hookName = currentHookNameInDev;
 
     if (hookTypesDev === null) {
-      hookTypesDev = [hookName];
+      hookTypesDev = [ hookName ];
     } else {
       hookTypesDev.push(hookName);
     }
@@ -16646,7 +16638,7 @@ function mountReducer(reducer, initialArg, init) {
     lastRenderedState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null, currentlyRenderingFiber$1, queue);
-  return [hook.memoizedState, dispatch];
+  return [ hook.memoizedState, dispatch ];
 }
 
 function updateReducer(reducer, initialArg, init) {
@@ -16774,7 +16766,7 @@ function updateReducer(reducer, initialArg, init) {
   }
 
   var dispatch = queue.dispatch;
-  return [hook.memoizedState, dispatch];
+  return [ hook.memoizedState, dispatch ];
 }
 
 function rerenderReducer(reducer, initialArg, init) {
@@ -16827,7 +16819,7 @@ function rerenderReducer(reducer, initialArg, init) {
     queue.lastRenderedState = newState;
   }
 
-  return [newState, dispatch];
+  return [ newState, dispatch ];
 }
 
 function readFromUnsubcribedMutableSource(root, source, getSnapshot) {
@@ -16968,7 +16960,7 @@ function useMutableSource(hook, source, getSnapshot, subscribe) {
 
       markRootEntangled(root, root.mutableReadLanes);
     }
-  }, [getSnapshot, source, subscribe]); // If we got a new source or subscribe function, re-subscribe in a passive effect.
+  }, [ getSnapshot, source, subscribe ]); // If we got a new source or subscribe function, re-subscribe in a passive effect.
 
   dispatcher.useEffect(function () {
     var handleChange = function () {
@@ -17000,7 +16992,7 @@ function useMutableSource(hook, source, getSnapshot, subscribe) {
     }
 
     return unsubscribe;
-  }, [source, subscribe]); // If any of the inputs to useMutableSource change, reading is potentially unsafe.
+  }, [ source, subscribe ]); // If any of the inputs to useMutableSource change, reading is potentially unsafe.
   //
   // If either the source or the subscription have changed we can't can't trust the update queue.
   // Maybe the source changed in a way that the old subscription ignored but the new one depends on.
@@ -17067,7 +17059,7 @@ function mountState(initialState) {
     lastRenderedState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null, currentlyRenderingFiber$1, queue);
-  return [hook.memoizedState, dispatch];
+  return [ hook.memoizedState, dispatch ];
 }
 
 function updateState(initialState) {
@@ -17224,7 +17216,7 @@ function mountImperativeHandle(ref, create, deps) {
   } // TODO: If deps are provided, should we skip comparing the ref itself?
 
 
-  var effectDeps = deps !== null && deps !== undefined ? deps.concat([ref]) : null;
+  var effectDeps = deps !== null && deps !== undefined ? deps.concat([ ref ]) : null;
   return mountEffectImpl(Update, Layout, imperativeHandleEffect.bind(null, create, ref), effectDeps);
 }
 
@@ -17236,7 +17228,7 @@ function updateImperativeHandle(ref, create, deps) {
   } // TODO: If deps are provided, should we skip comparing the ref itself?
 
 
-  var effectDeps = deps !== null && deps !== undefined ? deps.concat([ref]) : null;
+  var effectDeps = deps !== null && deps !== undefined ? deps.concat([ ref ]) : null;
   return updateEffectImpl(Update, Layout, imperativeHandleEffect.bind(null, create, ref), effectDeps);
 }
 
@@ -17250,7 +17242,7 @@ var updateDebugValue = mountDebugValue;
 function mountCallback(callback, deps) {
   var hook = mountWorkInProgressHook();
   var nextDeps = deps === undefined ? null : deps;
-  hook.memoizedState = [callback, nextDeps];
+  hook.memoizedState = [ callback, nextDeps ];
   return callback;
 }
 
@@ -17269,7 +17261,7 @@ function updateCallback(callback, deps) {
     }
   }
 
-  hook.memoizedState = [callback, nextDeps];
+  hook.memoizedState = [ callback, nextDeps ];
   return callback;
 }
 
@@ -17277,7 +17269,7 @@ function mountMemo(nextCreate, deps) {
   var hook = mountWorkInProgressHook();
   var nextDeps = deps === undefined ? null : deps;
   var nextValue = nextCreate();
-  hook.memoizedState = [nextValue, nextDeps];
+  hook.memoizedState = [ nextValue, nextDeps ];
   return nextValue;
 }
 
@@ -17298,7 +17290,7 @@ function updateMemo(nextCreate, deps) {
   }
 
   var nextValue = nextCreate();
-  hook.memoizedState = [nextValue, nextDeps];
+  hook.memoizedState = [ nextValue, nextDeps ];
   return nextValue;
 }
 
@@ -17316,7 +17308,7 @@ function mountDeferredValue(value) {
     } finally {
       ReactCurrentBatchConfig$1.transition = prevTransition;
     }
-  }, [value]);
+  }, [ value ]);
   return prevValue;
 }
 
@@ -17334,7 +17326,7 @@ function updateDeferredValue(value) {
     } finally {
       ReactCurrentBatchConfig$1.transition = prevTransition;
     }
-  }, [value]);
+  }, [ value ]);
   return prevValue;
 }
 
@@ -17352,7 +17344,7 @@ function rerenderDeferredValue(value) {
     } finally {
       ReactCurrentBatchConfig$1.transition = prevTransition;
     }
-  }, [value]);
+  }, [ value ]);
   return prevValue;
 }
 
@@ -17386,7 +17378,7 @@ function mountTransition() {
 
   var start = startTransition.bind(null, setPending);
   mountRef(start);
-  return [start, isPending];
+  return [ start, isPending ];
 }
 
 function updateTransition() {
@@ -17395,7 +17387,7 @@ function updateTransition() {
 
   var startRef = updateRef();
   var start = startRef.current;
-  return [start, isPending];
+  return [ start, isPending ];
 }
 
 function rerenderTransition() {
@@ -17404,7 +17396,7 @@ function rerenderTransition() {
 
   var startRef = updateRef();
   var start = startRef.current;
-  return [start, isPending];
+  return [ start, isPending ];
 }
 
 var isUpdatingOpaqueValueInRenderPhase = false;
@@ -23329,7 +23321,7 @@ function scheduleUpdateOnFiber(fiber, lane, eventTime) {
       // This is the result of a discrete event. Track the lowest priority
       // discrete update per root so we can flush them early, if needed.
       if (rootsWithPendingDiscreteUpdates === null) {
-        rootsWithPendingDiscreteUpdates = new Set([root]);
+        rootsWithPendingDiscreteUpdates = new Set([ root ]);
       } else {
         rootsWithPendingDiscreteUpdates.add(root);
       }
@@ -25057,7 +25049,7 @@ function isAlreadyFailedLegacyErrorBoundary(instance) {
 }
 function markLegacyErrorBoundaryAsFailed(instance) {
   if (legacyErrorBoundariesThatAlreadyFailed === null) {
-    legacyErrorBoundariesThatAlreadyFailed = new Set([instance]);
+    legacyErrorBoundariesThatAlreadyFailed = new Set([ instance ]);
   } else {
     legacyErrorBoundariesThatAlreadyFailed.add(instance);
   }
@@ -25283,7 +25275,7 @@ function warnAboutUpdateOnNotYetMountedFiberInDEV(fiber) {
 
       didWarnStateUpdateForNotYetMountedComponent.add(componentName);
     } else {
-      didWarnStateUpdateForNotYetMountedComponent = new Set([componentName]);
+      didWarnStateUpdateForNotYetMountedComponent = new Set([ componentName ]);
     }
 
     var previousFiber = current;
@@ -25330,7 +25322,7 @@ function warnAboutUpdateOnUnmountedFiberInDEV(fiber) {
 
       didWarnStateUpdateForUnmountedComponent.add(componentName);
     } else {
-      didWarnStateUpdateForUnmountedComponent = new Set([componentName]);
+      didWarnStateUpdateForUnmountedComponent = new Set([ componentName ]);
     }
 
     if (isFlushingPassiveEffects) ; else {
@@ -25532,7 +25524,7 @@ function computeThreadID(root, lane) {
 function markSpawnedWork(lane) {
 
   if (spawnedWorkDuringRender === null) {
-    spawnedWorkDuringRender = [lane];
+    spawnedWorkDuringRender = [ lane ];
   } else {
     spawnedWorkDuringRender.push(lane);
   }
@@ -26068,7 +26060,6 @@ function findChildHostInstancesForFiberShallowly(fiber, hostInstances) {
     }
   }
 
-  return false;
 }
 
 var hasBadMapPolyfill;
@@ -26080,8 +26071,8 @@ var hasBadMapPolyfill;
     var nonExtensibleObject = Object.preventExtensions({});
     /* eslint-disable no-new */
 
-    new Map([[nonExtensibleObject, null]]);
-    new Set([nonExtensibleObject]);
+    new Map([ [ nonExtensibleObject, null ] ]);
+    new Set([ nonExtensibleObject ]);
     /* eslint-enable no-new */
   } catch (e) {
     // TODO: Consider warning about bad polyfills
@@ -26748,7 +26739,7 @@ function registerMutableSourceForHydration(root, mutableSource) {
   // Retaining it forever may interfere with GC.
 
   if (root.mutableSourceEagerHydrationData == null) {
-    root.mutableSourceEagerHydrationData = [mutableSource, version];
+    root.mutableSourceEagerHydrationData = [ mutableSource, version ];
   } else {
     root.mutableSourceEagerHydrationData.push(mutableSource, version);
   }
@@ -27651,8 +27642,8 @@ function unstable_createPortal(children, container) {
 var Internals = {
   // Keep in sync with ReactTestUtils.js, and ReactTestUtilsAct.js.
   // This is an array for better minification.
-  Events: [getInstanceFromNode, getNodeFromInstance, getFiberCurrentPropsFromNode, enqueueStateRestore, restoreStateIfNeeded, flushPassiveEffects, // TODO: This is related to `act`, not events. Move to separate key?
-  IsThisRendererActing]
+  Events: [ getInstanceFromNode, getNodeFromInstance, getFiberCurrentPropsFromNode, enqueueStateRestore, restoreStateIfNeeded, flushPassiveEffects, // TODO: This is related to `act`, not events. Move to separate key?
+  IsThisRendererActing ]
 };
 var foundDevTools = injectIntoDevTools({
   findFiberByHostInstance: getClosestInstanceFromNode,
@@ -27719,14 +27710,6 @@ function checkDCE() {
     // this message doesn't occur elsewhere in this function, or it will cause
     // a false positive.
     throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
   }
 }
 
@@ -27953,7 +27936,7 @@ function printWarning(level, format, args) {
 
     if (stack !== '') {
       format += '%s';
-      args = args.concat([stack]);
+      args = args.concat([ stack ]);
     }
 
     var argsWithFormat = args.map(function (item) {
@@ -28139,8 +28122,8 @@ Component.prototype.forceUpdate = function (callback) {
 
 {
   var deprecatedAPIs = {
-    isMounted: ['isMounted', 'Instead, make sure to clean up subscriptions and pending requests in ' + 'componentWillUnmount to prevent memory leaks.'],
-    replaceState: ['replaceState', 'Refactor your code to use setState instead (see ' + 'https://github.com/facebook/react/issues/3236).']
+    isMounted: [ 'isMounted', 'Instead, make sure to clean up subscriptions and pending requests in ' + 'componentWillUnmount to prevent memory leaks.' ],
+    replaceState: [ 'replaceState', 'Refactor your code to use setState instead (see ' + 'https://github.com/facebook/react/issues/3236).' ]
   };
 
   var defineDeprecationWarning = function (methodName, info) {
@@ -30034,8 +30017,8 @@ function cloneElementWithValidation(element, props, children) {
     var frozenObject = Object.freeze({});
     /* eslint-disable no-new */
 
-    new Map([[frozenObject, null]]);
-    new Set([frozenObject]);
+    new Map([ [ frozenObject, null ] ]);
+    new Set([ frozenObject ]);
     /* eslint-enable no-new */
   } catch (e) {
   }
@@ -30845,7 +30828,7 @@ function markTaskStart(task, ms) {
       // performance.now returns a float, representing milliseconds. When the
       // event is logged, it's coerced to an int. Convert to microseconds to
       // maintain extra degrees of precision.
-      logEvent([TaskStartEvent, ms * 1000, task.id, task.priorityLevel]);
+      logEvent([ TaskStartEvent, ms * 1000, task.id, task.priorityLevel ]);
     }
   }
 }
@@ -30856,7 +30839,7 @@ function markTaskCompleted(task, ms) {
     profilingState[QUEUE_SIZE]--;
 
     if (eventLog !== null) {
-      logEvent([TaskCompleteEvent, ms * 1000, task.id]);
+      logEvent([ TaskCompleteEvent, ms * 1000, task.id ]);
     }
   }
 }
@@ -30865,7 +30848,7 @@ function markTaskCanceled(task, ms) {
     profilingState[QUEUE_SIZE]--;
 
     if (eventLog !== null) {
-      logEvent([TaskCancelEvent, ms * 1000, task.id]);
+      logEvent([ TaskCancelEvent, ms * 1000, task.id ]);
     }
   }
 }
@@ -30876,7 +30859,7 @@ function markTaskErrored(task, ms) {
     profilingState[QUEUE_SIZE]--;
 
     if (eventLog !== null) {
-      logEvent([TaskErrorEvent, ms * 1000, task.id]);
+      logEvent([ TaskErrorEvent, ms * 1000, task.id ]);
     }
   }
 }
@@ -30888,7 +30871,7 @@ function markTaskRun(task, ms) {
     profilingState[CURRENT_RUN_ID] = runIdCounter;
 
     if (eventLog !== null) {
-      logEvent([TaskRunEvent, ms * 1000, task.id, runIdCounter]);
+      logEvent([ TaskRunEvent, ms * 1000, task.id, runIdCounter ]);
     }
   }
 }
@@ -30899,7 +30882,7 @@ function markTaskYield(task, ms) {
     profilingState[CURRENT_RUN_ID] = 0;
 
     if (eventLog !== null) {
-      logEvent([TaskYieldEvent, ms * 1000, task.id, runIdCounter]);
+      logEvent([ TaskYieldEvent, ms * 1000, task.id, runIdCounter ]);
     }
   }
 }
@@ -30908,14 +30891,14 @@ function markSchedulerSuspended(ms) {
     mainThreadIdCounter++;
 
     if (eventLog !== null) {
-      logEvent([SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter]);
+      logEvent([ SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter ]);
     }
   }
 }
 function markSchedulerUnsuspended(ms) {
   {
     if (eventLog !== null) {
-      logEvent([SchedulerResumeEvent, ms * 1000, mainThreadIdCounter]);
+      logEvent([ SchedulerResumeEvent, ms * 1000, mainThreadIdCounter ]);
     }
   }
 }
@@ -31700,7 +31683,7 @@ if (true) {
 
               update(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_1__["default"]);
       })(__WEBPACK_OUTDATED_DEPENDENCIES__); }.bind(this)
-    )
+    );
   }
 
   module.hot.dispose(function() {
@@ -32038,7 +32021,7 @@ function SideNavList(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "side-nav"
   }, items.map(function (item, i) {
-    var btnClassNames = ['side-nav__button'];
+    var btnClassNames = [ 'side-nav__button' ];
     if (props.activeTab === item.name) btnClassNames.push('active');
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i,
@@ -32109,6 +32092,7 @@ __webpack_require__.r(__webpack_exports__);
 var BLOCK_NAME = 'experience-entry';
 var TOOL_LIST_HEADER = 'Tools:';
 var RESP_LIST_HEADER = 'My responsibilities included:';
+var MILLISECONDS_IN_DAY = 8.64 * Math.pow(10, 7);
 function ExperienceEntry(props) {
   var date = props.date,
       location = props.location,
@@ -32118,9 +32102,20 @@ function ExperienceEntry(props) {
       companyName = props.companyName,
       duration = props.duration,
       isCurrent = props.isCurrent,
+      startTimestamp = props.startTimestamp,
       tools = props.tools,
       responsibilities = props.responsibilities,
       responsibilitiesHeader = props.responsibilitiesHeader;
+
+  function calculateEllapsedTime() {
+    if (!isCurrent) return;
+    var ellapsedMilliseconds = Date.now() - startTimestamp;
+    var totalDays = Math.floor(ellapsedMilliseconds / MILLISECONDS_IN_DAY);
+    var displayYears = Math.floor(totalDays / 365);
+    var displayMonths = Math.floor((totalDays - displayYears * 12 * 30) / 30);
+    return displayMonths ? "".concat(displayYears, " yrs ").concat(displayMonths, " mos") : "".concat(displayYears, " yrs");
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: BLOCK_NAME
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -32133,7 +32128,7 @@ function ExperienceEntry(props) {
     className: "".concat(BLOCK_NAME, "__company-location location ").concat(country)
   }, location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "".concat(BLOCK_NAME, "__duration")
-  }, duration), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, isCurrent ? calculateEllapsedTime() : duration), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "".concat(BLOCK_NAME, "__description")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description), responsibilities && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "responsibilities"
@@ -32249,7 +32244,7 @@ function Skills(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "contactData", function() { return contactData; });
-var contactData = [{
+var contactData = [ {
   label: 'jim.castex@gmail.com',
   site: 'mail'
 }, {
@@ -32264,7 +32259,7 @@ var contactData = [{
   label: '@jimousse',
   link: 'https://twitter.com/jimmycastex',
   site: 'twitter'
-}];
+} ];
 
 /***/ }),
 
@@ -32280,7 +32275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "educationEntries", function() { return educationEntries; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "experienceEntries", function() { return experienceEntries; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "skillItems", function() { return skillItems; });
-var educationEntries = [{
+var educationEntries = [ {
   date: '2013 - 2017',
   schoolName: 'Telecom ParisTech',
   diploma: 'Master of Science in Engineering',
@@ -32301,33 +32296,33 @@ var educationEntries = [{
   description: 'Highly selective training for national competitive entrance exams to leading French “Grandes Écoles”. Intense training in mathematics and physics.',
   location: 'Paris, France',
   country: 'FR'
-}];
-var experienceEntries = [{
+} ];
+var experienceEntries = [ {
   date: '2019 - Present',
   companyName: 'ServiceNow',
   title: 'Senior Software Engineer',
   description: 'Working on the Now Design System at ServiceNow. Building Data Visualisations with D3.',
   location: 'Amsterdam, Netherlands',
   country: 'NL',
-  duration: '3 yr 11 mos',
+  startTimestamp: 1491026400000,
   responsibilitiesHeader: 'My responsibilities include:',
-  responsibilities: ['Developing a JavaScript charting library for the Now Platform, using D3', 'Working closely with designers and product owners to develop powerful, beautiful and accessible data visualisations', 'Packaging our charts into reusable and light web components using the Now UI Framework', 'Point of contact for other teams at ServiceNow who want to integrate our library into the end product', 'Supporting other developers from app teams and constantly fixing bugs to improve the quality of our code'],
-  tools: ['JavaScript', 'D3', 'Sass', 'Web Components'],
+  responsibilities: [ 'Developing a JavaScript charting library for the Now Platform, using D3', 'Working closely with designers and product owners to develop powerful, beautiful and accessible data visualisations', 'Packaging our charts into reusable and light web components using the Now UI Framework', 'Point of contact for other teams at ServiceNow who want to integrate our library into the end product', 'Supporting other developers from app teams and constantly fixing bugs to improve the quality of our code' ],
+  tools: [ 'JavaScript', 'D3', 'Sass', 'Web Components' ],
   isCurrent: true
 }, {
   date: '2017 – 2019',
   title: 'Software Engineer',
   description: 'I worked on the Performance Analytics and Reporting product and was the frontend team lead for timeseries charts integration into the product.',
-  tools: ['JavaScript', 'React', 'Redux', 'Webpack', 'Java', 'Highcharts', 'Enzyme', 'Jest'],
-  responsibilities: ['Integrated and componentized, using React, timeseries visualizations, supported other teams, maintained the project and actively transferred knowledge to my teammates and new hires', 'Supervised the migration from Highcharts to in-house D3 chart library, evaluated risks of regression and mismatch, architectural changes, gathered business and technical requirements and worked closely with product owners, quality engineers and UX designers', 'Participated in a global company Hackathon, won 1st place in EMEA and 3rd globally']
+  tools: [ 'JavaScript', 'React', 'Redux', 'Webpack', 'Java', 'Highcharts', 'Enzyme', 'Jest' ],
+  responsibilities: [ 'Integrated and componentized, using React, timeseries visualizations, supported other teams, maintained the project and actively transferred knowledge to my teammates and new hires', 'Supervised the migration from Highcharts to in-house D3 chart library, evaluated risks of regression and mismatch, architectural changes, gathered business and technical requirements and worked closely with product owners, quality engineers and UX designers', 'Participated in a global company Hackathon, won 1st place in EMEA and 3rd globally' ]
 }, {
   date: '2016',
   companyName: 'Amadeus',
   title: 'Software Engineer Intern',
   description: 'Mobile Development Internship in the R&D Payment Department.',
   responsibilitiesHeader: 'What I achieved:',
-  responsibilities: ['Built hybrid mobile applications that perform payments using QR Code', 'Development of a payment Android SDK', 'Development of several Cordova plugins'],
-  tools: ['JavaScript', 'Ionic', 'PhoneGap', 'Angular', 'Android', 'Java'],
+  responsibilities: [ 'Built hybrid mobile applications that perform payments using QR Code', 'Development of a payment Android SDK', 'Development of several Cordova plugins' ],
+  tools: [ 'JavaScript', 'Ionic', 'PhoneGap', 'Angular', 'Android', 'Java' ],
   location: 'Madrid, Spain',
   country: 'ES',
   duration: '6 mos'
@@ -32337,13 +32332,13 @@ var experienceEntries = [{
   title: 'Software Engineer Intern',
   description: 'Worked in the QA team on IBM Decision Optimization on Cloud (DOcloud).',
   location: 'Nice, France',
-  tools: ['Python', 'Java', 'Docker', 'Linux'],
+  tools: [ 'Python', 'Java', 'Docker', 'Linux' ],
   responsibilitiesHeader: 'What I achieved:',
-  responsibilities: ['Collaborated with a team of 10+ senior engineers', 'Evaluated possible solutions to contain unsafe code', 'Used Docker to execute unsafe Python code in a cloud architecture', 'Implemented a cloud component in Java, responsible of solving Python models, in a test driven development approach'],
+  responsibilities: [ 'Collaborated with a team of 10+ senior engineers', 'Evaluated possible solutions to contain unsafe code', 'Used Docker to execute unsafe Python code in a cloud architecture', 'Implemented a cloud component in Java, responsible of solving Python models, in a test driven development approach' ],
   country: 'FR',
   duration: '6 mos'
-}];
-var skillItems = [{
+} ];
+var skillItems = [ {
   label: 'JavaScript',
   "class": 'js'
 }, {
@@ -32379,7 +32374,7 @@ var skillItems = [{
 }, {
   label: 'Team player',
   "class": 'team'
-}];
+} ];
 
 /***/ }),
 
@@ -32401,7 +32396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var TABS = [{
+var TABS = [ {
   name: 'about',
   label: 'About',
   comp: _components_About__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -32417,7 +32412,7 @@ var TABS = [{
   name: 'contact',
   label: 'Contact',
   comp: _components_Contact__WEBPACK_IMPORTED_MODULE_1__["default"]
-}];
+} ];
 
 /***/ }),
 
