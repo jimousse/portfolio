@@ -1,6 +1,7 @@
 .sidebar {
   background-color: $color-secondary;
   flex: 0 0 23rem;
+  overflow: auto;
 
   
   @include respond(medium) {
