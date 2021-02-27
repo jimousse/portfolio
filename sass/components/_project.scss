@@ -88,9 +88,11 @@ $card-width: 33rem;
     }
   }
 
-  &__link:hover {
-    background-color: $color-secondary-dark;
-    transform: scale(1.15);
+  @media (hover: hover) {
+    &__link:hover {
+      background-color: $color-secondary-dark;
+      transform: scale(1.15);
+    }
   }
 
   &__link:active {
