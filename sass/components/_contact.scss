@@ -2,16 +2,6 @@
   font-size: 2rem;
   margin: 5rem;
 
-  @include respond(medium) {
-    @include absoluteCentering;
-    top: 33%;
-    margin: 0;
-  }
-
-  @include respond(medium) {
-    top: 40%;
-  }
-
   &__item {
     display: flex;
     align-items: center;

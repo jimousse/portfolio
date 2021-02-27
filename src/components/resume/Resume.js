@@ -6,7 +6,7 @@ import { educationEntries, experienceEntries, skillItems } from '../../data/resu
 
 export default function Resume() {
   return (
-    <div>
+    <div className="resume-container">
       <div className="resume-section">
         <div className="resume-section__title">Skills</div>
         <Skills items={skillItems} />

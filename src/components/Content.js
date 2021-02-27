@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import video from '../../img/relax1.mp4';
 
 export default function Content(props) {
   const contentRef = useRef(null);
@@ -11,8 +12,16 @@ export default function Content(props) {
   });
 
   return (
-    <div ref={contentRef} className="content">
-      {props.children}
+    <div className="parentContent">
+      <div className="background">
+        <video muted autoPlay loop className="background__content">
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+      <div ref={contentRef} className="content">
+        {props.children}
+      </div>
     </div>
+
   );
 }

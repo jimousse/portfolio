@@ -11,6 +11,12 @@
               inset 0px 0px 0px 4px $color-tertiary-light;
 }
 
+@mixin whiteBgOnVideo() {
+  background-color: rgba($color-white, .8);
+  border-radius: 10px;
+  box-shadow: 1rem 0 3rem $color-white, -1rem 0 3rem $color-white;
+}
+
 /*
   MEDIA QUERY MANAGER
 */
