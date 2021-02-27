@@ -23,39 +23,20 @@
     z-index: 10;
     font-size: 1.7rem;
     cursor: pointer;
-
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1 ;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 2px;
-      background-color: $color-primary-dark;
-      transform: scaleY(0);
-      transition: transform .2s,
-                  width .4s cubic-bezier(1,0,0,1) .2s,
-                  background-color .1s;
-    }
+    transition: all .4s;
 
     &:focus {
       outline: none;
       @include focusRing;
-
-      &:before {
-        @include focusRing;
-      }
     }
 
     @media (hover: hover) {
-      &:hover:before {
-        transform: scaleY(1);
-        width: 100%;
+      &:hover {
+        background-color: $color-primary-dark;
       }
     }
 
-    &:active:before,
+    &:active,
     &.active {
       background-color: $color-primary-darker;
     }

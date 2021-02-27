@@ -56,7 +56,12 @@
   }
 
   &__description {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    color: $color-grey-dark-4;
+    
+    .location {
+      margin-left: .5rem;
+    }
   }
 
   &__text {

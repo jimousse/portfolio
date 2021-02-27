@@ -62,6 +62,8 @@
   grid-template-areas: "icon text" ". text";
   grid-column-gap: 1rem;
   align-items: start;
+  color: $color-grey-dark-4;
+  font-size: 1.7rem;
 
   &:before {
     content: "";
