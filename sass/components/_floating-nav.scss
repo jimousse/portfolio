@@ -28,8 +28,8 @@
   // BACKGROUND
   &__background {
     background-image: radial-gradient(
-      $color-secondary, 
-      darken($color-secondary-dark, 20%)
+      $color-primary, 
+      $color-secondary 20%
     );
     height: 3rem;
     width: 3rem;
@@ -44,7 +44,7 @@
   }
 
   &__checkbox:checked + &__button {
-    background-color: $color-primary;
+    background-color: $color-secondary;
   }
   
   &__checkbox:checked ~ &__background {
