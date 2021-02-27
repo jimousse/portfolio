@@ -38,7 +38,7 @@
   color: $color-grey-dark-4;
 
   &.current {
-    color: $color-secondary;
+    color: $color-tertiary;
     font-weight: 700;
   }
 }
@@ -68,7 +68,7 @@
     display: inline-block;
     height: 1.8rem;
     width: 1.8rem;
-    background-color: $color-primary-dark;
+    background-color: $color-secondary-dark;
     mask-size: cover;
     -webkit-mask-size: cover;
 

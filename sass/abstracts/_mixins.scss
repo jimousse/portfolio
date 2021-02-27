@@ -7,8 +7,8 @@
 
 @mixin focusRing() {
   outline: none;
-  box-shadow: inset 0px 0px 0px 2px $color-primary,
-              inset 0px 0px 0px 4px $color-primary-light;
+  box-shadow: inset 0px 0px 0px 2px $color-tertiary,
+              inset 0px 0px 0px 4px $color-tertiary-light;
 }
 
 /*

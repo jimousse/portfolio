@@ -20,14 +20,19 @@ $card-width: 33rem;
     transition: all .3s;
     width: $card-width;
 
-    &:hover {
-      transform: translateY(-1rem);
-      box-shadow: $box-shadow-dark;
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-1rem);
+        box-shadow: $box-shadow-dark;
+      }
     }
+
   }
 
-  &__card:hover > &__image {
-    filter: none;
+  @media (hover: hover) {
+    &__card:hover > &__image {
+      filter: none;
+    }
   }
 
   &__image {
@@ -35,7 +40,9 @@ $card-width: 33rem;
     height: 22rem;
     background-size: cover;
     box-shadow: 0 1rem 2rem rgba($color-black, .4);
-    filter: brightness(60%);
+    @media (hover: hover) {
+      filter: brightness(70%);
+    }
   }
 
   &__title {
@@ -45,12 +52,12 @@ $card-width: 33rem;
     padding: .5rem 1rem;
     display: inline-block;
     text-align: center;
-    background-color: $color-primary-dark;
+    background-color: $color-secondary;
     align-self: center;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
     transform: translateY(-50%);
-    border: 3px solid $color-secondary;
+    border: 3px solid $color-secondary-light;
   }
 
   &__description {
@@ -64,7 +71,7 @@ $card-width: 33rem;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    background-color: rgba($color-primary, 0.2);
+    background-color: rgba($color-tertiary-dark, 0.2);
   }
   &__link:link,
   &__link:visited {

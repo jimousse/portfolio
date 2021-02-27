@@ -20,6 +20,8 @@
     padding: 3px;
     margin-bottom: 5rem;
     flex: 0 0 auto;
+    border: 5px solid $color-tertiary;
+    border-radius: 50%;
 
     @include respond(medium) {
       width: 25rem;
