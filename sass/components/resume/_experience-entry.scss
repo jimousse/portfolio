@@ -62,6 +62,7 @@
     grid-area: company-location;
     @include info-style;
     justify-self: end;
+    color: $color-black;
 
     @include respond(medium) {
       justify-self: center;

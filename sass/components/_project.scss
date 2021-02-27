@@ -34,8 +34,8 @@ $card-width: 33rem;
     width: 100%;
     height: 22rem;
     background-size: cover;
-    box-shadow: $box-shadow-dark;
-    filter: blur(2px);
+    box-shadow: 0 1rem 2rem rgba($color-black, .4);
+    filter: brightness(60%);
   }
 
   &__title {
@@ -47,9 +47,10 @@ $card-width: 33rem;
     text-align: center;
     background-color: $color-primary-dark;
     align-self: center;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: $box-shadow-light;
     transform: translateY(-50%);
+    border: 3px solid $color-secondary;
   }
 
   &__description {
