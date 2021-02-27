@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from './Link';
-const BLOCK_NAME = 'contact';
 import { contactData } from '../data/contact';
+
+const BLOCK_NAME = 'contact';
 
 export default function Contacts() {
   return (

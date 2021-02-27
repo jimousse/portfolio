@@ -27,10 +27,9 @@ module.exports = [
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/i,
-          loader: "url-loader",
-          options: {
-            limit: 8192
-          }
+          use: [
+            { loader: 'url-loader' }
+          ]
         }
       ]
     },
@@ -43,7 +42,7 @@ module.exports = [
     },
     plugins: [ new webpack.HotModuleReplacementPlugin() ],
     devServer: {
-      contentBase: path.resolve(__dirname, './docs'),
+      contentBase: [ path.resolve(__dirname, './docs'), path.resolve(__dirname, './img') ],
       hot: true
     }
   }
