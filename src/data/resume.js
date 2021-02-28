@@ -11,7 +11,7 @@ export const educationEntries = [
     date: '2016 - 2017',
     schoolName: 'KTH Royal Institute of Technology',
     diploma: 'Erasmus Exchange',
-    description: 'Main courses: artifial intelligence, machine learning, data mining, computer encryption.',
+    description: 'Main courses: artificial intelligence, machine learning, data mining, computer encryption.',
     location: 'Stockholm, Sweden',
     country: 'SW'
   },
