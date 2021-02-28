@@ -2,12 +2,16 @@
   font-size: 2rem;
   margin: 5rem;
 
+  &__hi {
+    margin-bottom: 5rem;
+  }
+
   &__item {
     display: flex;
     align-items: center;
 
     &:not(:last-child) {
-      margin-bottom: 6rem;
+      margin-bottom: 3rem;
     }
 
 

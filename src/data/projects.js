@@ -7,34 +7,34 @@ import hotelApp from '../../img/projects/hotel-app.png';
 export const projectsData = [
   {
     title: 'This portofolio',
-    description: 'portofolio',
+    description: 'Website you are currently looking at. Built with React and Sass only.',
     img: portofolioImg,
     github: 'https://github.com/jimousse/portfolio'
   },
   {
     title: '2D Game',
-    description: 'This is a simple tile-based game concept made in JavaScript using HTML5 <canvas>.',
+    description: 'This is a tile-based game concept using HTML5 <canvas>. Built with JavaScript and LitElement.',
     img: gameImg,
     github: 'https://github.com/jimousse/2DGame',
     demo: 'https://jimousse.github.io/2DGame/'
   },
   {
     title: 'Hotel Domstraat',
-    description: 'stuff',
+    description: 'CSS project focusing on Flexbox.',
     img: hotelApp,
     github: 'https://github.com/jimousse/hotel-app',
     demo: 'https://jimousse.github.io/hotel-app/'
   },
   {
     title: 'Nature Tours App',
-    description: 'stuff',
+    description: 'CSS project focusing on float layouts.',
     img: natoursImg,
     github: 'https://github.com/jimousse/nature-tour-app',
     demo: 'https://jimousse.github.io/nature-tour-app/'
   },
   {
     title: 'Real Estate App',
-    description: 'stuff',
+    description: 'CSS project focusing on Grid.',
     img: realEstateImg,
     demo: 'https://jimousse.github.io/real-estate-app/',
     github: 'https://github.com/jimousse/real-estate-app'

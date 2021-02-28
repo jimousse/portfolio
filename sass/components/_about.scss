@@ -7,7 +7,6 @@
   align-items: center;
 
   @include respond(medium) {
-    margin-top: 5rem;
     padding: 2rem 0 0 0;
   }
 
@@ -27,6 +26,7 @@
     @include respond(medium) {
       width: 25rem;
       height: 25rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -60,7 +60,7 @@
     color: $color-grey-dark-4;
     
     .location {
-      margin-left: .5rem;
+      margin: .2rem;
     }
   }
 
