@@ -46,5 +46,39 @@ module.exports = [
       host: '192.168.178.201',
       hot: true
     }
+  },
+  {
+    mode: 'production',
+    entry: path.resolve(__dirname, './src/index.js'),
+    output: {
+      filename: 'main.js',
+      path: path.resolve(__dirname, './docs')
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: [ 'babel-loader' ]
+        },
+        {
+          test: /\.(sass|css|scss)$/i,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            { loader: 'sass-loader' }
+          ]
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg|mp4)$/i,
+          use: [
+            { loader: 'url-loader' }
+          ]
+        }
+      ]
+    },
+    resolve: {
+      extensions: [ '*', '.js', '.jsx' ]
+    }
   }
 ];
