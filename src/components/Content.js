@@ -14,7 +14,7 @@ export default function Content(props) {
   return (
     <div className="parentContent">
       <div className="background">
-        <video muted autoPlay loop className="background__content">
+        <video muted autoPlay playsInline loop className="background__content">
           <source src={video} type="video/mp4" />
         </video>
       </div>
