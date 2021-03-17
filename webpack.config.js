@@ -43,7 +43,7 @@ module.exports = [
     plugins: [ new webpack.HotModuleReplacementPlugin() ],
     devServer: {
       contentBase: [ path.resolve(__dirname, './docs'), path.resolve(__dirname, './img') ],
-      host: '192.168.178.201',
+      host: 'localhost',
       hot: true
     }
   },

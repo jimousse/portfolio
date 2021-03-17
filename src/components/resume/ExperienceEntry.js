@@ -3,7 +3,8 @@ import React from 'react';
 const BLOCK_NAME = 'experience-entry';
 const TOOL_LIST_HEADER = 'Tools:';
 const RESP_LIST_HEADER = 'My responsibilities included:';
-const MILLISECONDS_IN_DAY = 8.64 * Math.pow(10, 7);
+const MILLISECONDS_IN_MONTH = 2.628 * Math.pow(10, 9);
+const MILLISECONDS_IN_YEAR = 3.154 * Math.pow(10, 10);
 
 export default function ExperienceEntry(props) {
   const {
@@ -25,9 +26,10 @@ export default function ExperienceEntry(props) {
   function calculateEllapsedTime() {
     if (!isCurrent) return;
     const ellapsedMilliseconds = Date.now() - startTimestamp;
-    const totalDays = Math.floor(ellapsedMilliseconds / MILLISECONDS_IN_DAY);
-    const displayYears = Math.floor(totalDays / 365);
-    const displayMonths = Math.floor((totalDays - displayYears * 12 * 30) / 30);
+    const numOfYears = ellapsedMilliseconds / MILLISECONDS_IN_YEAR;
+    const displayYears = Math.floor(numOfYears);
+    const numOfMonths = (ellapsedMilliseconds - displayYears * MILLISECONDS_IN_YEAR) / MILLISECONDS_IN_MONTH;
+    const displayMonths = Math.floor(numOfMonths);
     return displayMonths ? `${displayYears} yrs ${displayMonths} mos` : `${displayYears} yrs`;
   }
 

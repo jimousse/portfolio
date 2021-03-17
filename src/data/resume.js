@@ -102,6 +102,6 @@ export const skillItems = [
   { label: 'NodeJS', class: 'node' },
   { label: 'Design Systems', class: 'embed' },
   { label: 'SQL/MySQL', class: 'database' },
-  { label: 'Multi-cultural mindset', class: 'international' },
+  { label: 'Multicultural mindset', class: 'international' },
   { label: 'Team player', class: 'team' }
 ];
