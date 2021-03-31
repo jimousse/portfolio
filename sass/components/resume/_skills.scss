@@ -87,11 +87,27 @@
       }
     }
 
+    // CLOUD ICON
+    &.cloud {
+      &:before {
+        mask-image: url(/img/cloud.svg);
+        -webkit-mask-image: url(/img/cloud.svg);
+      }
+    }
+
     // DATABASE ICON
     &.database {
       &:before {
         mask-image: url(/img/database.svg);
         -webkit-mask-image: url(/img/database.svg);
+      }
+    }
+
+    // MYSQL ICON
+    &.mysql {
+      &:before {
+        mask-image: url(/img/mysql.svg);
+        -webkit-mask-image: url(/img/mysql.svg);
       }
     }
 

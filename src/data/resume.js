@@ -100,8 +100,10 @@ export const skillItems = [
   { label: 'SASS', class: 'sass' },
   { label: 'LitElement', class: 'embed' },
   { label: 'NodeJS', class: 'node' },
+  { label: 'Express.js', class: 'node' },
   { label: 'Design Systems', class: 'embed' },
-  { label: 'SQL/MySQL', class: 'database' },
+  { label: 'REST APIs', class: 'cloud' },
+  { label: 'SQL/MySQL', class: 'mysql' },
   { label: 'MongoDB', class: 'mongodb' },
   { label: 'Multicultural mindset', class: 'international' },
   { label: 'Team player', class: 'team' }
