@@ -95,6 +95,14 @@
       }
     }
 
+    // MONGO ICON
+    &.mongodb {
+      &:before {
+        mask-image: url(/img/mongodb.svg); 
+        -webkit-mask-image: url(/img/mongodb.svg); 
+      }
+    }
+
     // SASS ICON
     &.sass {
       &:before {
