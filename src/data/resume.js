@@ -108,3 +108,8 @@ export const skillItems = [
   { label: 'Multicultural mindset', class: 'international' },
   { label: 'Team player', class: 'team' }
 ];
+
+export const resumePdf = {
+  url: 'https://drive.google.com/file/d/1KiOpekeWtzhfWmF8k25oP_vnzlk8LS5f/view?usp=sharing',
+  label: 'Download my resume'
+};
