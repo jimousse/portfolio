@@ -29,7 +29,7 @@
   
   &--primary {
     display: inline-block;
-    transition: all .6s;
+    transition: all .2s;
 
     &:visited,
     &:link {
@@ -44,13 +44,13 @@
         color: $color-white;
         border: 1px solid $color-primary-light;
         box-shadow: $box-shadow-light;
-        transform: translateY(-3px);
+        transform: translateY(-1px);
       }
     }
     
     &:focus, 
     &:active {
-      transform: translateY(3px);
+      transform: translateY(1px);
       outline: none;
       background-color: $color-primary-dark;
       color: $color-white;
