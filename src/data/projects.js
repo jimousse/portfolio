@@ -3,8 +3,15 @@ import portofolioImg from '../../img/projects/portfolio.png';
 import realEstateImg from '../../img/projects/real-estate.png';
 import natoursImg from '../../img/projects/natours.png';
 import hotelApp from '../../img/projects/hotel-app.png';
+import nodeRestApi from '../../img/projects/rest-api.png';
 
 export const projectsData = [
+  {
+    title: 'Social Media REST API',
+    description: 'Node REST API for a social media client created with Express, MongoDB/Mongoose.',
+    img: nodeRestApi,
+    github: 'https://github.com/jimousse/node-rest-api'
+  },
   {
     title: 'This portofolio',
     description: 'Website you are currently looking at. Built with React and Sass only.',
