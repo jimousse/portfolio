@@ -55,7 +55,7 @@
       background-color: $color-primary-dark;
       color: $color-white;
       border: 1px solid $color-primary-dark;
-      box-shadow: $box-shadow-light;
+      box-shadow: 0 .5rem 1rem rgba($color-black, .4);
     }
   }
 
