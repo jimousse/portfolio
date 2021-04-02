@@ -3,7 +3,7 @@ export const educationEntries = [
     date: '2013 - 2017',
     schoolName: 'Telecom ParisTech',
     diploma: 'Master of Science in Engineering',
-    description: 'Among the highest ranked French Grandes Ecoles, Telecom ParisTech is considered as the leading one in Computer Sience and Information Technology in France. Majored in Web Engineering and Data Science.',
+    description: 'Second highest ranked French Engineering Grande Ecole, Telecom ParisTech is considered as the leading one in Computer Science and Information Technology in France. Majored in Web Engineering and Data Science.',
     location: 'Paris, France',
     country: 'FR'
   },
