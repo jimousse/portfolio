@@ -28,6 +28,9 @@
   }
   
   &--primary {
+    display: inline-block;
+    transition: all .6s;
+
     &:visited,
     &:link {
       text-decoration: none;
@@ -41,15 +44,18 @@
         color: $color-white;
         border: 1px solid $color-primary-light;
         box-shadow: $box-shadow-light;
+        transform: translateY(-3px);
       }
+    }
     
-      &:focus {
-        outline: none;
-        background-color: $color-primary-light;
-        color: $color-white;
-        border: 1px solid $color-primary-light;
-        box-shadow: $box-shadow-light;
-      }
+    &:focus, 
+    &:active {
+      transform: translateY(3px);
+      outline: none;
+      background-color: $color-primary-dark;
+      color: $color-white;
+      border: 1px solid $color-primary-dark;
+      box-shadow: $box-shadow-light;
     }
   }
 
@@ -58,6 +64,7 @@
     transition: all .2s;
     margin-left: 7px;
     & > svg {
+      transition: all .2s;
       fill: $color-primary;
       stroke-width: 2px;
       transform: translateY(3px);
@@ -65,20 +72,35 @@
   }
 
   @media(hover: hover) {
-    &:hover &__arrow,
-    &:focus &__arrow {
+    &:hover &__arrow {
       animation: arrowMoving .8s infinite;
       & > svg {
         fill: $color-primary-dark;
       }
     }
   
-    &--primary:hover &__arrow,
-    &--primary:focus &__arrow {
+    &--primary:hover &__arrow {
       animation: arrowMoving .8s infinite;
       & > svg {
         fill: $color-white;
       }
+    }
+  }
+
+  &:focus &__arrow,
+  &:active &__arrow {
+    animation: arrowMoving .8s infinite;
+    & > svg {
+      fill: $color-primary-dark;
+    }
+  }
+
+  
+  &--primary:focus &__arrow,
+  &--primary:active &__arrow {
+    animation: arrowMoving .8s infinite;
+    & > svg {
+      fill: $color-white;
     }
   }
 }
