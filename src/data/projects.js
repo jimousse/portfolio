@@ -11,47 +11,53 @@ export const projectsData = [
     title: 'Book Shop',
     description: 'Full stack book shop website made with NodeJS and MongoDB.',
     img: nodeBookShop,
-    github: 'https://github.com/jimousse/node-mongodb-shop'
+    github: 'https://github.com/jimousse/node-mongodb-shop',
+    topics: [ 'nodejs', 'mongodb', 'expressjs' ]
   },
   {
     title: 'This portofolio',
     description: 'Website you are currently looking at. Built with React and Sass only.',
     img: portofolioImg,
-    github: 'https://github.com/jimousse/portfolio'
+    github: 'https://github.com/jimousse/portfolio',
+    topics: [ 'reactjs', 'sass', 'webpack' ]
   },
   {
     title: '2D Game',
     description: 'This is a tile-based game concept using HTML5 <canvas>. Built with JavaScript and LitElement.',
     img: gameImg,
     github: 'https://github.com/jimousse/2DGame',
-    demo: 'https://jimousse.github.io/2DGame/'
+    demo: 'https://jimousse.github.io/2DGame/',
+    topics: [ 'javascript', 'canvas', 'lit-element' ]
   },
   {
     title: 'Social Media REST API',
     description: 'Node REST API for a social media client created with Express, MongoDB/Mongoose.',
     img: nodeRestApi,
-    github: 'https://github.com/jimousse/node-rest-api'
+    github: 'https://github.com/jimousse/node-rest-api',
+    topics: [ 'rest-api', 'mongoose', 'nodejs' ]
   },
   {
     title: 'Hotel Domstraat',
     description: 'CSS project focusing on Flexbox.',
     img: hotelApp,
     github: 'https://github.com/jimousse/hotel-app',
-    demo: 'https://jimousse.github.io/hotel-app/'
+    demo: 'https://jimousse.github.io/hotel-app/',
+    topics: [ 'css', 'sass', 'flexbox' ]
   },
   {
     title: 'Nature Tours App',
     description: 'CSS project focusing on float layouts.',
     img: natoursImg,
     github: 'https://github.com/jimousse/nature-tour-app',
-    demo: 'https://jimousse.github.io/nature-tour-app/'
+    demo: 'https://jimousse.github.io/nature-tour-app/',
+    topics: [ 'css', 'sass', 'float' ]
   },
   {
     title: 'Real Estate App',
     description: 'CSS project focusing on Grid.',
     img: realEstateImg,
     demo: 'https://jimousse.github.io/real-estate-app/',
-    github: 'https://github.com/jimousse/real-estate-app'
+    github: 'https://github.com/jimousse/real-estate-app',
+    topics: [ 'css', 'sass', 'grid' ]
   }
-
 ];
