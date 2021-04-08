@@ -4,13 +4,14 @@ import realEstateImg from '../../img/projects/real-estate.png';
 import natoursImg from '../../img/projects/natours.png';
 import hotelApp from '../../img/projects/hotel-app.png';
 import nodeRestApi from '../../img/projects/rest-api.png';
+import nodeBookShop from '../../img/projects/node-shop.jpg';
 
 export const projectsData = [
   {
-    title: 'Social Media REST API',
-    description: 'Node REST API for a social media client created with Express, MongoDB/Mongoose.',
-    img: nodeRestApi,
-    github: 'https://github.com/jimousse/node-rest-api'
+    title: 'Book Shop',
+    description: 'Full stack book shop website made with NodeJS and MongoDB.',
+    img: nodeBookShop,
+    github: 'https://github.com/jimousse/node-mongodb-shop'
   },
   {
     title: 'This portofolio',
@@ -24,6 +25,12 @@ export const projectsData = [
     img: gameImg,
     github: 'https://github.com/jimousse/2DGame',
     demo: 'https://jimousse.github.io/2DGame/'
+  },
+  {
+    title: 'Social Media REST API',
+    description: 'Node REST API for a social media client created with Express, MongoDB/Mongoose.',
+    img: nodeRestApi,
+    github: 'https://github.com/jimousse/node-rest-api'
   },
   {
     title: 'Hotel Domstraat',
