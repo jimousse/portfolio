@@ -98,7 +98,6 @@ export const skillItems = [
   { label: 'React', class: 'react' },
   { label: 'CSS', class: 'css' },
   { label: 'SASS', class: 'sass' },
-  { label: 'LitElement', class: 'embed' },
   { label: 'NodeJS', class: 'node' },
   { label: 'Express.js', class: 'node' },
   { label: 'Design Systems', class: 'embed' },
