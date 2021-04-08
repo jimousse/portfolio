@@ -62,10 +62,26 @@ $card-width: 33rem;
   }
 
   &__description {
-    height: 15rem;
+    height: 12rem;
     padding: 2rem;
     font-size: 1.8rem;
     color: $color-grey-dark-3;
+  }
+
+  &__topics {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+  }
+
+  &__topic {
+    display: inline-block;
+    color: $topic-color;
+    background-color: $topic-background;
+    border-radius: 2rem;
+    border: 1px solid $topic-color;
+    padding: 0 1rem;
+    text-transform: lowercase;
   }
 
   &__links {
