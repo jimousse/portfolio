@@ -40,6 +40,46 @@
     &.active {
       background-color: $color-tertiary-darker;
     }
+  }
 
+  &__item-name {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    &:before {
+      margin-right: 1rem;
+      margin-top: -.3rem;
+      display: inline-block;
+      background-color: $color-primary-light;
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      content: '';
+      height: 2rem;
+      width: 2rem;
+
+    }
+
+    &.tab {
+      &-about:before {
+        mask-image: url(/img/happy.svg);
+        -webkit-mask-image: url(/img/happy.svg);
+      }
+
+      &-projects:before {
+        mask-image: url(/img/pie-chart.svg);
+        -webkit-mask-image: url(/img/pie-chart.svg);
+      }
+
+      &-resume:before {
+        mask-image: url(/img/resume.svg);
+        -webkit-mask-image: url(/img/resume.svg);
+      }
+
+      &-contact:before {
+        mask-image: url(/img/envelop.svg);
+        -webkit-mask-image: url(/img/envelop.svg);
+      }
+    }
   }
 }

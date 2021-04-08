@@ -16,7 +16,7 @@ export default function SideNavList(props) {
                 if (onClickItem) onClickItem();
               }}
             >
-              {item.label}
+              <span className={`side-nav__item-name tab-${item.name}`}>{item.label}</span>
             </button>
           </li>
         );
