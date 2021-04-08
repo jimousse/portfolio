@@ -30,6 +30,17 @@
     }
   }
 
+  &__name {
+    display: inline-block;
+    color: $color-tertiary;
+    transition: all .5s;
+    
+    &:hover {
+      transform: scale(1.3) rotate(20deg);
+      color: $color-primary-light;
+    }
+  }
+
   &__picture {
     height: 100%;
     transform: scale(1.1);

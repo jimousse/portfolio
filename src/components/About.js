@@ -9,7 +9,7 @@ export default function About() {
         <figcaption className="about__caption">🍻</figcaption>
       </figure>
       <div className="about__text">
-        <h2 className="heading-2 about__hi">Hi, I'm Jimmy.</h2>
+        <h2 className="heading-2 about__hi">Hi, I'm <span className="about__name">Jimmy</span>.</h2>
         <p className="about__description">I am a software developer based in 
         <span className="location NL"> Utrecht, Netherlands </span>.
         </p>
