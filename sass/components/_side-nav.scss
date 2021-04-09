@@ -49,8 +49,15 @@
     }
   }
 
-  &__button:hover &__item-name {
-    transform: translateX(10%);
+  @media (hover: hover) {
+    &__button:hover &__item-name {
+      transform: translateX(10%);
+      color: $color-primary;
+
+      &:before {
+        background-color: $color-primary;
+      }
+    }
   }
 
   &__item-name {
@@ -60,6 +67,7 @@
     transition: all .2s;
 
     &:before {
+      transition: all .2s;
       margin-right: 1rem;
       margin-top: -.15rem;
       display: inline-block;
