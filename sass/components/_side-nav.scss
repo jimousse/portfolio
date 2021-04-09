@@ -24,6 +24,13 @@
     font-size: 1.7rem;
     cursor: pointer;
     transition: all .4s;
+    background-image:
+      linear-gradient(45deg, $color-tertiary 50%, transparent 50%),
+      linear-gradient(45deg, transparent 50%, $color-tertiary 50%);
+    background-position-x: right, left;
+    background-position-y: center, center;
+    background-size: 250% 100%, 250% 100%;
+    background-repeat: no-repeat, no-repeat;
 
     &:focus {
       outline: none;
@@ -32,7 +39,7 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: $color-tertiary;
+        background-position-x: center, center;
       }
     }
 
