@@ -12,7 +12,7 @@ export default function Contacts() {
         const { link, label, site } = item;
         return (
           <div key={i} className={`${BLOCK_NAME}__item ${BLOCK_NAME}__item--${site}`}>
-            {link ? <Link label={label} href={link} /> : label}
+            {link ? <Link label={label} includeArrow href={link} /> : label}
           </div>
         );
       })}

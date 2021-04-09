@@ -2,6 +2,14 @@
   margin: 0 2px;
   white-space: nowrap;
 
+  background-image:
+    linear-gradient(currentColor 0 0),
+    linear-gradient(currentColor 0 0);
+  background-position: 0% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 0% 2px;
+  transition: all .3s;
+
   &--primary {
     border-radius: 5px;
     padding: 1rem 2rem;
@@ -11,22 +19,21 @@
   &:link {
     text-decoration: none;
     color: $color-primary;
-    border-bottom: 1px solid transparent;
   }
 
-  @media(hover: hover) { 
+  @media(hover: hover) {
     &:hover {
       color: $color-primary-dark;
-      border-bottom: 1px solid $color-primary-dark;
+      background-size: 50% 2px;
     }
-  
+
     &:focus {
       outline: none;
       color: $color-primary-dark;
-      border-bottom: 1px solid $color-primary-dark;
+      background-size: 50% 1px;
     }
   }
-  
+
   &--primary {
     display: inline-block;
     transition: all .2s;
@@ -44,11 +51,12 @@
         color: $color-white;
         border: 1px solid $color-primary-light;
         box-shadow: $box-shadow-light;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        background-size: 0;
       }
     }
-    
-    &:focus, 
+
+    &:focus,
     &:active {
       transform: translateY(1px);
       outline: none;
@@ -56,18 +64,19 @@
       color: $color-white;
       border: 1px solid $color-primary-dark;
       box-shadow: 0 .5rem 1rem rgba($color-black, .4);
+      background-size: 0;
     }
   }
 
   &__arrow {
     display: inline-block;
     transition: all .2s;
-    margin-left: 7px;
+    margin-left: 5px;
     & > svg {
       transition: all .2s;
       fill: $color-primary;
       stroke-width: 2px;
-      transform: translateY(3px);
+      transform: translateY(2px);
     }
   }
 
@@ -78,7 +87,7 @@
         fill: $color-primary-dark;
       }
     }
-  
+
     &--primary:hover &__arrow {
       animation: arrowMoving .8s infinite;
       & > svg {
@@ -95,7 +104,7 @@
     }
   }
 
-  
+
   &--primary:focus &__arrow,
   &--primary:active &__arrow {
     animation: arrowMoving .8s infinite;
