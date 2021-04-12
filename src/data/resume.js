@@ -109,6 +109,6 @@ export const skillItems = [
 ];
 
 export const resumePdf = {
-  url: 'https://drive.google.com/file/d/1KiOpekeWtzhfWmF8k25oP_vnzlk8LS5f/view?usp=sharing',
+  url: 'https://drive.google.com/file/d/1uizvKgwQwSFl1bxziCSeaOESrMK0S65S/view?usp=sharing',
   label: 'Download my resume'
 };
