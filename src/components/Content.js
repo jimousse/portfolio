@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import video from '../../img/relax1.mp4';
+import video from '../../img/coffee.mp4';
 
 export default function Content(props) {
   const contentRef = useRef(null);
