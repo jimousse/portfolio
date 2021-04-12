@@ -12,9 +12,14 @@
 }
 
 @mixin whiteBgOnVideo() {
-  background-color: rgba($color-white, .8);
-  border-radius: 10px;
-  box-shadow: 1rem 0 3rem $color-white, -1rem 0 3rem $color-white;
+  background-color: rgba($color-white, .6);
+  border-radius: 50px;
+  $bs-length: .5rem;
+  $bs-color: rgba($color-white, 0.4);
+  box-shadow: #{$bs-length} -#{$bs-length} 3rem $bs-color,
+    -#{$bs-length} -#{$bs-length} 3rem $bs-color,
+    #{$bs-length} #{$bs-length} 3rem $bs-color,
+    -#{$bs-length} #{$bs-length} 3rem $bs-color;
 }
 
 /*
@@ -33,7 +38,7 @@
     @media only screen and (max-width: 50rem) { @content }; // 800px /16px
   }
 
-  @if $breakpoint == small { 
+  @if $breakpoint == small {
     @media only screen and (max-width: 37.5rem) { @content }; // 600px /16px
   }
 
