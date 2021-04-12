@@ -114,10 +114,8 @@
     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     & > * {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
+      margin: 0 auto;
+      margin-top: 10rem;
       width: 25rem;
     }
   }
@@ -125,12 +123,5 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     left: 0;
-  }
-
-  &__logo {
-    display: block;
-    width: 6rem;
-    margin: 0 auto;
-    margin-bottom: 2rem;
   }
 }
