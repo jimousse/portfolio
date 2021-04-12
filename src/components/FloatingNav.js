@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import SideNavList from './SideNavList';
+import svg from '../../docs/cup.svg';
 
 export default function FloatingNav(props) {
   const checkboxRef = useRef(null);
@@ -16,7 +17,10 @@ export default function FloatingNav(props) {
       </label>
       <div className="float-nav__background">&nbsp;</div>
       <div className="float-nav__nav">
+      <div>
+        <img className="float-nav__logo" src={svg} alt="Cup of coffee" />
         <SideNavList {...props} onClickItem={closeNav}/>
+      </div>
       </div>
     </div>
   );

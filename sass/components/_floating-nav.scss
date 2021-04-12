@@ -4,7 +4,7 @@
 
   &__checkbox {
     display: none;
-  } 
+  }
 
   @include respond(medium) {
     display: block;
@@ -28,7 +28,7 @@
   // BACKGROUND
   &__background {
     background-image: radial-gradient(
-      $color-primary-dark, 
+      $color-primary-dark,
       $color-secondary 20%
     );
     height: 3rem;
@@ -46,7 +46,7 @@
   &__checkbox:checked + &__button {
     background-color: $color-secondary;
   }
-  
+
   &__checkbox:checked ~ &__background {
     transform: scale(120);
   }
@@ -127,4 +127,10 @@
     left: 0;
   }
 
+  &__logo {
+    display: block;
+    width: 6rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
 }
