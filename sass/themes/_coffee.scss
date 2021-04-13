@@ -1,0 +1,16 @@
+:root.coffee {
+  --color-secondary: hsl(345, 22%, 42%);
+  --color-secondary-light: hsl(346, 22%, 62%);
+  --color-secondary-dark: hsl(345, 22%, 32%);
+  --color-secondary-darker: hsl(344, 23%, 22%);
+
+  --color-primary-light: hsl(198, 34%, 62%);
+  --color-primary: hsl(199, 35%, 53%);
+  --color-primary-dark: hsl(199, 31%, 47%);
+  --color-primary-darker: hsl(198, 30%, 42%);
+
+  --color-tertiary-light: hsl(43, 52%, 74%);
+  --color-tertiary: hsl(42, 52%, 64%);
+  --color-tertiary-dark: hsl(42, 52%, 54%);
+  --color-tertiary-darker: hsl(42, 52%, 44%);
+}

@@ -7,8 +7,8 @@
 
 @mixin focusRing() {
   outline: none;
-  box-shadow: inset 0px 0px 0px 2px $color-secondary-dark,
-              inset 0px 0px 0px 4px $color-secondary-light;
+  box-shadow: inset 0px 0px 0px 2px var(--color-secondary-dark),
+              inset 0px 0px 0px 4px var(--color-secondary-light);
 }
 
 @mixin whiteBgOnVideo() {

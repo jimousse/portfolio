@@ -1,0 +1,40 @@
+.logo {
+  width: 7rem;
+  height: 7rem;
+  display: inline-block;
+  margin: 0 auto;
+
+  & > svg {
+    height: 100%;
+    width: 100%;
+
+    .handle,
+    .cup-outside {
+      fill: var(--color-primary-darker);
+    }
+
+    .cup-inside {
+      fill: #bdc3c7;
+    }
+
+    .cup-border {
+      fill: #ecf0f1;
+    }
+
+    .coffee {
+      fill: #a56a43;
+    }
+
+    .coffee-dark {
+      fill: #805333;
+    }
+
+    .bean-left{
+      fill: var(--color-tertiary-light);
+    }
+
+    .bean-right {
+      fill: var(--color-tertiary-darker);
+    }
+  }
+}

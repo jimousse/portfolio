@@ -53,12 +53,12 @@ $card-width: 33rem;
     padding: .5rem 1rem;
     display: inline-block;
     text-align: center;
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
     align-self: center;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
     transform: translateY(-50%);
-    border: 3px solid $color-secondary-light;
+    border: 3px solid var(--color-secondary-light);
   }
 
   &__description {
@@ -90,13 +90,13 @@ $card-width: 33rem;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    background-color: rgba($color-tertiary-dark, 0.2);
+    background-color: rgba(var(--color-tertiary-dark), 0.2);
   }
   &__link:link,
   &__link:visited {
     height: 5rem;
     width: 5rem;
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
     -webkit-mask-size: cover;
     mask-size: cover;
     transition: all .2s;
@@ -109,13 +109,13 @@ $card-width: 33rem;
 
   @media (hover: hover) {
     &__link:hover {
-      background-color: $color-secondary-dark;
+      background-color: var(--color-secondary-dark);
       transform: scale(1.15);
     }
   }
 
   &__link:active {
-    background-color: $color-secondary-darker;
+    background-color: var(--color-secondary-darker);
   }
 
   &__link--github {

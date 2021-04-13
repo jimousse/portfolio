@@ -38,7 +38,7 @@
   color: $color-grey-dark-4;
 
   &.current {
-    color: $color-tertiary;
+    color: var(--color-tertiary-darker);
     font-weight: 700;
   }
 }
@@ -46,7 +46,7 @@
 @mixin main-sub-style {
   font-size: 2rem;
   font-style: italic;
-  color: $color-grey-dark-3; 
+  color: $color-grey-dark-3;
 }
 
 @mixin list-icon-def {
@@ -70,7 +70,7 @@
     display: inline-block;
     height: 1.8rem;
     width: 1.8rem;
-    background-color: $color-secondary-dark;
+    background-color: var(--color-secondary-dark);
     mask-size: cover;
     -webkit-mask-size: cover;
 

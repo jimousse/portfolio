@@ -18,18 +18,18 @@
   &:visited,
   &:link {
     text-decoration: none;
-    color: $color-primary;
+    color: var(--color-primary);
   }
 
   @media(hover: hover) {
     &:hover {
-      color: $color-primary-dark;
+      color: var(--color-primary-dark);
       background-size: 50% 2px;
     }
 
     &:focus {
       outline: none;
-      color: $color-primary-dark;
+      color: var(--color-primary-dark);
       background-size: 50% 1px;
     }
   }
@@ -41,15 +41,15 @@
     &:visited,
     &:link {
       text-decoration: none;
-      color: $color-primary;
-      border: 1px solid $color-primary;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
     }
 
     @media(hover: hover) {
       &:hover {
-        background-color: $color-primary-light;
+        background-color: var(--color-primary-light);
         color: $color-white;
-        border: 1px solid $color-primary-light;
+        border: 1px solid var(--color-primary-light);
         box-shadow: $box-shadow-light;
         transform: translateY(-2px);
         background-size: 0;
@@ -60,9 +60,9 @@
     &:active {
       transform: translateY(1px);
       outline: none;
-      background-color: $color-primary-dark;
+      background-color: var(--color-primary-dark);
       color: $color-white;
-      border: 1px solid $color-primary-dark;
+      border: 1px solid var(--color-primary-dark);
       box-shadow: 0 .5rem 1rem rgba($color-black, .4);
       background-size: 0;
     }
@@ -74,7 +74,7 @@
     margin-left: 5px;
     & > svg {
       transition: all .2s;
-      fill: $color-primary;
+      fill: var(--color-primary);
       stroke-width: 2px;
       transform: translateY(2px);
     }
@@ -84,7 +84,7 @@
     &:hover &__arrow {
       animation: arrowMoving .8s infinite;
       & > svg {
-        fill: $color-primary-dark;
+        fill: var(--color-primary-dark);
       }
     }
 
@@ -100,7 +100,7 @@
   &:active &__arrow {
     animation: arrowMoving .8s infinite;
     & > svg {
-      fill: $color-primary-dark;
+      fill: var(--color-primary-dark);
     }
   }
 

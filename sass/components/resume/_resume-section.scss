@@ -10,7 +10,7 @@
     font-size: 3rem;
     font-weight: 300;
     text-transform: uppercase;
-    color: $color-primary;
+    color: var(--color-primary);
 
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
@@ -22,7 +22,7 @@
       content: '';
       display: inline-block;
       height: 1px;
-      background-color: $color-primary;
+      background-color: var(--color-primary);
     }
   }
-} 
+}

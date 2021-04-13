@@ -7,7 +7,7 @@
 
   &__job {
     display: inline-block;
-    color: $color-primary-darker;
+    color: var(--color-primary-darker);
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: .2rem;

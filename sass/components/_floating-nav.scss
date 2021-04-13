@@ -12,7 +12,7 @@
 
   // BUTTON
   &__button {
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
@@ -28,8 +28,8 @@
   // BACKGROUND
   &__background {
     background-image: radial-gradient(
-      $color-primary-dark,
-      $color-secondary 20%
+      var(--color-primary-dark),
+      var(--color-secondary) 20%
     );
     height: 3rem;
     width: 3rem;
@@ -44,7 +44,7 @@
   }
 
   &__checkbox:checked + &__button {
-    background-color: $color-secondary;
+    background-color: var(--color-secondary);
   }
 
   &__checkbox:checked ~ &__background {

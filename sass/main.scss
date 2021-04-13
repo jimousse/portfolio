@@ -22,7 +22,12 @@
 @import "components/resume/experience-entry";
 @import "components/resume/skills";
 @import "components/nav-content";
+@import "components/theme-toggle-button";
+@import "components/logo";
 
 @import "layout/container";
 @import "layout/sidebar";
 @import "layout/content";
+
+@import "themes/default";
+@import "themes/coffee";

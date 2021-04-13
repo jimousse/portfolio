@@ -3,7 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
 
 html {
@@ -22,8 +22,8 @@ body {
   $first-color-height: 15rem;
   background-image: linear-gradient(
     180deg,
-    $color-primary-dark 0%,
-    $color-primary-dark $first-color-height,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-dark) $first-color-height,
     $color-grey-light-2 $first-color-height
   );
   background-size: cover;
@@ -43,6 +43,6 @@ body {
 }
 
 ::selection {
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   color: $color-white;
 }

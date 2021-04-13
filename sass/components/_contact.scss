@@ -4,7 +4,7 @@
 
   &__hi {
     margin-bottom: 5rem;
-    color: $color-secondary-dark;
+    color: var(--color-secondary-dark);
     font-style: italic;
   }
 
@@ -47,7 +47,7 @@
     }
 
     &--mail:before {
-      background-color: $color-primary;
+      background-color: var(--color-primary);
       mask-image: url(/img/mail.svg);
       -webkit-mask-image: url(/img/mail.svg);
     }
