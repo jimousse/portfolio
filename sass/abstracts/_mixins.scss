@@ -7,7 +7,7 @@
 
 @mixin focusRing() {
   outline: none;
-  box-shadow: inset 0px 0px 0px 2px var(--color-secondary-dark),
+  box-shadow: inset 0px 0px 0px 2px var(--color-secondary-darker),
               inset 0px 0px 0px 4px var(--color-secondary-light);
 }
 

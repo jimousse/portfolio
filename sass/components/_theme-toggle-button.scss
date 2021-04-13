@@ -2,6 +2,10 @@
   position: relative;
   margin: 2rem auto;
 
+  &:focus {
+    outline: none;
+  }
+
   &__border {
     width: 42px;
     height: 24px;
@@ -12,6 +16,7 @@
   }
 
   &__switch {
+    appearance: none;
     position: absolute;
     top: -2px;
     left: -2px;
@@ -28,6 +33,10 @@
 
     &.toggled {
       transform: translate(18px);
+    }
+
+    &:focus {
+      @include focusRing();
     }
   }
 }

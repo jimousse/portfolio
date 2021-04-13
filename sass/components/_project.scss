@@ -90,8 +90,9 @@ $card-width: 33rem;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    background-color: rgba(var(--color-tertiary-dark), 0.2);
+    background-color: var(--color-tertiary-light);
   }
+
   &__link:link,
   &__link:visited {
     height: 5rem;
