@@ -9,16 +9,20 @@ export default function ThemeToggleButton(props) {
   };
 
   return (
-    <span className="theme-toggle">
-      <div className="theme-toggle__border" />
-      <input
-        type="checkbox"
-        role="checkbox"
-        checked={toggled}
-        aria-checked={toggled}
-        role="switch"
-        onClick={switchTheme} className={`theme-toggle__switch ${ toggled ? 'toggled' : ''}`}
-      />
-    </span>
+    <div class="theme-toggle-group">
+      <label for="theme-toggle-button" class="theme-toggle-label">Theme</label>
+      <span className="theme-toggle">
+        <div className="theme-toggle__border" />
+        <input
+          id="theme-toggle-button"
+          type="checkbox"
+          role="checkbox"
+          checked={toggled}
+          aria-checked={toggled}
+          role="switch"
+          onClick={switchTheme} className={`theme-toggle__switch ${ toggled ? 'toggled' : ''}`}
+        />
+      </span>
+    </div>
   );
 };
