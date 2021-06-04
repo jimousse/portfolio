@@ -6,6 +6,8 @@
     margin-bottom: 5rem;
     color: var(--color-secondary-dark);
     font-style: italic;
+    @include whiteBgOnVideo;
+    width: fit-content;
   }
 
   &__item {
@@ -13,9 +15,10 @@
     align-items: center;
     @include whiteBgOnVideo;
     width: fit-content;
+    padding: .5rem;
 
     &:not(:last-child) {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
 

@@ -5,11 +5,11 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: $color-grey-light-3;
+  background-color: var(--color-tertiary-lighter);
 
   .emoji {
     font-size: 30px;
-    dominant-baseline: middle;
-    text-anchor: middle;
+    // dominant-baseline: middle;
+    // text-anchor: middle;
   }
 }

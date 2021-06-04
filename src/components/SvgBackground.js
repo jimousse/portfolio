@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SvgBackground() {
 
-  const patternSemiSize = 75;
+  const patternSemiSize = 55;
   const emojiHeight = 37;
   const emojiWidth = 34.4;
   const one = {
@@ -46,11 +46,11 @@ export default function SvgBackground() {
   return (
     <svg className="svg-background" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <pattern id="emoji-pattern" x="5" y="-20" patternUnits="userSpaceOnUse" width={patternSemiSize*2} height={patternSemiSize*2}>
-        <text id="one" className="emoji" {...one}>🍺 {loopRotationTransform(45, one.x, one.y)} </text>
-        <text id="two" className="emoji" {...two} >🍕 {fullRotationTransform(0, two.x, two.y)}</text>
-        <text id="three" className="emoji" {...three} >🍔 {fullRotationTransform(0, three.x, three.y)}</text>
-        <text id="four" className="emoji" {...four}>🍩 {loopRotationTransform(90, four.x, four.y)}</text>
+      <pattern id="emoji-pattern" x="0" y="0" patternUnits="userSpaceOnUse" width={patternSemiSize*2} height={patternSemiSize*2}>
+        <text id="one" className="emoji" {...one}>🍺</text>
+        <text id="two" className="emoji" {...two} >🍕</text>
+        <text id="three" className="emoji" {...three} >🍔</text>
+        <text id="four" className="emoji" {...four}>🍩</text>
       </pattern>
     </defs>
       <rect width="100%" height="100%" fill="url(#emoji-pattern)" />
