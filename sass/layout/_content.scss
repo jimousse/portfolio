@@ -1,8 +1,14 @@
+.parentContent {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .content {
   height: 100%;
   width: 100%;
   padding: 4rem;
   position: relative;
   overflow: auto;
-  background-color: $color-grey-light-3;
 }

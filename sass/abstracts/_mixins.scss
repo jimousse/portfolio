@@ -12,10 +12,10 @@
 }
 
 @mixin whiteBgOnVideo() {
-  background-color: rgba($color-white, .6);
-  border-radius: 50px;
+  background-color: rgba($color-white, .95);
+  border-radius: 20px;
   $bs-length: .5rem;
-  $bs-color: rgba($color-white, 0.4);
+  $bs-color: rgba($color-white, 2);
   box-shadow: #{$bs-length} -#{$bs-length} 3rem $bs-color,
     -#{$bs-length} -#{$bs-length} 3rem $bs-color,
     #{$bs-length} #{$bs-length} 3rem $bs-color,

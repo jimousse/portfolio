@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import SvgBackground from './SvgBackground';
 
 export default function Content(props) {
   const contentRef = useRef(null);
@@ -11,8 +12,11 @@ export default function Content(props) {
   });
 
   return (
-    <div ref={contentRef} className="content">
-      {props.children}
+    <div className="parentContent">
+      <SvgBackground /> 
+      <div ref={contentRef} className="content">
+        {props.children}
+      </div>
     </div>
   );
 }
