@@ -2,7 +2,7 @@
   background-color: var(--color-secondary);
   flex: 0 0 23rem;
   overflow: auto;
-
+  z-index: 2000;
 
   @include respond(medium) {
     display: none;
