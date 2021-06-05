@@ -11,7 +11,7 @@ $card-width: 33rem;
 
 .project {
   &__card {
-    box-shadow: $box-shadow-light;
+    box-shadow: $box-shadow-dark;
     display: flex;
     flex-direction: column;
     background-color: $color-white;

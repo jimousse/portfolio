@@ -15,7 +15,7 @@
   background-color: rgba($color-white, .94);
   border-radius: 20px;
   $bs-length: .3rem;
-  $bs-color: rgba($color-white, 5);
+  $bs-color: rgba($color-white, .5);
   box-shadow: #{$bs-length} -#{$bs-length} 2rem $bs-color,
     -#{$bs-length} -#{$bs-length} 2rem $bs-color,
     #{$bs-length} #{$bs-length} 2rem $bs-color,
