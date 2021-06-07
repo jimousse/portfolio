@@ -6,6 +6,7 @@
   min-width: 31rem;
   @include sectionMargins;
   color: $color-black;
+  margin-bottom: 0;
 
   &__hi {
     margin-bottom: 3rem;
