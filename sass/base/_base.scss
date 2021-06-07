@@ -37,6 +37,7 @@ body {
   height: 100%;
   padding: 3rem;
   min-height: 60rem;
+  display: flex;
 
   @include respond(largest) {
     padding: 0;
@@ -44,6 +45,6 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-darker);
   color: $color-white;
 }

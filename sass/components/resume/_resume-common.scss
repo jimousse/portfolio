@@ -6,6 +6,7 @@
   grid-row-gap: .5rem;
   padding: 1rem 0;
   align-items: center;
+  color: $color-black;
 
   @include respond(largest) {
     grid-template-columns: 21rem repeat(2, 1fr);
@@ -24,18 +25,15 @@
 @mixin info-style {
   font-size: 1.8rem;
   font-weight: 300;
-  color: $color-grey-dark-3;
 }
 
 @mixin description-style {
-  color: $color-grey-dark-3;
   font-size: 1.8rem;
   word-break: break-word;
 }
 
 @mixin main-style {
   font-size: 2.2rem;
-  color: $color-grey-dark-4;
 
   &.current {
     color: var(--color-tertiary-darker);
@@ -46,7 +44,6 @@
 @mixin main-sub-style {
   font-size: 2rem;
   font-style: italic;
-  color: $color-grey-dark-3;
 }
 
 @mixin list-icon-def {
@@ -62,7 +59,6 @@
   grid-template-areas: "icon text" ". text";
   grid-column-gap: 1rem;
   align-items: start;
-  color: $color-grey-dark-4;
   font-size: 1.7rem;
 
   &:before {

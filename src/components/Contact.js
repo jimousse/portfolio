@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Link from './Link';
 import { contactData } from '../data/contact';
+import SectionTitle from './SectionTitle';
 
-const BLOCK_NAME = 'contact';
-
-export default function Contacts() {
+const Contacts = forwardRef((props, ref) => {
   return (
-    <div className={BLOCK_NAME}>
-      <h2 className={`heading-2 ${BLOCK_NAME}__hi`}>Drop me a line!</h2>
-      {contactData.map((item, i) => {
-        const { link, label, site } = item;
-        return (
-          <div key={i} className={`${BLOCK_NAME}__item ${BLOCK_NAME}__item--${site}`}>
-            {link ? <Link label={label} includeArrow href={link} /> : label}
-          </div>
-        );
-      })}
-    </div>
+    <section ref={ref} id={props.id} className="section">
+      <SectionTitle title={props.label} />
+      <div  className="contact">
+        <h2 className="heading-2 contact__hi">Drop me a line!</h2>
+        {contactData.map((item, i) => {
+          const { link, label, site } = item;
+          return (
+            <div key={i} className={`contact__item contact__item--${site}`}>
+              {link ? <Link label={label} includeArrow href={link} /> : label}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
-}
+});
+
+export default Contacts;

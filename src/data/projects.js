@@ -8,13 +8,6 @@ import nodeBookShop from '../../img/projects/node-shop.jpg';
 
 export const projectsData = [
   {
-    title: 'Book Shop',
-    description: 'Full stack book shop website made with NodeJS and MongoDB.',
-    img: nodeBookShop,
-    github: 'https://github.com/jimousse/node-mongodb-shop',
-    topics: [ 'nodejs', 'mongodb', 'expressjs' ]
-  },
-  {
     title: 'This portofolio',
     description: 'Website you are currently looking at. Built with React and Sass only.',
     img: portofolioImg,
@@ -28,6 +21,13 @@ export const projectsData = [
     github: 'https://github.com/jimousse/2DGame',
     demo: 'https://jimousse.github.io/2DGame/',
     topics: [ 'javascript', 'canvas', 'lit-element' ]
+  },
+  {
+    title: 'Book Shop',
+    description: 'Full stack book shop website made with NodeJS and MongoDB.',
+    img: nodeBookShop,
+    github: 'https://github.com/jimousse/node-mongodb-shop',
+    topics: [ 'nodejs', 'mongodb', 'expressjs' ]
   },
   {
     title: 'Social Media REST API',

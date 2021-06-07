@@ -1,23 +1,25 @@
 import React from 'react';
 
 export default function SideNavList(props) {
-  const { items, onChangeTabs, onClickItem } = props;
+  const { pages, onChangePage, onClickItem } = props;
   return (
     <ul className="side-nav">
-      {items.map((item, i) => {
-        const btnClassNames = [ 'side-nav__button' ];
-        if (props.activeTab === item.name) btnClassNames.push('active');
+      {pages.map((item, i) => {
+        const linkClassNames = [ 'side-nav__link' ];
+        if (props.currentPage === item.name) linkClassNames.push('active');
         return (
           <li key={i} className="side-nav__item">
-            <button 
-              className={btnClassNames.join(' ')}
+            <a 
+              className={linkClassNames.join(' ')}
+              tabIndex="2"
+              href={`#${item.id}`}
               onClick={() => {
-                onChangeTabs(item.name);
+                onChangePage(item.name);
                 if (onClickItem) onClickItem();
               }}
             >
               <span className={`side-nav__item-name tab-${item.name}`}>{item.label}</span>
-            </button>
+            </a>
           </li>
         );
       })}

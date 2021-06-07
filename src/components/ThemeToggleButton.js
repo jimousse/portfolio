@@ -8,13 +8,15 @@ export default function ThemeToggleButton(props) {
     setToggled(!toggled);
   };
 
+  const randomId = `theme-toggle-button-${Math.random()}`; // since there are two menus: one for desktop and one for mobile
+
   return (
-    <div class="theme-toggle-group">
-      <label for="theme-toggle-button" class="theme-toggle-label">Theme</label>
+    <div className="theme-toggle-group">
+      <label htmlFor={randomId} className="theme-toggle-label">Theme 🎨</label>
       <span className="theme-toggle">
         <div className="theme-toggle__border" />
         <input
-          id="theme-toggle-button"
+          id={randomId}
           type="checkbox"
           role="checkbox"
           checked={toggled}

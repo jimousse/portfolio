@@ -1,7 +1,14 @@
-.container {
-  background-color: $color-white;
-  box-shadow: $box-shadow-light;
+.main-content {
   height: 100%;
   width: 100%;
-  display: flex;
-} 
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollable-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+  // background-color: $color-grey-light-2;
+}

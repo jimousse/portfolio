@@ -7,13 +7,17 @@
   .theme-toggle-label {
     text-transform: uppercase;
     font-size: 1.3rem;
-    color: $color-white;
-    font-weight: 300;
+    color: var(--color-secondary-darker);
+    border-radius: 20px;
+    border: 2px solid var(--color-secondary-darker);
+    padding: 0 .8rem;
+    font-weight: 400;
+    background-color: var(--color-secondary-lighter);
   }
 
   .theme-toggle {
     position: relative;
-    margin: .7rem auto;
+    margin: 1rem auto;
 
     &:focus {
       outline: none;

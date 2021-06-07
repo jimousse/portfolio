@@ -1,0 +1,12 @@
+.section-title {
+  background-color: var(--color-primary);
+  color: $color-white;
+  padding-left: 4rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 5px solid var(--color-primary-lighter);
+}

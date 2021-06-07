@@ -6,6 +6,7 @@ $card-width: 33rem;
   grid-column-gap: 6rem;
   grid-row-gap: 6rem;
   justify-items: center;
+  @include sectionMargins;
 }
 
 
@@ -53,19 +54,19 @@ $card-width: 33rem;
     padding: .5rem 1rem;
     display: inline-block;
     text-align: center;
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-dark);
     align-self: center;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
     transform: translateY(-50%);
-    border: 3px solid var(--color-secondary-light);
+    border: 3px solid var(--color-secondary);
   }
 
   &__description {
     height: 12rem;
     padding: 2rem;
     font-size: 1.8rem;
-    color: $color-grey-dark-3;
+    color: $color-black;
   }
 
   &__topics {
@@ -101,6 +102,7 @@ $card-width: 33rem;
     -webkit-mask-size: cover;
     mask-size: cover;
     transition: all .2s;
+    padding: 0 .5rem;
 
 
     &:not(:last-child) {
@@ -108,10 +110,15 @@ $card-width: 33rem;
     }
   }
 
+  &__link:focus {
+    background-color: var(--color-primary-darker);
+    transform: scale(1.2);
+  }
+
   @media (hover: hover) {
     &__link:hover {
       background-color: var(--color-secondary-dark);
-      transform: scale(1.15);
+      transform: scale(1.2);
     }
   }
 
@@ -128,5 +135,9 @@ $card-width: 33rem;
     transform: translateY(.2rem);
     -webkit-mask-image: url(/img/external-link.svg);
     mask-image: url(/img/external-link.svg);
+
+    &:focus {
+      transform: translateY(3px) scale(1.2);
+    }
   }
 }

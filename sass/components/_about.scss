@@ -5,6 +5,7 @@
   padding: 2rem;
   justify-content: center;
   align-items: center;
+  @include sectionMargins;
 
   @include respond(medium) {
     padding: 2rem 0 0 0;
@@ -67,8 +68,8 @@
   }
 
   &__description {
-    font-size: 1.8rem;
-    color: $color-grey-dark-4;
+    font-size: 1.9rem;
+    color: $color-black;
 
     .location {
       margin: .2rem;

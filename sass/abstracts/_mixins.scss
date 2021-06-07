@@ -11,6 +11,10 @@
               inset 0px 0px 0px 4px var(--color-secondary-light);
 }
 
+@mixin sectionMargins {
+  margin: 4rem 2rem;
+}
+
 @mixin whiteBgOnVideo() {
   background-color: rgba($color-white, .94);
   border-radius: 10px;

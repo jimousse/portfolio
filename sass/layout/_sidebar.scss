@@ -3,6 +3,7 @@
   flex: 0 0 23rem;
   overflow: auto;
   z-index: 2000;
+  border-right: 5px solid var(--color-secondary-light);
 
   @include respond(medium) {
     display: none;

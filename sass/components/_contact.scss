@@ -4,10 +4,12 @@
   @include whiteBgOnVideo;
   padding: 2rem;
   min-width: 31rem;
+  @include sectionMargins;
+  color: $color-black;
 
   &__hi {
     margin-bottom: 3rem;
-    color: var(--color-secondary-dark);
+    color: var(--color-secondary);
     font-style: italic;
     text-align: center;
   }

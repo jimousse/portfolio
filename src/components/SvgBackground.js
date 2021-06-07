@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SvgBackground() {
 
-  const patternSemiSize = 55;
+  const patternSemiSize = 130;
   const emojiHeight = 37;
   const emojiWidth = 34.4;
   const one = {
@@ -42,11 +42,22 @@ export default function SvgBackground() {
             repeatCount="indefinite" />;
   };
 
+  const scaleTransform = (x, y) => {
+    return <animateTransform 
+            attributeName="transform" 
+            attributeType="XML" 
+            type="rotate"
+            values={`${angle} ${x} ${y}; ${angle + 360} ${x} ${y};`}
+            dur="5s" 
+            repeatCount="indefinite" />;
+  };
+
+
 
   return (
     <svg className="svg-background" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <pattern id="emoji-pattern" x="0" y="0" patternUnits="userSpaceOnUse" width={patternSemiSize*2} height={patternSemiSize*2}>
+      <pattern id="emoji-pattern" x="-20" y="0" patternUnits="userSpaceOnUse" width={patternSemiSize*2} height={patternSemiSize*2}>
         <text id="one" className="emoji" {...one}>🍺</text>
         <text id="two" className="emoji" {...two} >🍕</text>
         <text id="three" className="emoji" {...three} >🍔</text>

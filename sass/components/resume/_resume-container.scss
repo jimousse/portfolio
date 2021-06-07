@@ -1,5 +1,6 @@
 .resume-container {
   @include whiteBgOnVideo;
+  @include sectionMargins;
   padding: 2rem;
 }
 
