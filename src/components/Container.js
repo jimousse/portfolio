@@ -25,22 +25,31 @@ export default function Container() {
   const resumeSectionRef = useRef(null);
   const contactSectionRef = useRef(null);
 
+
+
   const handleScroll = () => {
     const currentScrollTop = scrollableContainerRef.current.scrollTop;
+  
+    // about boundaries
+    const aboutStart = 0;
+    const aboutEnd = aboutStart + aboutSectionRef.current.offsetHeight;
+    // projects boundaries
+    const projectsStart = projectsSectionRef.current.offsetTop;
+    const projectEnd = projectsStart + projectsSectionRef.current.offsetHeight;
+    // resume boundaries
+    const resumeStart = resumeSectionRef.current.offsetTop;
+    const resumeEnd = resumeStart + resumeSectionRef.current.offsetHeight;
 
-    // if (currentScrollTop >= aboutSectionRef.current.offsetTop &&
-    //   currentScrollTop <= aboutSectionRef.current.offsetHeight/2) {
-    //   setCurrentPage('about');
-    // } else if (currentScrollTop >= aboutSectionRef.current.offsetHeight/2 &&
-    //   currentScrollTop <= projectsSectionRef.current.offsetTop + projectsSectionRef.current.offsetHeight/2) {
-    //     setCurrentPage('projects');
-    // } else if (currentScrollTop >= resumeSectionRef.current.offsetTop - projectsSectionRef.current.offsetHeight/2 &&
-    //   currentScrollTop <= resumeSectionRef.current.offsetTop + resumeSectionRef.current.offsetHeight/2) {
-    //     setCurrentPage('resume');
-    //     console.log('resume');
-    // } else {
-    //     setCurrentPage('contact');
-    // }
+    // the following percentages are kind of arbitruary
+    if (currentScrollTop <=  0.7 * aboutEnd) {
+      setCurrentPage('about');
+    } else if (currentScrollTop > 0.7 * aboutEnd && currentScrollTop <= 0.9 * projectEnd) {
+      setCurrentPage('projects');
+    } else if (currentScrollTop > 0.9 * projectEnd && currentScrollTop <= 0.95 * resumeEnd) {
+      setCurrentPage('resume');
+    } else {
+      setCurrentPage('contact');
+    }
   };
 
   useEffect(() => {
