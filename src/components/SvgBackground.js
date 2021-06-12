@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SvgBackground() {
 
-  const patternSemiSize = 130;
+  const patternSemiSize = 110;
   const emojiHeight = 37;
   const emojiWidth = 34.4;
   const one = {
@@ -61,7 +61,7 @@ export default function SvgBackground() {
         <text id="one" className="emoji" {...one}>🍺</text>
         <text id="two" className="emoji" {...two} >🍕</text>
         <text id="three" className="emoji" {...three} >🍔</text>
-        <text id="four" className="emoji" {...four}>🍩</text>
+        <text id="four" className="emoji" {...four}>🍟</text>
       </pattern>
     </defs>
       <rect width="100%" height="100%" fill="url(#emoji-pattern)" />
