@@ -35,10 +35,6 @@ module.exports = [
     },
     resolve: {
       extensions: [ '*', '.js', '.jsx' ]
-      // alias: {
-      //   Styles: path.resolve(__dirname, 'src/styles'),
-      //   Utils: path.resolve(__dirname, 'src/utils')
-      // }
     },
     plugins: [ new webpack.HotModuleReplacementPlugin() ],
     devServer: {
