@@ -1,14 +1,14 @@
 import React, { forwardRef } from 'react';
-import moiImg from '../../img/moi.jpg';
 import SectionTitle from './SectionTitle';
 
 const About = forwardRef((props, ref) => {
+  const moiSrcImg = 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/moi.jpg';
   return (
     <section ref={ref} id={props.id} className="section">
       <SectionTitle title={props.label} />
       <div  className="about">
         <figure className="about__figure">
-          <img className="about__picture" src={moiImg} alt="portrait picture" />
+          <img className="about__picture" src={moiSrcImg} alt="portrait picture" />
           <figcaption className="about__caption">👋</figcaption>
         </figure>
         <div className="about__text">

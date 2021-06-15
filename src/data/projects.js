@@ -1,23 +1,15 @@
-import gameImg from '../../img/projects/2dgame.png';
-import portofolioImg from '../../img/projects/portfolio.png';
-import realEstateImg from '../../img/projects/real-estate.png';
-import natoursImg from '../../img/projects/natours.png';
-import hotelApp from '../../img/projects/hotel-app.png';
-import nodeRestApi from '../../img/projects/rest-api.png';
-import nodeBookShop from '../../img/projects/node-shop.jpg';
-
 export const projectsData = [
   {
     title: 'This portofolio',
     description: 'Website you are currently looking at. Built with React and Sass only.',
-    img: portofolioImg,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/portfolio.png',
     github: 'https://github.com/jimousse/portfolio',
     topics: [ 'reactjs', 'sass', 'webpack' ]
   },
   {
     title: '2D Game',
     description: 'This is a tile-based game concept using HTML5 <canvas>. Built with JavaScript and LitElement.',
-    img: gameImg,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/2dgame.png',
     github: 'https://github.com/jimousse/2DGame',
     demo: 'https://jimousse.github.io/2DGame/',
     topics: [ 'javascript', 'canvas', 'lit-element' ]
@@ -25,21 +17,21 @@ export const projectsData = [
   {
     title: 'Book Shop',
     description: 'Full stack book shop website made with NodeJS and MongoDB.',
-    img: nodeBookShop,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/node-shop.jpg',
     github: 'https://github.com/jimousse/node-mongodb-shop',
     topics: [ 'nodejs', 'mongodb', 'expressjs' ]
   },
   {
     title: 'Social Media REST API',
     description: 'Node REST API for a social media client created with Express, MongoDB/Mongoose.',
-    img: nodeRestApi,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/rest-api.png',
     github: 'https://github.com/jimousse/node-rest-api',
     topics: [ 'rest-api', 'mongoose', 'nodejs' ]
   },
   {
     title: 'Hotel Domstraat',
     description: 'CSS project focusing on Flexbox.',
-    img: hotelApp,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/hotel-app.png',
     github: 'https://github.com/jimousse/hotel-app',
     demo: 'https://jimousse.github.io/hotel-app/',
     topics: [ 'css', 'sass', 'flexbox' ]
@@ -47,7 +39,7 @@ export const projectsData = [
   {
     title: 'Nature Tours App',
     description: 'CSS project focusing on float layouts.',
-    img: natoursImg,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/natours.png',
     github: 'https://github.com/jimousse/nature-tour-app',
     demo: 'https://jimousse.github.io/nature-tour-app/',
     topics: [ 'css', 'sass', 'float' ]
@@ -55,7 +47,7 @@ export const projectsData = [
   {
     title: 'Real Estate App',
     description: 'CSS project focusing on Grid.',
-    img: realEstateImg,
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/real-estate.png',
     demo: 'https://jimousse.github.io/real-estate-app/',
     github: 'https://github.com/jimousse/real-estate-app',
     topics: [ 'css', 'sass', 'grid' ]
