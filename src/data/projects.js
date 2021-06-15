@@ -1,5 +1,13 @@
 export const projectsData = [
   {
+    title: 'Beer O\'Clock',
+    description: 'Funny project, playing with CSS animations and SVG.',
+    img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/beer.png',
+    github: 'https://github.com/jimousse/beer-oclock',
+    demo: 'https://jimousse.github.io/beer-oclock/',
+    topics: [ 'svg', 'css', 'animations' ]
+  },
+  {
     title: 'This portofolio',
     description: 'Website you are currently looking at. Built with React and Sass only.',
     img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/portfolio.png',
@@ -34,7 +42,7 @@ export const projectsData = [
     img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/hotel-app.png',
     github: 'https://github.com/jimousse/hotel-app',
     demo: 'https://jimousse.github.io/hotel-app/',
-    topics: [ 'css', 'sass', 'flexbox' ]
+    topics: [ 'css', 'sass', 'css-flexbox' ]
   },
   {
     title: 'Nature Tours App',
@@ -50,6 +58,6 @@ export const projectsData = [
     img: 'https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/real-estate.png',
     demo: 'https://jimousse.github.io/real-estate-app/',
     github: 'https://github.com/jimousse/real-estate-app',
-    topics: [ 'css', 'sass', 'grid' ]
+    topics: [ 'css', 'sass', 'css-grid' ]
   }
 ];
