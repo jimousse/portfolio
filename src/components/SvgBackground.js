@@ -1,70 +1,44 @@
 import React from 'react';
 
 export default function SvgBackground() {
-
-  const patternSemiSize = 110;
-  const emojiHeight = 37;
-  const emojiWidth = 34.4;
-  const one = {
-    x: (patternSemiSize - emojiWidth) / 2,
-    y: (patternSemiSize - emojiHeight) / 2 + emojiHeight 
-  };
-  const two = {
-    x: (patternSemiSize - emojiWidth) / 2 + patternSemiSize,
-    y: (patternSemiSize - emojiHeight) / 2 + emojiHeight
-  };
-  const three = {
-    x: (patternSemiSize - emojiWidth) / 2,
-    y: (patternSemiSize - emojiHeight) / 2 + emojiHeight + patternSemiSize
-  };
-  const four = {
-    x: (patternSemiSize - emojiWidth) / 2 + patternSemiSize,
-    y: (patternSemiSize - emojiHeight) / 2 + emojiHeight + patternSemiSize
-  };
-
-  const loopRotationTransform = (angle, x, y) => {
-    return <animateTransform 
-            attributeName="transform" 
-            attributeType="XML" 
-            type="rotate"
-            values={`-${angle} ${x} ${y}; ${angle} ${x} ${y}; -${angle} ${x} ${y}`}
-            dur="3s" 
-            repeatCount="indefinite" />;
-  };
-
-  const fullRotationTransform = (angle, x, y) => {
-    return <animateTransform 
-            attributeName="transform" 
-            attributeType="XML" 
-            type="rotate"
-            values={`${angle} ${x} ${y}; ${angle + 360} ${x} ${y};`}
-            dur="5s" 
-            repeatCount="indefinite" />;
-  };
-
-  const scaleTransform = (x, y) => {
-    return <animateTransform 
-            attributeName="transform" 
-            attributeType="XML" 
-            type="rotate"
-            values={`${angle} ${x} ${y}; ${angle + 360} ${x} ${y};`}
-            dur="5s" 
-            repeatCount="indefinite" />;
-  };
-
-
-
+  const squareSize = 100;
+  const halfSquareSize = squareSize/2;
+  const colors = [
+    'hsl(29, 97%, 76%)',
+    'hsl(4, 82%, 67%)',
+    'hsl(58, 89%, 83%)',
+    'hsl(183, 100%, 36%)'
+  ];
   return (
     <svg className="svg-background" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <pattern id="emoji-pattern" x="-20" y="0" patternUnits="userSpaceOnUse" width={patternSemiSize*2} height={patternSemiSize*2}>
-        <text id="one" className="emoji" {...one}>🍺</text>
-        <text id="two" className="emoji" {...two} >🍕</text>
-        <text id="three" className="emoji" {...three} >🍔</text>
-        <text id="four" className="emoji" {...four}>🍟</text>
-      </pattern>
+        <pattern 
+            id="cool-pattern" 
+            width={squareSize} 
+            height={squareSize}
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(20)"
+            viewBox={`0,0,${squareSize},${squareSize}`}
+        >
+            <polygon 
+              points={`0 0, ${halfSquareSize} ${halfSquareSize}, ${squareSize} 0`} 
+              fill={colors[0]}
+            />
+            <polygon 
+              points={`${squareSize} 0, ${halfSquareSize} ${halfSquareSize}, ${squareSize} ${squareSize}`} 
+              fill={colors[1]}
+            />
+            <polygon 
+              points={`${squareSize} ${squareSize}, ${halfSquareSize} ${halfSquareSize},0 ${squareSize}`} 
+              fill={colors[2]}
+            />
+            <polygon 
+              points={`0 ${squareSize}, ${halfSquareSize} ${halfSquareSize}, 0 0`} 
+              fill={colors[3]}
+            />
+        </pattern>
     </defs>
-      <rect width="100%" height="100%" fill="url(#emoji-pattern)" />
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#cool-pattern)" />
     </svg>
   );
 }
