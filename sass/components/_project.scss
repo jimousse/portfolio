@@ -1,4 +1,4 @@
-$card-width: 33rem;
+$card-width: 30rem;
 
 .projects {
   display: grid;
@@ -9,7 +9,6 @@ $card-width: 33rem;
   @include sectionMargins;
 }
 
-
 .project {
   &__card {
     box-shadow: $box-shadow-dark;
@@ -19,7 +18,7 @@ $card-width: 33rem;
 
     border-radius: 10px;
     overflow: hidden;
-    transition: all .3s;
+    transition: all 0.3s;
     width: $card-width;
 
     @media (hover: hover) {
@@ -28,7 +27,6 @@ $card-width: 33rem;
         box-shadow: $box-shadow-dark;
       }
     }
-
   }
 
   @media (hover: hover) {
@@ -39,9 +37,9 @@ $card-width: 33rem;
 
   &__image {
     width: 100%;
-    height: 22rem;
+    height: 15rem;
     background-size: cover;
-    box-shadow: 0 1rem 2rem rgba($color-black, .4);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
     @media (hover: hover) {
       filter: brightness(70%);
     }
@@ -51,7 +49,7 @@ $card-width: 33rem;
     width: 80%;
     font-size: 2rem;
     color: $color-white;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     display: inline-block;
     text-align: center;
     background-color: var(--color-secondary-dark);
@@ -63,9 +61,10 @@ $card-width: 33rem;
   }
 
   &__description {
-    height: 12rem;
+    margin-top: -1.5rem;
+    height: 10rem;
     padding: 2rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: $color-black;
   }
 
@@ -101,9 +100,8 @@ $card-width: 33rem;
     background-color: var(--color-secondary);
     -webkit-mask-size: cover;
     mask-size: cover;
-    transition: all .2s;
-    padding: 0 .5rem;
-
+    transition: all 0.2s;
+    padding: 0 0.5rem;
 
     &:not(:last-child) {
       margin-right: 6rem;
@@ -132,7 +130,7 @@ $card-width: 33rem;
   }
 
   &__link--website {
-    transform: translateY(.2rem);
+    transform: translateY(0.2rem);
     -webkit-mask-image: url(/img/external-link.svg);
     mask-image: url(/img/external-link.svg);
 
