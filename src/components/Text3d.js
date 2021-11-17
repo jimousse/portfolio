@@ -11,8 +11,8 @@ function render3DText(canvas) {
   fontLoader.load('/3d/fonts/helvetiker_regular.typeface.json', (font) => {
     const textGeometry = new TextGeometry('J.C.', {
       font: font,
-      size: 0.5,
-      height: 0.2,
+      size: 0.6,
+      height: 0.05,
       curveSegments: 20,
       bevelEnabled: true,
       bevelThickness: 0.03,
@@ -47,7 +47,7 @@ function render3DText(canvas) {
     100
   );
   camera.position.x = 0;
-  camera.position.y = 0;
+  camera.position.y = -0.1;
   camera.position.z = 1;
   scene.add(camera);
 
@@ -69,7 +69,6 @@ function render3DText(canvas) {
 
     if (text) {
       text.rotation.y = elapsedTime;
-      text.rotation.x = elapsedTime;
     }
 
     // Render

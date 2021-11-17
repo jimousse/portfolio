@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   .theme-toggle-label {
     text-transform: uppercase;
@@ -10,7 +10,7 @@
     color: var(--color-secondary-darker);
     border-radius: 20px;
     border: 2px solid var(--color-secondary-darker);
-    padding: 0 .8rem;
+    padding: 0 0.8rem;
     font-weight: 400;
     background-color: var(--color-secondary-lighter);
   }
@@ -46,7 +46,8 @@
       cursor: pointer;
       transition: transform 0.3s;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: var(--color-primary-darker);
       }
 

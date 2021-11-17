@@ -1,13 +1,13 @@
 .side-nav {
   font-size: 1.4rem;
   list-style: none;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -26,10 +26,17 @@
       z-index: 10;
       font-size: 1.7rem;
       cursor: pointer;
-      transition: all .4s;
-      background-image:
-        linear-gradient(45deg, var(--color-tertiary-darker) 50%, transparent 50%),
-        linear-gradient(45deg, transparent 50%, var(--color-tertiary-darker) 50%);
+      transition: all 0.4s;
+      background-image: linear-gradient(
+          45deg,
+          var(--color-tertiary-darker) 50%,
+          transparent 50%
+        ),
+        linear-gradient(
+          45deg,
+          transparent 50%,
+          var(--color-tertiary-darker) 50%
+        );
       background-position-x: right, left;
       background-position-y: center, center;
       background-size: 250% 100%, 250% 100%;
@@ -65,12 +72,12 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    transition: all .2s;
+    transition: all 0.2s;
 
     &:before {
-      transition: all .2s;
+      transition: all 0.2s;
       margin-right: 1rem;
-      margin-top: -.15rem;
+      margin-top: -0.15rem;
       display: inline-block;
       background-color: var(--color-tertiary-lighter);
       mask-size: cover;
@@ -78,7 +85,6 @@
       content: '';
       height: 2rem;
       width: 2rem;
-
     }
 
     &.tab {
