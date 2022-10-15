@@ -14,7 +14,6 @@ export default function NavContent(props) {
       <Name />
       <SideNavList {...props} />
       <ThemeToggleButton />
-      <Text3d />
     </div>
   );
 }
