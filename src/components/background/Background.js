@@ -52,7 +52,8 @@ const do3dStuff = (canvas) => {
   const tick = () => {
     const currentTime = clock.getElapsedTime();
 
-    particules.rotation.y = currentTime / 100;
+    particules.rotation.y = currentTime / 40;
+    particules.rotation.x = -currentTime / 100;
 
     renderer.render(scene, camera);
 
