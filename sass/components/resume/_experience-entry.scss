@@ -14,8 +14,8 @@
 
   @include respond(large) {
     grid-template-areas:
-      'company-name company-name'
-      'title duration'
+      'company-name duration'
+      'title title'
       'date company-location'
       'description description';
   }
@@ -23,9 +23,9 @@
   @include respond(medium) {
     grid-template-areas:
       'company-name'
+      'duration'
       'title'
       'date'
-      'duration'
       'company-location'
       'description';
   }
@@ -52,7 +52,7 @@
     grid-area: company-name;
     @include main-style;
 
-    @include respond(large) {
+    @include respond(medium) {
       text-align: center;
     }
   }
