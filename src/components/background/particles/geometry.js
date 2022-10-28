@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const COUNT = 5000;
+const COUNT = 10000;
 
 const positions = new Float32Array(COUNT * 3);
 for (let i = 0; i < COUNT * 3; i++) {

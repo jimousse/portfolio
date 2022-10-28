@@ -19,57 +19,77 @@ export default function ExperienceEntry(props) {
     startTimestamp,
     tools,
     responsibilities,
-    responsibilitiesHeader
+    responsibilitiesHeader,
   } = props;
-
 
   function calculateEllapsedTime() {
     if (!isCurrent) return;
     const ellapsedMilliseconds = Date.now() - startTimestamp;
     const numOfYears = ellapsedMilliseconds / MILLISECONDS_IN_YEAR;
     const displayYears = Math.floor(numOfYears);
-    const numOfMonths = (ellapsedMilliseconds - displayYears * MILLISECONDS_IN_YEAR) / MILLISECONDS_IN_MONTH;
+    const numOfMonths =
+      (ellapsedMilliseconds - displayYears * MILLISECONDS_IN_YEAR) /
+      MILLISECONDS_IN_MONTH;
     const displayMonths = Math.floor(numOfMonths);
-    return displayMonths ? `${displayYears} yrs ${displayMonths} mos` : `${displayYears} yrs`;
+    if (displayMonths && !displayYears) {
+      return `${displayMonths} mos`;
+    } else if (!displayMonths && displayYears) {
+      return `${displayYears} yrs`;
+    }
+    return `${displayYears} yrs ${displayMonths} mos`;
   }
 
   return (
     <div className={BLOCK_NAME}>
-      <div className={`${BLOCK_NAME}__date  ${isCurrent ? 'current' : null}`}>{date}</div>
-      <div className={`${BLOCK_NAME}__title ${isCurrent ? 'current' : null}`}>{title}</div>
-      <div className={`${BLOCK_NAME}__company-name  ${isCurrent ? 'current' : null}`}>
+      <div className={`${BLOCK_NAME}__date  ${isCurrent ? 'current' : null}`}>
+        {date}
+      </div>
+      <div className={`${BLOCK_NAME}__title ${isCurrent ? 'current' : null}`}>
+        {title}
+      </div>
+      <div
+        className={`${BLOCK_NAME}__company-name  ${
+          isCurrent ? 'current' : null
+        }`}
+      >
         {companyName}
       </div>
-      <div className={`${BLOCK_NAME}__company-location location ${country}`}>{location}</div>
-      <div className={`${BLOCK_NAME}__duration`}>{isCurrent ? calculateEllapsedTime() : duration}</div>
+      <div className={`${BLOCK_NAME}__company-location location ${country}`}>
+        {location}
+      </div>
+      <div className={`${BLOCK_NAME}__duration`}>
+        {isCurrent ? calculateEllapsedTime() : duration}
+      </div>
       <div className={`${BLOCK_NAME}__description`}>
         <p>{description}</p>
-        {responsibilities &&
-        <p className="responsibilities">
-          {responsibilitiesHeader || RESP_LIST_HEADER}
-        <ul className="responsibilities__list">
-          {responsibilities.map((resp, i) => {
-            return (
-              <li key={i} className="responsibilities__item">
-                <span>{resp}</span>
-              </li>
-            );
-          })}
-        </ul>
-        </p>}
-        {tools &&
-        <p className="tools">
-          {TOOL_LIST_HEADER}
-          <ul className="tools__list">
-            {tools.map((tool, i) => {
-              return (
-                <li className="tools__item" key={i}>
-                  <span>{tool}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </p>}
+        {responsibilities && (
+          <p className="responsibilities">
+            {responsibilitiesHeader || RESP_LIST_HEADER}
+            <ul className="responsibilities__list">
+              {responsibilities.map((resp, i) => {
+                return (
+                  <li key={i} className="responsibilities__item">
+                    <span>{resp}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </p>
+        )}
+        {tools && (
+          <p className="tools">
+            {TOOL_LIST_HEADER}
+            <ul className="tools__list">
+              {tools.map((tool, i) => {
+                return (
+                  <li className="tools__item" key={i}>
+                    <span>{tool}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </p>
+        )}
       </div>
     </div>
   );

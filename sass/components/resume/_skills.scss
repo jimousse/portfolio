@@ -2,7 +2,7 @@
   padding: 2rem;
   width: 75%;
   margin: 0 auto;
-  color: $color-black;
+  color: $color-grey-dark-5;
 
   @include respond(large) {
     padding: 1rem;
@@ -27,7 +27,7 @@
     }
 
     & > span {
-      margin-top: .2rem; // aligning stuff is hard :(
+      margin-top: 0.2rem; // aligning stuff is hard :(
     }
 
     // PIE ICON
@@ -76,7 +76,7 @@
         height: 2rem;
         mask-image: url(/img/embed2.svg);
         -webkit-mask-image: url(/img/embed2.svg);
-        margin-top: .3rem;
+        margin-top: 0.3rem;
       }
     }
 
@@ -115,8 +115,8 @@
     // MONGO ICON
     &.mongodb {
       &:before {
-        mask-image: url(/img/mongodb.svg); 
-        -webkit-mask-image: url(/img/mongodb.svg); 
+        mask-image: url(/img/mongodb.svg);
+        -webkit-mask-image: url(/img/mongodb.svg);
       }
     }
 
@@ -135,6 +135,5 @@
         -webkit-mask-image: url(/img/users.svg);
       }
     }
-
   }
 }

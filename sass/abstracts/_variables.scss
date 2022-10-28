@@ -1,5 +1,5 @@
-$color-grey-light-1: #E5E6E4;
-$color-grey-light-2: #CFD2CD;
+$color-grey-light-1: #e5e6e4;
+$color-grey-light-2: #cfd2cd;
 $color-grey-light-3: #ebe9e9;
 
 $color-grey-dark: hsl(0, 0%, 47%);
@@ -12,20 +12,20 @@ $color-white: #fff;
 $color-black: #000;
 
 // DUTCH COLORS
-$color-dutch-blue: #21468B;
+$color-dutch-blue: #21468b;
 $color-dutch-white: #fff;
-$color-dutch-red: #AE1C28;
+$color-dutch-red: #ae1c28;
 $color-dutch-orange: #eb7640;
 $color-dutch-orange-dark: darken($color-dutch-orange, 5%);
 
 // FRENCH COLORS
-$color-french-blue: #0055A4;
+$color-french-blue: #0055a4;
 $color-french-white: #fff;
-$color-french-red:#EF4135;
+$color-french-red: #ef4135;
 
 // SPANISH COLORS
-$color-spanish-red: #AA151B;
-$color-spanish-yellow: #F1BF00;
+$color-spanish-red: #aa151b;
+$color-spanish-yellow: #f1bf00;
 
 // SWEDISH COLORS
 $color-swedish-yellow: #ffce00;
@@ -44,5 +44,5 @@ $topic-background: #f1f8ff;
 $default-font-size: 1.6rem;
 
 // box shadow
-$box-shadow-light: 0 2rem 4rem rgba($color-black, .2);
-$box-shadow-dark: 0 1rem 4rem rgba($color-black, .4);
+$box-shadow-light: 0 2rem 4rem rgba($color-black, 0.2);
+$box-shadow-dark: 0 1rem 4rem rgba($color-black, 0.4);

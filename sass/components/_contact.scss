@@ -5,7 +5,7 @@
   padding: 2rem;
   min-width: 31rem;
   @include sectionMargins;
-  color: $color-black;
+  color: $color-grey-dark-5;
   margin-bottom: 0;
 
   &__hi {
@@ -18,15 +18,14 @@
   &__item {
     display: flex;
     align-items: center;
-    padding: .5rem;
+    padding: 0.5rem;
 
     &:not(:last-child) {
       margin-bottom: 3rem;
     }
 
-
     &::before {
-      content: "";
+      content: '';
       display: inline-block;
       mask-size: cover;
       -webkit-mask-size: cover;
