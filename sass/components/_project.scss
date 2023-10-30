@@ -58,7 +58,7 @@ $card-width: 30rem;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
     transform: translateY(-50%);
-    border: 3px solid var(--color-secondary);
+    // border: 3px solid var(--color-secondary);
   }
 
   &__description {
@@ -91,13 +91,13 @@ $card-width: 30rem;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    background-color: var(--color-tertiary-light);
+    background-color: var(--color-tertiary-lighter);
   }
 
   &__link:link,
   &__link:visited {
-    height: 5rem;
-    width: 5rem;
+    height: 3rem;
+    width: 3rem;
     background-color: var(--color-secondary);
     -webkit-mask-size: cover;
     mask-size: cover;
