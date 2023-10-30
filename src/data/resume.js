@@ -130,6 +130,7 @@ export const skillItems = [
   { label: "React", class: "react" },
   { label: "ThreeJS", class: "threejs" },
   { label: "WebGL", class: "webgl" },
+  { label: "Blender", class: "blender" },
   { label: "CSS", class: "css" },
   { label: "SASS", class: "sass" },
   { label: "NodeJS", class: "node" },

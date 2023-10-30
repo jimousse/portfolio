@@ -70,6 +70,14 @@
       }
     }
 
+    // BLENDER ICON
+    &.blender {
+      &:before {
+        mask-image: url(/img/blender.svg);
+        -webkit-mask-image: url(/img/blender.svg);
+      }
+    }
+
     // CSS ICON
     &.css {
       &:before {

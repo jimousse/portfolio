@@ -60,8 +60,8 @@ export const projectsData = [
   {
     title: "3D Font Effect",
     description: "ThreeJS experimentation with fonts and shaders",
-    img: "https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/curved-planes.png",
-    github: "https://github.com/jimousse/curved-plane/tree/master",
+    img: "https://raw.githubusercontent.com/jimousse/portfolio/main/img/projects/3dfont.png",
+    github: "https://github.com/jimousse/outline-text-effect",
     demo: "https://outline-text-effect.vercel.app/",
     topics: ["threejs", "shaders", "webgl"],
   },
