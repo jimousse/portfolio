@@ -1,11 +1,10 @@
-import React from 'react';
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { particlesGeometry } from './particles/geometry';
-import { particlesMaterial } from './particles/material';
-import gsap from 'gsap';
+import React from "react";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { particlesGeometry } from "./particles/geometry";
+import { particlesMaterial } from "./particles/material";
 
-const BACKGROUND_COLOR = '#0B0C3D';
+const BACKGROUND_COLOR = "#0B0C3D";
 
 const do3dStuff = (canvas) => {
   const scene = new THREE.Scene();
@@ -18,7 +17,7 @@ const do3dStuff = (canvas) => {
     height: window.innerHeight,
   };
 
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     // Update sizes
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;

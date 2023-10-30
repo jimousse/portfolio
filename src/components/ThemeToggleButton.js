@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function ThemeToggleButton(props) {
-  const [ toggled, setToggled ] = useState(false);
+  const [toggled, setToggled] = useState(false);
 
   const switchTheme = () => {
-    document.querySelector('html').classList.toggle('coffee');
+    document.querySelector("html").classList.toggle("coffee");
     setToggled(!toggled);
   };
 
@@ -12,7 +12,9 @@ export default function ThemeToggleButton(props) {
 
   return (
     <div className="theme-toggle-group">
-      <label htmlFor={randomId} className="theme-toggle-label">Theme 🎨</label>
+      <label htmlFor={randomId} className="theme-toggle-label">
+        Theme 🎨
+      </label>
       <span className="theme-toggle">
         <div className="theme-toggle__border" />
         <input
@@ -21,10 +23,10 @@ export default function ThemeToggleButton(props) {
           role="checkbox"
           checked={toggled}
           aria-checked={toggled}
-          role="switch"
-          onClick={switchTheme} className={`theme-toggle__switch ${ toggled ? 'toggled' : ''}`}
+          onClick={switchTheme}
+          className={`theme-toggle__switch ${toggled ? "toggled" : ""}`}
         />
       </span>
     </div>
   );
-};
+}

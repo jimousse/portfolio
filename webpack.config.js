@@ -1,81 +1,81 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = [
   {
-    mode: 'development',
-    entry: path.resolve(__dirname, './src/index.js'),
-    devtool: 'inline-source-map',
+    mode: "development",
+    entry: path.resolve(__dirname, "./src/index.js"),
+    devtool: "inline-source-map",
     output: {
-      filename: 'main.js',
-      path: path.resolve(__dirname, './docs'),
+      filename: "main.js",
+      path: path.resolve(__dirname, "./docs"),
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: ["babel-loader"],
         },
         {
           test: /\.(sass|css|scss)$/i,
           use: [
-            { loader: 'style-loader' },
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' },
+            { loader: "style-loader" },
+            { loader: "css-loader" },
+            { loader: "sass-loader" },
           ],
         },
         {
           test: /\.(png|jpe?g|gif|svg|mp4)$/i,
-          use: [{ loader: 'url-loader' }],
+          use: [{ loader: "url-loader" }],
         },
       ],
     },
     resolve: {
-      extensions: ['*', '.js', '.jsx'],
+      extensions: ["*", ".js", ".jsx"],
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
       contentBase: [
-        path.resolve(__dirname, './docs'),
-        path.resolve(__dirname, './img'),
+        path.resolve(__dirname, "./docs"),
+        path.resolve(__dirname, "./img"),
       ],
-      host: '192.168.178.201',
+      // host: '192.168.178.201',
       hot: true,
     },
   },
   {
-    mode: 'production',
-    entry: path.resolve(__dirname, './src/index.js'),
+    mode: "production",
+    entry: path.resolve(__dirname, "./src/index.js"),
     output: {
-      filename: 'main.js',
-      path: path.resolve(__dirname, './docs'),
+      filename: "main.js",
+      path: path.resolve(__dirname, "./docs"),
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: ["babel-loader"],
         },
         {
           test: /\.(sass|css|scss)$/i,
           use: [
-            { loader: 'style-loader' },
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' },
+            { loader: "style-loader" },
+            { loader: "css-loader" },
+            { loader: "sass-loader" },
           ],
         },
         {
           test: /\.(png|jpe?g|gif|svg|mp4)$/i,
-          use: [{ loader: 'url-loader' }],
+          use: [{ loader: "url-loader" }],
         },
       ],
     },
     resolve: {
-      extensions: ['*', '.js', '.jsx'],
+      extensions: ["*", ".js", ".jsx"],
     },
     // plugins: [
     //   new BundleAnalyzerPlugin()

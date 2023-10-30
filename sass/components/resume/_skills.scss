@@ -54,6 +54,22 @@
       }
     }
 
+    // THREEJS ICON
+    &.threejs {
+      &:before {
+        mask-image: url(/img/threejs.svg);
+        -webkit-mask-image: url(/img/threejs.svg);
+      }
+    }
+
+    // WEBGL ICON
+    &.webgl {
+      &:before {
+        mask-image: url(/img/webgl.svg);
+        -webkit-mask-image: url(/img/webgl.svg);
+      }
+    }
+
     // CSS ICON
     &.css {
       &:before {
